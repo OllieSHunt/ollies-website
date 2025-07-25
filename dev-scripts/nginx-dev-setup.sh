@@ -25,14 +25,15 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # counterparts in `./nginx-dev-cleanup.sh`
 PROJECT_ROOT="$SCRIPT_DIR/.."
 NGINX_ROOT="/tmp-nginx"
-NGINX_CONFIG="$SCRIPT_DIR/nginx.conf"
+NGINX_CONFIG="$SCRIPT_DIR/nginx-dev.conf"
 NGINX_LOG_DIR="/var/log/nginx"
 USER=$(id -nu)
 GROUP=$(id -ng)
 
-if ! [ -z "$( ls -A "$NGINX_ROOT" )" ]; then
-    echo "WARNING: $NGINX_ROOT is NOT empty script exiting"
-    return 1
+# Exit if important directory is already in use
+if ! [ -z "$( ls -A "$NGINX_ROOT" 2>/dev/null )" ]; then
+    echo "ERROR: $NGINX_ROOT is NOT empty and so should not have anything mounted over the top of it."
+    exit 1
 fi
 
 # Create mount point
@@ -42,9 +43,8 @@ sudo chown "$USER:$GROUP" "$NGINX_ROOT"
 # Bind mount
 sudo mount --bind $PROJECT_ROOT "$NGINX_ROOT"
 
-# Create log files and make sure they have the correct permissions
+# Create log files directory
 sudo mkdir -p "$NGINX_LOG_DIR"
-sudo touch "$NGINX_LOG_DIR/access.log"
 
 # Start nginx
-sudo nginx -c "$NGINX_CONFIG" -e stderr
+sudo nginx -c "$NGINX_CONFIG"

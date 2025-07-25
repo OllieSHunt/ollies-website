@@ -8,4 +8,4 @@
 >
 > Instead you must use a server that supports server side includes (like [Nginx](https://nginx.org/en/)) to serve the website on localhost.
 >
-> See also: `./nginx-dev-setup.sh`
+> See also: `./dev-scripts/nginx-dev-setup.sh`
