@@ -12,6 +12,7 @@
     </head>
 
     <body>
+        <!--#include file="html-components/menu-bar.shtml" -->
         <h1>Hello, world!</h1>
     </body>
 </html>
