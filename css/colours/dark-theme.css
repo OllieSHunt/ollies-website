@@ -1,4 +1,14 @@
+/*
+Dark theme is based of Gruvbox. See the colour palette here:
+https://github.com/morhetz/gruvbox-contrib
+*/
+
 :root {
-    --main-text-colour: #ffffff;
-    --main-bg-colour: #000000;
+    --main-text-colour: #ebdbb2;
+
+    --main-bg-colour: #282828;
+    --distant-bg-colour: #7c6f64;
+    --element-bg-colour: #32302f;
+
+    --main-accent-colour: #458588;
 }

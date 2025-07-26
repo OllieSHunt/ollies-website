@@ -1,0 +1,21 @@
+body {
+    background-color: var(--distant-bg-colour);
+}
+
+main {
+    background-color: var(--main-bg-colour);
+    color: var(--main-text-colour);
+
+    width: 66.66%;
+    margin: 0.5em auto;
+    padding: 1em;
+
+    border: 3px solid var(--main-accent-colour);
+    border-radius: 1em;
+}
+
+/* TODO: Mobile view for the main tag */
+/* @media (orientation: portrait) {
+    main {
+    }
+} */

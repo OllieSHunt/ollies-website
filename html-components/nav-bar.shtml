@@ -1,0 +1,16 @@
+<div id="nav-bar-anchor">
+    <!-- This is used to detect when the user has scrolled down -->
+</div>
+
+<nav id="nav-bar">
+    <!-- Navigation bar displayed at the top of the screen -->
+    <!-- Requires: `css/menu-bar.css` -->
+    <!-- Optionally requires: `js/nav-bar.js` -->
+
+    <ol>
+        <li class="nav-bar-left"><a href="index.shtml">Home</a></li>
+        <li class="nav-bar-right"><a href="#">Placeholder 2</a></li>
+        <li class="nav-bar-right"><a href="#">Placeholder 3</a></li>
+        <li class="nav-bar-right"><a href="#">Placeholder 4</a></li>
+    </ol>
+</nav>

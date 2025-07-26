@@ -1,0 +1,52 @@
+#nav-bar {
+    background-color: var(--main-bg-colour);
+    color: var(--main-text-colour);
+
+    width: 50%;
+    margin: 0 auto;
+
+    position: sticky;
+}
+
+.nav-moving {
+    top: 6px;
+
+    border: 3px solid var(--main-accent-colour);
+    border-radius: 1em;
+}
+
+.nav-docked {
+    top: 0;
+
+    border: 3px solid var(--main-accent-colour);
+    border-top: none;
+    border-radius: 0 0 1em 1em;
+}
+
+/* Custom styling for portrait screens */
+@media (orientation: portrait) {
+    #nav-bar {
+        width: 100%;
+    }
+}
+
+#nav-bar a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#nav-bar ol {
+    display: flex;
+
+    list-style-type: none;
+}
+
+#nav-bar ol li {
+    margin: 0 0.2em;
+}
+
+#nav-bar .nav-bar-left {
+}
+
+#nav-bar .nav-bar-right {
+}
