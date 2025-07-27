@@ -1,4 +1,6 @@
 nav {
+    /* TODO: add drop shadow? */
+
     background-color: var(--main-bg-colour);
 
     position: sticky;
