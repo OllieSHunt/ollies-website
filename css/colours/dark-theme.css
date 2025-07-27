@@ -1,7 +1,7 @@
-/*
+/*****************************************************************************
 Dark theme is based of Gruvbox. See the colour palette here:
 https://github.com/morhetz/gruvbox-contrib
-*/
+*****************************************************************************/
 
 :root {
     --main-text-colour: #ebdbb2;

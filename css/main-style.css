@@ -1,5 +1,15 @@
+/*****************************************************************************
+This file contains generic style for the whole site. For example, it contains
+style for headings, paragraphs, the body element, and fonts.
+*****************************************************************************/
+
 :root {
     color: var(--main-text-colour);
+
+    font:
+        16px Arial,
+        Helvetica,
+        sans-serif;
 }
 
 /* The colour of highlighted text */
@@ -22,6 +32,42 @@ main {
 
     border: var(--border-width) solid var(--main-accent-colour);
     border-radius: 1em;
+}
+
+h1 {
+    /* TODO */
+}
+
+h2 {
+    /* TODO */
+}
+
+h3 {
+    /* TODO */
+}
+
+h4 {
+    /* TODO */
+}
+
+h5 {
+    /* TODO */
+}
+
+h6 {
+    /* TODO */
+}
+
+p {
+    /* TODO */
+}
+
+em {
+    /* TODO */
+}
+
+strong {
+    /* TODO */
 }
 
 /* A hyperlink (<a> tag) that looks and feels like a button */
