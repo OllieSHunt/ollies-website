@@ -1,52 +1,59 @@
-#nav-bar {
+nav {
     background-color: var(--main-bg-colour);
-    color: var(--main-text-colour);
-
-    width: 50%;
-    margin: 0 auto;
 
     position: sticky;
-}
+    top: 1.25em;
+    height: 2.5em;
+    width: 33.33%;
+    margin: 0 auto;
+    padding: 0 0.5em;
 
-.nav-moving {
-    top: 6px;
+    border: var(--border-width) solid var(--main-accent-colour);
+    border-radius: 1.25em;
 
-    border: 3px solid var(--main-accent-colour);
-    border-radius: 1em;
-}
-
-.nav-docked {
-    top: 0;
-
-    border: 3px solid var(--main-accent-colour);
-    border-top: none;
-    border-radius: 0 0 1em 1em;
-}
-
-/* Custom styling for portrait screens */
-@media (orientation: portrait) {
-    #nav-bar {
-        width: 100%;
-    }
-}
-
-#nav-bar a {
-    color: inherit;
-    text-decoration: inherit;
-}
-
-#nav-bar ol {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    transition:
+        top 100ms,
+        border-radius 100ms,
+        border-top 100ms;
+}
+
+nav.nav-bar-moving {
+    top: 0;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+nav ol {
+    margin: 0;
+    padding: 0;
+
+    width: 50%;
+
+    white-space: nowrap;
+}
+
+nav ol li {
     list-style-type: none;
+
+    display: inline-block;
+
+    width: 50%;
 }
 
-#nav-bar ol li {
-    margin: 0 0.2em;
+nav ol li a {
+    width: 100%;
+    height: 100%;
 }
 
-#nav-bar .nav-bar-left {
-}
+nav .nav-bar-subheading {
+    margin: 0 0 0 1em;
 
-#nav-bar .nav-bar-right {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

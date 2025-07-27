@@ -1,16 +1,19 @@
+:root {
+    color: var(--main-text-colour);
+}
+
 body {
     background-color: var(--distant-bg-colour);
 }
 
 main {
     background-color: var(--main-bg-colour);
-    color: var(--main-text-colour);
 
     width: 66.66%;
-    margin: 0.5em auto;
+    margin: 0em auto;
     padding: 1em;
 
-    border: 3px solid var(--main-accent-colour);
+    border: var(--border-width) solid var(--main-accent-colour);
     border-radius: 1em;
 }
 
@@ -19,3 +22,32 @@ main {
     main {
     }
 } */
+
+/* A hyperlink (<a> tag) that looks and feels like a button */
+a.link-button {
+    display: inline-block;
+
+    color: inherit;
+    text-decoration: inherit;
+    text-align: center;
+
+    background-color: var(--element-bg-colour);
+
+    border: var(--border-width) solid var(--main-accent-colour);
+    border-radius: 1.25em;
+
+    padding: 0 0.5em;
+
+    transition: background-color 64ms;
+}
+
+a.link-button:hover {
+    background-color: var(--distant-bg-colour);
+}
+
+a.link-button:active {
+    transition: background-color 0ms;
+
+    background-color: var(--highlight-colour);
+    color: var(--element-bg-colour);
+}

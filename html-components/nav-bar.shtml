@@ -1,16 +1,18 @@
 <div id="nav-bar-anchor">
-    <!-- This is used to detect when the user has scrolled down -->
+    <!-- This acts as a reference point so the header can tell when it has scrolled away from the top of the page. -->
 </div>
 
-<nav id="nav-bar">
-    <!-- Navigation bar displayed at the top of the screen -->
-    <!-- Requires: `css/menu-bar.css` -->
+<nav>
+    <!-- Nav bar displayed at the top of the screen -->
+    <!-- This is designed to be used as an SSI (Server Side Include) -->
+    <!-- Requires: `css/main-style.css` -->
+    <!-- Requires: `css/nav-bar.css` -->
     <!-- Optionally requires: `js/nav-bar.js` -->
 
     <ol>
-        <li class="nav-bar-left"><a href="index.shtml">Home</a></li>
-        <li class="nav-bar-right"><a href="#">Placeholder 2</a></li>
-        <li class="nav-bar-right"><a href="#">Placeholder 3</a></li>
-        <li class="nav-bar-right"><a href="#">Placeholder 4</a></li>
+        <li><a class="link-button" href="index.shtml">Home</a></li>
+        <li><a class="link-button" href="#">Blog</a></li>
     </ol>
+
+    <div class="nav-bar-subheading">Current Subheading Here</div>
 </nav>

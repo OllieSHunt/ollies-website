@@ -1,22 +1,25 @@
-// This code creates an intersection observer to detect when the navigation
+// This code creates an intersection observer to detect when the nav bar
 // bar scrolls down. The nav bar will then change its style based of this
 // information.
+//
+// Code in this file is a modified version of: https://stackoverflow.com/a/39575616
 
-const navBar = document.getElementById("nav-bar");
+const navBar = document.getElementsByTagName("nav")[0];
 const navBarAnchor = document.getElementById("nav-bar-anchor");
 
-function updateNavColor(entries) {
+function updateNavBarClasses(entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) {
-    navBar.classList.add("nav-moving");
-    navBar.classList.remove("nav-docked");
+    navBar.classList.add("nav-bar-moving");
+    navBar.classList.remove("nav-bar-docked");
   } else {
-    navBar.classList.add("nav-docked");
-    navBar.classList.remove("nav-moving");
+    navBar.classList.add("nav-bar-docked");
+    navBar.classList.remove("nav-bar-moving");
   }
 }
 
-const navBarAnchorObserver = new IntersectionObserver(updateNavColor, {
+// Detect when the nav bar anchor goes off the screen
+const navBarAnchorObserver = new IntersectionObserver(updateNavBarClasses, {
   root: null,
   threshold: 0,
 });
