@@ -1,12 +1,13 @@
 #! /usr/bin/env bash
 
-# This is a script that sets up a Nginx server on localhost for debugging.
+# This is a script that sets up a Nginx server on your local computer for
+# debugging.
 #
 # This is needed because SSI (Server Side Includes) does not work when you
 # just open up the HTML file in your browser.
 #
 # If everything is set up correctly, you should be able to view the website at
-# `http://localhost/`.
+# `http://localhost/` or from another device with `http://<YOUR_IP>`.
 #
 # IMPORTANT: You can clean up all temp files created by this script using
 # `./nginx-dev-cleanup.sh`
