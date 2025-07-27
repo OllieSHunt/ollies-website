@@ -1,6 +1,4 @@
 nav {
-    /* TODO: add drop shadow? */
-
     background-color: var(--main-bg-colour);
 
     position: sticky;
@@ -20,7 +18,8 @@ nav {
     transition:
         top 100ms,
         border-radius 100ms,
-        border-top 100ms;
+        border-top 100ms,
+        box-shadow 100ms;
 }
 
 nav.nav-bar-moving {
@@ -28,6 +27,7 @@ nav.nav-bar-moving {
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    box-shadow: var(--shadow-colour) 0 0 3px 1.5px;
 }
 
 nav ol {
