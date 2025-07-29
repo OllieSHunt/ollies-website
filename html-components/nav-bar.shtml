@@ -1,8 +1,8 @@
-<div id="nav-bar-anchor">
+<div id="nav-bar-anchor"  aria-hidden="true">
     <!-- This acts as a reference point so the header can tell when it has scrolled away from the top of the page. -->
 </div>
 
-<nav>
+<nav id="nav-bar">
     <!-- Nav bar displayed at the top of the screen -->
     <!-- This is designed to be used as an SSI (Server Side Include) -->
     <!-- Requires: `css/main-style.css` -->

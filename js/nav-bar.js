@@ -4,7 +4,7 @@
 //
 // Code in this file is a modified version of: https://stackoverflow.com/a/39575616
 
-const navBar = document.getElementsByTagName("nav")[0];
+const navBar = document.getElementById("nav-bar");
 const navBarAnchor = document.getElementById("nav-bar-anchor");
 
 function updateNavBarClasses(entries) {
