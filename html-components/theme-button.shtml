@@ -10,3 +10,15 @@
     <!-- Text for screen readers (and the Lynx browser) -->
     <span class="hidden-text">Toggle light/dark mode</span>
 </button>
+
+<noscript>
+    <!--
+        Hide the theme button if scripting is disabled because this button
+        will do absolutely nothing without JavaScript.
+    -->
+    <style>
+        #theme-button {
+            display: none !important;
+        }
+    </style>
+</noscript>
