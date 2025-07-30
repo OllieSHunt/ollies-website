@@ -108,14 +108,34 @@ button:active {
 }
 
 /* EXAMPLE:
-<button type="button" aria-label="Accessible description" class="icon-button">
+<button type="button" class="icon-button">
     <!-- Put an <svg aria-hidden="true" focusable="false"> tag here -->
     <!-- Good site for icons: https://iconify.design/ -->
+
+    <!-- Text for screen readers (and the Lynx browser) -->
+    <span class="hidden-text">Accessible description</span>
 </button>
 */
 button.icon-button {
     padding: 0.25em;
     border-radius: 9999em;
+}
+
+/*
+Hide text that is intended for screen readers only.
+
+NOTE: This does NOT hide text from the Lynx text based browser.
+
+https://www.a11yproject.com/posts/how-to-hide-content/
+*/
+.hidden-text {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 @media (max-width: 1200px) {
