@@ -8,7 +8,7 @@
     margin: 0 auto;
     padding: 0 0.5em;
 
-    border: var(--border-width) solid var(--main-accent-colour);
+    border: var(--default-border);
     border-radius: 1.25em;
 
     display: flex;
@@ -28,7 +28,7 @@
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: var(--shadow-colour) 0 0 3px 1.5px;
+    box-shadow: var(--default-shadow);
 }
 
 #nav-bar ol {

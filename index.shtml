@@ -8,16 +8,19 @@
 
         <title>Ollie's Website</title>
 
-        <link rel="stylesheet" type="text/css" href="/css/colours/dark-theme.css" />
+        <link rel="stylesheet" type="text/css" href="/css/theme.css" />
         <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
         <link rel="stylesheet" type="text/css" href="/css/nav-bar.css" />
+        <link rel="stylesheet" type="text/css" href="/css/theme-button.css" />
 
         <script defer src="/js/nav-bar.js"></script>
+        <script defer src="/js/theme-button.js"></script>
     </head>
 
     <body>
         <!--#include file="/html-components/nav-bar.shtml" -->
+        <!--#include file="/html-components/theme-button.shtml" -->
 
         <main>
             <h1>Hello!</h1>

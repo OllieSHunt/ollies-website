@@ -30,7 +30,7 @@ main {
     margin: 0em auto;
     padding: 1em;
 
-    border: var(--border-width) solid var(--main-accent-colour);
+    border: var(--default-border);
     border-radius: 2em;
 }
 
@@ -70,33 +70,52 @@ strong {
     /* TODO */
 }
 
-/* A hyperlink (<a> tag) that looks and feels like a button */
-a.link-button {
+/*
+Style for A hyperlink (<a> tag) that looks and feels like a button as well as
+literal buttons.
+*/
+a.link-button,
+button {
     display: inline-block;
 
-    color: inherit;
+    color: var(--main-text-colour);
     text-decoration: inherit;
     text-align: center;
 
     background-color: var(--element-bg-colour);
 
-    border: var(--border-width) solid var(--main-accent-colour);
+    border: var(--default-border);
     border-radius: 1.25em;
 
     padding: 0 0.5em;
 
+    cursor: pointer;
+
     transition: background-color 64ms;
 }
 
-a.link-button:hover {
+a.link-button:hover,
+button:hover {
     background-color: var(--distant-bg-colour);
 }
 
-a.link-button:active {
+a.link-button:active,
+button:active {
     transition: background-color 0ms;
 
-    background-color: var(--highlight-colour);
+    background-color: var(--secondary-accent-colour);
     color: var(--element-bg-colour);
+}
+
+/* EXAMPLE:
+<button type="button" aria-label="Accessible description" class="icon-button">
+    <!-- Put an <svg aria-hidden="true" focusable="false"> tag here -->
+    <!-- Good site for icons: https://iconify.design/ -->
+</button>
+*/
+button.icon-button {
+    padding: 0.25em;
+    border-radius: 9999em;
 }
 
 @media (max-width: 1200px) {
