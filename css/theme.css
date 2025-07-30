@@ -14,7 +14,7 @@ https://github.com/morhetz/gruvbox-contrib
     --main-text-colour: #fbf1c7;
 
     --main-bg-colour: #282828;
-    --distant-bg-colour: #928374;
+    --distant-bg-colour: #7c6f64;
     --element-bg-colour: #32302f;
 
     --main-accent-colour: #458588;
@@ -31,7 +31,7 @@ html[data-theme="light"] {
     --main-text-colour: #3c3836;
 
     --main-bg-colour: #fbf1c7;
-    --distant-bg-colour: #928374;
+    --distant-bg-colour: #a89984;
     --element-bg-colour: #f2e5bc;
 
     --main-accent-colour: #458588;
