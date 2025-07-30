@@ -138,25 +138,25 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     width: 1px;
 }
 
-@media (max-width: 1200px) {
+@media (992px <= width < 1200px) {
     main {
         width: 75%;
     }
 }
 
-@media (max-width: 992px) {
+@media (768px <= width < 992px) {
     main {
         width: 80%;
     }
 }
 
-@media (max-width: 768px) {
+@media (576px <= width < 768px) {
     main {
         width: 90%;
     }
 }
 
-@media (max-width: 576px) {
+@media (width < 576px) {
     main {
         width: 100%;
         border-radius: 1em;

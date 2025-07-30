@@ -13,7 +13,7 @@
 # Design and Development
 
 ## Scaling
-Although this project does not use Bootstrap, I aim to use the same "scaling increments" (idk what they are called).
+Although this project does not use Bootstrap, I am using the same scaling increments because I think they seem sensible.
 
 https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
 - >=1200px - default
@@ -24,8 +24,8 @@ https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
 
 Here are the corresponding media queries for these sizes:
 ```css
-@media (max-width: 1200px) { /* 992px-1200px */ }
-@media (max-width: 992px) { /* 768px-992px */ }
-@media (max-width: 768px) { /* 556px-768px */ }
-@media (max-width: 576px) { /* 0px-556px */ }
+@media (992px <= width < 1200px) {}
+@media (768px <= width < 992px) {}
+@media (576px <= width < 768px) {}
+@media (width < 576px) {}
 ```

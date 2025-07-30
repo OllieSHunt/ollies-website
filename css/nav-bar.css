@@ -64,22 +64,27 @@
     text-overflow: ellipsis;
 }
 
-@media (max-width: 1200px) {
-    #nav-bar {
-        /* width: 100%; */
-    }
+@media (992px <= width < 1200px) {
+    /* do nothing */
 }
-@media (max-width: 992px) {
+
+@media (768px <= width < 992px) {
     #nav-bar {
         width: 50%;
     }
 }
-@media (max-width: 768px) {
+
+@media (576px <= width < 768px) {
     #nav-bar {
         width: 66.66%;
     }
 }
-@media (max-width: 576px) {
+
+@media (width < 576px) {
+    #nav-bar {
+        width: 66.66%;
+    }
+
     #nav-bar .nav-bar-subheading {
         display: none;
     }
