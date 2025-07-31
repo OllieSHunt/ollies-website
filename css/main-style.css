@@ -152,18 +152,6 @@ a.inline-text-link {
     mask-size: 100% 100%;
 }
 
-p {
-    /* TODO */
-}
-
-em {
-    /* TODO */
-}
-
-strong {
-    /* TODO */
-}
-
 /*
 Style for A hyperlink (<a> tag) that looks and feels like a button as well as
 literal buttons.
