@@ -7,7 +7,9 @@ https://github.com/morhetz/gruvbox-contrib
     /* Default settings for some properties */
 
     --default-shadow: var(--shadow-colour) 0 2px 3px 1.5px;
-    --default-border: 3px solid var(--main-accent-colour);
+    --default-border: var(--decoration-line-thickness) solid
+        var(--main-accent-colour);
+    --decoration-line-thickness: 3px;
 
     /* Dark theme (default) */
 
@@ -15,7 +17,10 @@ https://github.com/morhetz/gruvbox-contrib
 
     --main-bg-colour: #282828;
     --distant-bg-colour: #7c6f64;
-    --element-bg-colour: #32302f;
+
+    --main-element-colour: #32302f;
+    --secondary-element-colour: #a89984;
+    --selected-element-colour: #504945;
 
     --main-accent-colour: #458588;
     --secondary-accent-colour: #98971a;
@@ -32,7 +37,10 @@ html[data-theme="light"] {
 
     --main-bg-colour: #fbf1c7;
     --distant-bg-colour: #a89984;
-    --element-bg-colour: #f2e5bc;
+
+    --main-element-colour: #f2e5bc;
+    --secondary-element-colour: #7c6f64;
+    --selected-element-colour: #d5c4a1;
 
     --main-accent-colour: #458588;
     --secondary-accent-colour: #427b58;

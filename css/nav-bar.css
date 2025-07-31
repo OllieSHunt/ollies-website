@@ -16,6 +16,8 @@
     align-items: center;
     column-gap: 1em;
 
+    z-index: 999;
+
     transition:
         top 100ms,
         border-radius 100ms,

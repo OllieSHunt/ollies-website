@@ -28,34 +28,128 @@ main {
 
     width: 66.66%;
     margin: 0em auto;
-    padding: 1em;
+    padding: 2em 1em;
 
     border: var(--default-border);
     border-radius: 2em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin: 0.75em 0 0.25em 0;
+    font-style: italic;
+    position: relative;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --heading-left-margin: 0.5em;
+    margin-left: var(--heading-left-margin);
+}
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    position: absolute;
+    content: "";
+    width: var(--decoration-line-thickness);
+    height: 100%;
+    vertical-align: middle;
+    left: calc(var(--heading-left-margin) * -1);
+
+    border-radius: calc(var(--decoration-line-thickness) / 2);
+    background-color: var(--tertiary-accent-colour);
+}
+
 h1 {
-    /* TODO */
+    font-size: 2em;
+
+    text-align: center;
+    margin: 1em auto;
+}
+
+h1::after,
+h1::before {
+    width: 80%;
+    height: var(--decoration-line-thickness);
+    border-radius: calc(var(--decoration-line-thickness) / 2);
+
+    display: block;
+    background-color: var(--tertiary-accent-colour);
+    content: "";
+
+    vertical-align: middle;
+    margin: 0.25em auto;
 }
 
 h2 {
-    /* TODO */
+    font-size: 2em;
 }
 
 h3 {
-    /* TODO */
+    font-size: 1.75em;
 }
 
 h4 {
-    /* TODO */
+    font-size: 1.5em;
 }
 
 h5 {
-    /* TODO */
+    font-size: 1.25em;
 }
 
 h6 {
-    /* TODO */
+    font-size: 1em;
+}
+
+*:has(> a.inline-text-link) {
+    position: relative !important;
+}
+
+/*
+This is a small hyperlink icon that will show before whatever element it is
+put inside.
+
+WARNING: This will set the parent element's position to "relative". This is
+         needed because we need to create a new "containing block" in order to
+         use absolute positioning on this element. It does look like there are
+         other options for this I could consider in the future such as
+         'transform: translate(0);'. See this link:
+         https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Containing_block
+*/
+a.inline-text-link {
+    color: var(--secondary-element-colour);
+    text-decoration: inherit;
+
+    font-size: initial;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+
+    /* Icon css copied from: https://icon-sets.iconify.design/tabler/link/ */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.07 5.07 0 0 1-7.127 0a4.97 4.97 0 0 1 0-7.071L6 11'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
 
 p {
@@ -82,7 +176,7 @@ button {
     text-decoration: inherit;
     text-align: center;
 
-    background-color: var(--element-bg-colour);
+    background-color: var(--main-bg-colour);
 
     border: var(--default-border);
     border-radius: 1.25em;
@@ -96,7 +190,7 @@ button {
 
 a.link-button:hover,
 button:hover {
-    background-color: var(--distant-bg-colour);
+    background-color: var(--selected-element-colour);
 }
 
 a.link-button:active,
@@ -104,7 +198,7 @@ button:active {
     transition: background-color 0ms;
 
     background-color: var(--secondary-accent-colour);
-    color: var(--element-bg-colour);
+    color: var(--main-bg-colour);
 }
 
 /* EXAMPLE:

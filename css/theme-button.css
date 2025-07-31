@@ -12,6 +12,8 @@
     align-content: center;
 
     box-shadow: var(--default-shadow);
+
+    z-index: 999;
 }
 
 /*
