@@ -1,5 +1,6 @@
 +++
 title = "Blog Article"
+description = "description of article"
 date = 2019-11-27
 +++
 
@@ -10,4 +11,4 @@ This should be on the same line.
 This should be on another line.
 
 ## Image for testing
-![image alt text](./spinning_doghnut.gif)
+![image alt text](spinning_doghnut.gif)

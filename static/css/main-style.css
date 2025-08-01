@@ -112,7 +112,7 @@ h6 {
     font-size: 1em;
 }
 
-*:has(> a.inline-text-link) {
+*:has(> a.heading-anchor) {
     position: relative !important;
 }
 
@@ -127,7 +127,7 @@ WARNING: This will set the parent element's position to "relative". This is
          'transform: translate(0);'. See this link:
          https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Containing_block
 */
-a.inline-text-link {
+a.heading-anchor {
     color: var(--secondary-element-colour);
     text-decoration: inherit;
 
