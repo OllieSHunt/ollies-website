@@ -14,8 +14,7 @@ highlight_themes_css = [
   { theme = "gruvbox-light", filename = "css/syntax-theme-light.css" },
 ]
 
-
-insert_anchor_links = "left"
+insert_anchor_links = "heading"
 
 [extra]
 # Put all your custom variables here
