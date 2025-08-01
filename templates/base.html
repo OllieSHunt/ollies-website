@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <!-- TODO: Add more meta tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name -->
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <title>Ollie's Website</title>
+
+        <link rel="stylesheet" type="text/css" href="/css/theme.css" />
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/nav-bar.css" />
+        <link rel="stylesheet" type="text/css" href="/css/theme-button.css" />
+
+        <script defer src="/js/nav-bar.js"></script>
+        <script defer src="/js/theme-button.js"></script>
+    </head>
+
+    <body>
+        <div id="nav-bar-anchor" aria-hidden="true">
+            <!-- This acts as a reference point so the header can tell when it has scrolled away from the top of the page. -->
+        </div>
+
+        <nav id="nav-bar">
+            <!-- Nav bar displayed at the top of the screen -->
+            <!-- Requires: `css/main-style.css` -->
+            <!-- Requires: `css/nav-bar.css` -->
+            <!-- Optionally requires: `js/nav-bar.js` -->
+
+            <ol>
+                <li><a class="link-button" href="/">Home</a></li>
+                <li><a class="link-button" href="/blog">Blog</a></li>
+            </ol>
+
+            <div class="nav-bar-subheading">Current Subheading Here</div>
+        </nav>
+
+        <button type="button" id="theme-button" class="icon-button">
+            <!-- This is a button that will toggle between the light and dark themes. -->
+            <!-- Requires: `css/main-style.css` -->
+            <!-- Requires: `css/theme-button.css` -->
+            <!-- Requires: `js/theme-button.js` -->
+
+            <span
+                id="theme-button-icon"
+                class="dark-mode-icon"
+                aria-hidden="true"
+            ></span>
+
+            <!-- Text for screen readers (and the Lynx browser) -->
+            <span class="hidden-text">Toggle light/dark mode</span>
+        </button>
+
+        <noscript>
+            <!--
+                Hide the theme button if scripting is disabled because this button
+                will do absolutely nothing without JavaScript.
+            -->
+            <style>
+                #theme-button {
+                    display: none !important;
+                }
+            </style>
+        </noscript>
+
+        <main>{% block content %} {% endblock content %}</main>
+    </body>
+</html>
