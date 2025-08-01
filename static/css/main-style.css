@@ -152,6 +152,10 @@ a.heading-anchor {
     mask-size: 100% 100%;
 }
 
+pre {
+    overflow: auto;
+}
+
 /*
 Style for A hyperlink (<a> tag) that looks and feels like a button as well as
 literal buttons.
