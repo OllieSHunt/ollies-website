@@ -8,29 +8,27 @@
 
         <title>Ollie's Website</title>
 
-        <link rel="stylesheet" type="text/css" href="/css/theme.css" />
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/theme-dark.css" media="(prefers-color-scheme: dark)" />
+        <link rel="stylesheet" type="text/css" href="/css/theme-light.css" media="(prefers-color-scheme: light)" />
         <link rel="stylesheet" type="text/css" href="/css/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
         <link rel="stylesheet" type="text/css" href="/css/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
 
-        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
         <link rel="stylesheet" type="text/css" href="/css/nav-bar.css" />
-        <link rel="stylesheet" type="text/css" href="/css/theme-button.css" />
 
         <script defer src="/js/nav-bar.js"></script>
-        <script defer src="/js/theme-button.js"></script>
     </head>
 
     <body>
         <div id="nav-bar-anchor" aria-hidden="true">
-            <!-- This acts as a reference point so the header can tell when it has scrolled away from the top of the page. -->
+            <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
         </div>
 
         <nav id="nav-bar">
             <!-- Nav bar displayed at the top of the screen -->
-            <!-- Requires: `css/main-style.css` -->
-            <!-- Requires: `css/nav-bar.css` -->
-            <!-- Optionally requires: `js/nav-bar.js` -->
 
             <ol>
                 <li><a class="link-button" href="/">Home</a></li>
@@ -39,34 +37,6 @@
 
             <div class="nav-bar-subheading">Current Subheading Here</div>
         </nav>
-
-        <button type="button" id="theme-button" class="icon-button">
-            <!-- This is a button that will toggle between the light and dark themes. -->
-            <!-- Requires: `css/main-style.css` -->
-            <!-- Requires: `css/theme-button.css` -->
-            <!-- Requires: `js/theme-button.js` -->
-
-            <span
-                id="theme-button-icon"
-                class="dark-mode-icon"
-                aria-hidden="true"
-            ></span>
-
-            <!-- Text for screen readers (and the Lynx browser) -->
-            <span class="hidden-text">Toggle light/dark mode</span>
-        </button>
-
-        <noscript>
-            <!--
-                Hide the theme button if scripting is disabled because this button
-                will do absolutely nothing without JavaScript.
-            -->
-            <style>
-                #theme-button {
-                    display: none !important;
-                }
-            </style>
-        </noscript>
 
         <main>{% block content %} {% endblock content %}</main>
     </body>

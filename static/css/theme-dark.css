@@ -1,0 +1,22 @@
+/*****************************************************************************
+Theme is based of Gruvbox. See the colour palette here:
+https://github.com/morhetz/gruvbox-contrib
+*****************************************************************************/
+
+:root {
+    --main-text-colour: #fbf1c7;
+
+    --main-bg-colour: #282828;
+    --distant-bg-colour: #7c6f64;
+
+    --main-element-colour: #32302f;
+    --secondary-element-colour: #a89984;
+    --selected-element-colour: #504945;
+
+    --main-accent-colour: #458588;
+    --secondary-accent-colour: #98971a;
+    --tertiary-accent-colour: #d79921;
+
+    --highlight-colour: #b8bb26;
+    --shadow-colour: #1d2021;
+}
