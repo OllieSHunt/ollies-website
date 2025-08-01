@@ -12,18 +12,29 @@ fn main() {
 }
 ```
 
+Inline `code`!
+
 ## Lists
+
+### Heading 3
 1. one
 2. two
 3. three
 
+#### Heading 4
 - one
 - two
 - three
 
+##### Heading 5
 - [ ] one
 - [ ] two
 - [ ] three
+
+###### Heading 6
+* one
+* two
+* three
 
 # Misc
 > block quote
