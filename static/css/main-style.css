@@ -49,7 +49,6 @@ h6 {
     margin-left: var(--heading-left-margin);
 }
 
-h1::before,
 h2::before,
 h3::before,
 h4::before,
@@ -66,36 +65,33 @@ h6::before {
     background-color: var(--tertiary-accent-colour);
 }
 
-h1 {
-    font-size: 2em;
-}
-
 h2 {
-    font-size: 1.8em;
+    font-size: 2.1em;
 }
 
 h3 {
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 
 h4 {
-    font-size: 1.4em;
-}
-
-h5 {
     font-size: 1.2em;
 }
 
-h6 {
-    font-size: 1em;
+h5 {
+    font-size: 1.05em;
 }
 
-h1.page-title {
+h6 {
+    font-size: 0.975em;
+}
+
+h1 {
+    font-size: 2.1em;
     text-align: center;
     margin: 1em auto;
 }
-h1.page-title::after,
-h1.page-title::before {
+h1::after,
+h1::before {
     width: 80%;
     height: var(--decoration-line-thickness);
     border-radius: calc(var(--decoration-line-thickness) / 2);
