@@ -19,4 +19,11 @@ https://github.com/morhetz/gruvbox-contrib
 
     --highlight-colour: #b8bb26;
     --shadow-colour: #1d2021;
+
+    --heading1: #d79921;
+    --heading2: #98971a;
+    --heading3: #689d6a;
+    --heading4: #458588;
+    --heading5: #b16286;
+    --heading6: #cc241d;
 }
