@@ -28,7 +28,7 @@ main {
 
     width: 66.66%;
     margin: 0em auto;
-    padding: 2em 1em;
+    padding: 1.5em 1em;
 
     border: var(--default-border);
     border-radius: 2em;
@@ -56,12 +56,12 @@ h5::before,
 h6::before {
     position: absolute;
     content: "";
-    width: var(--decoration-line-thickness);
+    width: var(--main-line-thickness);
     height: 100%;
     vertical-align: middle;
     left: calc(var(--heading-left-margin) * -1);
 
-    border-radius: calc(var(--decoration-line-thickness) / 2);
+    border-radius: calc(var(--main-line-thickness) / 2);
     background-color: var(--tertiary-accent-colour);
 }
 
@@ -73,8 +73,8 @@ h1 {
 h1::after,
 h1::before {
     width: 80%;
-    height: var(--decoration-line-thickness);
-    border-radius: calc(var(--decoration-line-thickness) / 2);
+    height: var(--main-line-thickness);
+    border-radius: calc(var(--main-line-thickness) / 2);
 
     position: static;
     display: block;
@@ -202,8 +202,28 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     width: 1px;
 }
 
+.page-metadata-section {
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    /* margin-top: 0.5em; */
+}
+.page-metadata {
+    background-color: var(--main-element-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0 0.5em;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
 @media (992px <= width < 1200px) {
-    main {
+    main {none
         width: 75%;
     }
 }
@@ -224,5 +244,19 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     main {
         width: 100%;
         border-radius: 1em;
+    }
+
+    .page-metadata-section {
+        background-color: var(--main-element-colour);
+        border: var(--thin-border);
+        border-radius: 1em;
+        padding: 0.5em;
+    }
+    .page-metadata {
+        background-color: initial;
+        border: none;
+        border-radius: 0;
+
+        margin: auto;
     }
 }

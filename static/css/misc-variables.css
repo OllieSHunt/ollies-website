@@ -3,8 +3,11 @@ This file contains misc css variables that are used throughout the website.
 *****************************************************************************/
 
 :root {
+    --main-line-thickness: 3px;
+    --secondary-line-thickness: 1.5px;
+
     --default-shadow: var(--shadow-colour) 0 2px 3px 1.5px;
-    --default-border: var(--decoration-line-thickness) solid
-        var(--main-accent-colour);
-    --decoration-line-thickness: 3px;
+
+    --default-border: var(--main-line-thickness) solid var(--main-accent-colour);
+    --thin-border: var(--secondary-line-thickness) solid var(--distant-bg-colour);
 }

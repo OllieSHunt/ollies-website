@@ -2,6 +2,7 @@
 title = "Example Article"
 description = "This blog post is a test to make sure that everything works correctly."
 date = 2019-11-27
+updated = 2020-05-05
 +++
 
 # I am a markdown doc
