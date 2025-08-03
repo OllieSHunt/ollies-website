@@ -165,7 +165,7 @@ blockquote::after {
 blockquote {
     background-color: var(--secondary-bg-colour);
 
-    margin: 1em 10%;
+    margin: 1em 2em;
 
     border: var(--thin-border);
     border-radius: 0.5em;

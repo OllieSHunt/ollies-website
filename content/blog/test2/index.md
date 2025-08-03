@@ -66,4 +66,24 @@ new[^1] paragraph?
 > Highlights information that users should take into account, even when skimming.
 > asfasfdasdf
 
+> [!TIP]
+> Highlights information that users should take into account, even when skimming.
+> asfasfdasdf
+
+> [!IMPORTANT]
+> Highlights information that users should take into account, even when skimming.
+> asfasfdasdf
+
+> [!WARNING]
+> Highlights information that users should take into account, even when skimming.
+> asfasfdasdf
+
+> [!CAUTION]
+> Highlights information that users should take into account, even when skimming.
+> asfasfdasdf
+
+> [!ASDF]
+> Highlights information that users should take into account, even when skimming.
+> asfasfdasdf
+
 [^1]: Footnotes! wow.
