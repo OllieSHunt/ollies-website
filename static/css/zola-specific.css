@@ -22,6 +22,29 @@ section.footnotes ol {
     list-style-type: decimal;
 }
 
+/* Inline code and code blocks */
+pre {
+    overflow: auto;
+}
+code, pre.z-code {
+    font-family: monospace;
+    background-color: var(--secondary-bg-colour);
+
+    border: var(--thin-border);
+    border-radius: 0.5em;
+    padding: 0 0.25em;
+}
+pre.z-code > code {
+    background-color: initial;
+
+    border: none;
+    border-radius: initial;
+    padding: initial;
+}
+pre.z-code {
+    margin: 1em 0;
+}
+
 blockquote.markdown-alert-note {
     /*
     TODO: GitHub style markdown alerts:
@@ -30,5 +53,5 @@ blockquote.markdown-alert-note {
     */
 
 
-    background-color: var(--main-element-colour);
+    background-color: var(--secondary-bg-colour);
 }

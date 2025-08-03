@@ -18,6 +18,14 @@ style for headings, paragraphs, the body element, and fonts.
     color: var(--main-bg-colour);
 }
 
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+:target {
+    /* TODO: Make this fade out after some time */
+
+    /* background-color: var(--highlight-colour);
+    border-radius: 0.25em; */
+}
+
 body {
     background-color: var(--distant-bg-colour);
 }
@@ -135,14 +143,6 @@ a.heading-anchor {
     text-decoration: inherit;
 }
 
-pre {
-    overflow: auto;
-}
-
-code {
-    font-family: monospace;
-}
-
 /*
 Style for A hyperlink (<a> tag) that looks and feels like a button as well as
 literal buttons.
@@ -222,7 +222,7 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     /* margin-top: 0.5em; */
 }
 .page-metadata {
-    background-color: var(--main-element-colour);
+    background-color: var(--secondary-bg-colour);
     border: var(--thin-border);
     border-radius: 1em;
     padding: 0 0.5em;
@@ -256,7 +256,7 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     }
 
     .page-metadata-section {
-        background-color: var(--main-element-colour);
+        background-color: var(--secondary-bg-colour);
         border: var(--thin-border);
         border-radius: 1em;
         padding: 0.5em;

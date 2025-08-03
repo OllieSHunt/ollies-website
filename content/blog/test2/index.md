@@ -14,6 +14,10 @@ fn main() {
 
 Inline `code`!
 
+```
+Code block with no language
+```
+
 ## Lists
 
 ### Heading 3
