@@ -120,6 +120,10 @@ h6::before {
     background-color: var(--heading6);
 }
 
+p {
+    margin: 1em 0;
+}
+
 a {
     color: var(--main-accent-colour);
     text-decoration: underline;
