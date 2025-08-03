@@ -14,13 +14,13 @@ This should be on another line.
 ## Testing specific features
 
 ### Internal links
-Test 1: [link to other article](/blog/2025-01-02)
+Test 1: [link to other article](/blog/test2)
 
 Test 2: [link to image](spinning_doghnut.gif)
 
-Test 3: [direct link to md](../2025-01-02/index.md)
+Test 3: [direct link to md](../test2/index.md)
 
-Test 4: [direct link to html](../2025-01-02/index.html)
+Test 4: [direct link to html](../test2/index.html)
 
 ### Images
 ![image alt text](spinning_doghnut.gif)
