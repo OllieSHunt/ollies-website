@@ -41,6 +41,8 @@ Inline `code`!
 > block quote
 > block quote
 
+---
+
 Inline `code` block
 
 paragraph

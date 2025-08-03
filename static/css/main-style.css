@@ -120,6 +120,11 @@ h6::before {
     background-color: var(--heading6);
 }
 
+a {
+    color: var(--main-accent-colour);
+    text-decoration: underline;
+}
+
 /* Hyperlink around headings */
 a.heading-anchor {
     color: inherit;

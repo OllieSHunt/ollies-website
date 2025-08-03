@@ -1,7 +1,26 @@
 /*****************************************************************************
 This file contains misc css that is unlikely to work if I ever switch away
-from Zola.
+from Zola. This is mainly because of classes that Zola creates with specific
+names. Other static site generators may use different class names.
 *****************************************************************************/
+
+section.footnotes::before, hr {
+    width: 100%;
+    height: var(--main-line-thickness);
+    border: none;
+    border-radius: calc(var(--main-line-thickness) / 2);
+
+    position: static;
+    display: block;
+    background-color: var(--main-accent-colour);
+    content: "";
+
+    vertical-align: middle;
+    margin: 3rem auto;
+}
+section.footnotes ol {
+    list-style-type: decimal;
+}
 
 blockquote.markdown-alert-note {
     /*

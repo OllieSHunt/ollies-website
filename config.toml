@@ -22,8 +22,5 @@ github_alerts = true
 # Enable footnotes with back-links at the bottom of the page
 bottom_footnotes = true
 
-# TODO: Should I enable this?
-# lazy_async_image = false
-
 [extra]
 # Put all your custom variables here
