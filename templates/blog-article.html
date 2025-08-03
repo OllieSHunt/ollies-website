@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="page-metadata-section">
-    <p class="page-metadata"><strong>Published: </strong><em>{{ page.date }}</em></p>
-    {% if page.updated %}
-    <p class="page-metadata"><strong>Updated: </strong><em>{{ page.updated }}</em></p>
-    {% endif %}
-</div>
-
 <article>
     {{ page.content | safe }}
 </article>
+<ul class="page-metadata-section">
+    <li class="page-metadata"><strong>Published: </strong><em>{{ page.date }}</em></li>
+    {% if page.updated %}
+    <li class="page-metadata"><strong>Updated: </strong><em>{{ page.updated }}</em></li>
+    {% endif %}
+</ul>
 {% endblock content %}

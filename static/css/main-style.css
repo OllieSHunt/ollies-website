@@ -264,9 +264,19 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     align-items: center;
     align-content: center;
 
-    /* margin-top: 0.5em; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    /*
+    If I ever move the metadata section back to the top, then I must remember
+    to change the margin from margin-top to margin-bottom
+    */
+    margin-top: 2em;
 }
 .page-metadata {
+    /* width: fit-content; */
+
     background-color: var(--secondary-bg-colour);
     border: var(--thin-border);
     border-radius: 1em;
