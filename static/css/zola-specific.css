@@ -1,0 +1,15 @@
+/*****************************************************************************
+This file contains misc css that is unlikely to work if I ever switch away
+from Zola.
+*****************************************************************************/
+
+blockquote.markdown-alert-note {
+    /*
+    TODO: GitHub style markdown alerts:
+        Do the regular blockquote tag first in main-style.css, then expand on
+        it here using ::before to add the "NOTE:" text.
+    */
+
+
+    background-color: var(--main-element-colour);
+}

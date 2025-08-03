@@ -5,8 +5,7 @@ base_url = "/"
 build_search_index = true
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+# Syntax highlighting for code
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
@@ -14,7 +13,17 @@ highlight_themes_css = [
   { theme = "gruvbox-light", filename = "css/syntax-theme-light.css" },
 ]
 
+# Make headings clickable (see `templates/anchor-link.html`)
 insert_anchor_links = "heading"
+
+# GitHub style alerts: e.g. IMPORTANT, NOTE, WARNING, etc...
+github_alerts = true
+
+# Enable footnotes with back-links at the bottom of the page
+bottom_footnotes = true
+
+# TODO: Should I enable this?
+# lazy_async_image = false
 
 [extra]
 # Put all your custom variables here
