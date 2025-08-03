@@ -133,8 +133,53 @@ p {
 }
 
 a {
-    color: var(--main-accent-colour);
+    color: var(--hyperlink-colour);
     text-decoration: underline;
+}
+
+blockquote::before, blockquote::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1em;
+
+    background-color: var(--secondary-accent-colour);
+
+    /* Icon credit: https://icon-sets.iconify.design/tabler/quote-filled/ */
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 5a2 2 0 0 1 2 2v6c0 3.13-1.65 5.193-4.757 5.97a1 1 0 1 1-.486-1.94C7.984 16.473 9 15.203 9 13v-1H6a2 2 0 0 1-1.995-1.85L4 10V7a2 2 0 0 1 2-2zm9 0a2 2 0 0 1 2 2v6c0 3.13-1.65 5.193-4.757 5.97a1 1 0 1 1-.486-1.94C16.984 16.473 18 15.203 18 13v-1h-3a2 2 0 0 1-1.995-1.85L13 10V7a2 2 0 0 1 2-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+blockquote::after {
+    margin-left: 100%;
+    transform: translateX(-100%);
+}
+blockquote {
+    background-color: var(--secondary-bg-colour);
+
+    margin: 1em 10%;
+
+    border: var(--thin-border);
+    border-radius: 0.5em;
+    padding: 0 0.25em;
+}
+blockquote > * {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+blockquote > *:first-child {
+    margin-top: 0;
+}
+blockquote > *:last-child {
+    margin-bottom: 0;
 }
 
 /* Hyperlink around headings */
