@@ -45,6 +45,18 @@ pre.z-code {
     margin: 1em 0;
 }
 
+/*
+Highlight the parent of a footnote-reference if it is targeted.
+The contents of this block should be the same as :target in main-style.css
+*/
+*:has(>.footnote-reference:target) {
+    animation-duration: 2s;
+    animation-name: target-highlight;
+}
+.footnote-reference:target {
+    animation-name: none;
+}
+
 /* GitHub style markdown alerts */
 blockquote.markdown-alert-note,
 blockquote.markdown-alert-tip,

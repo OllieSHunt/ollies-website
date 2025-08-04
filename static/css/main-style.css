@@ -3,6 +3,16 @@ This file contains generic style for the whole site. For example, it contains
 style for headings, paragraphs, the body element, and fonts.
 *****************************************************************************/
 
+/* Used by `::target { ... }` */
+@keyframes target-highlight {
+    from {
+        background-color: var(--highlight-colour);
+    }
+    to {
+        background-color: initial;
+    }
+}
+
 :root {
     color: var(--main-text-colour);
 
@@ -18,12 +28,15 @@ style for headings, paragraphs, the body element, and fonts.
     color: var(--main-bg-colour);
 }
 
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
-:target {
-    /* TODO: Make this fade out after some time */
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/:target
 
-    /* background-color: var(--highlight-colour);
-    border-radius: 0.25em; */
+If you update this, also update `*:has(>.footnote-reference:target) { ... }`
+in `zola-specific.css`
+*/
+:target {
+    animation-duration: 2s;
+    animation-name: target-highlight;
 }
 
 body {
