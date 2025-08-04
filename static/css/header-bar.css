@@ -90,4 +90,14 @@
     #header-bar {
         width: 66.66%;
     }
+
+    #header-bar .link-button span {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
 }
