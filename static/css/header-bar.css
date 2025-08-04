@@ -1,4 +1,4 @@
-#nav-bar {
+#header-bar {
     background-color: var(--main-bg-colour);
 
     position: sticky;
@@ -25,7 +25,7 @@
         box-shadow 100ms;
 }
 
-#nav-bar.nav-bar-moving {
+#header-bar.header-bar-moving {
     top: 0;
     border-top: none;
     border-top-left-radius: 0;
@@ -33,11 +33,15 @@
     box-shadow: var(--default-shadow);
 }
 
-#nav-bar ol {
+#header-bar nav {
+    width: 100%;
+}
+
+#header-bar nav ol {
     margin: 0;
     padding: 0;
 
-    width: 50%;
+    width: 100%;
 
     white-space: nowrap;
 
@@ -47,7 +51,7 @@
     column-gap: 0.5em;
 }
 
-#nav-bar ol li {
+#header-bar nav li {
     list-style-type: none;
 
     display: inline-block;
@@ -55,15 +59,15 @@
     width: 50%;
 }
 
-#nav-bar ol li a {
+#header-bar .link-button {
     width: 100%;
     height: 100%;
 }
 
-#nav-bar .nav-bar-subheading {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+#header-bar .link-button svg {
+    display: inline;
+    height: 1em;
+    vertical-align: -0.125em;
 }
 
 @media (992px <= width < 1200px) {
@@ -71,27 +75,19 @@
 }
 
 @media (768px <= width < 992px) {
-    #nav-bar {
+    #header-bar {
         width: 50%;
     }
 }
 
 @media (576px <= width < 768px) {
-    #nav-bar {
+    #header-bar {
         width: 66.66%;
     }
 }
 
 @media (width < 576px) {
-    #nav-bar {
+    #header-bar {
         width: 66.66%;
-    }
-
-    #nav-bar .nav-bar-subheading {
-        display: none;
-    }
-
-    #nav-bar ol {
-        width: 100%;
     }
 }

@@ -4,17 +4,17 @@
 //
 // Code in this file is a modified version of: https://stackoverflow.com/a/39575616
 
-const navBar = document.getElementById("nav-bar");
-const navBarAnchor = document.getElementById("nav-bar-anchor");
+const navBar = document.getElementById("header-bar");
+const navBarAnchor = document.getElementById("header-bar-anchor");
 
 function updateNavBarClasses(entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) {
-    navBar.classList.add("nav-bar-moving");
-    navBar.classList.remove("nav-bar-docked");
+    navBar.classList.add("header-bar-moving");
+    navBar.classList.remove("header-bar-docked");
   } else {
-    navBar.classList.add("nav-bar-docked");
-    navBar.classList.remove("nav-bar-moving");
+    navBar.classList.add("header-bar-docked");
+    navBar.classList.remove("header-bar-moving");
   }
 }
 

@@ -18,26 +18,39 @@
 
         <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
         <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
-        <link rel="stylesheet" type="text/css" href="/css/nav-bar.css" />
+        <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
 
-        <script defer src="/js/nav-bar.js"></script>
+        <script defer src="/js/header-bar.js"></script>
     </head>
 
     <body>
-        <div id="nav-bar-anchor" aria-hidden="true">
+        <div id="header-bar-anchor" aria-hidden="true">
             <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
         </div>
 
-        <nav id="nav-bar">
+        <header id="header-bar">
             <!-- Nav bar displayed at the top of the screen -->
 
-            <ol>
-                <li><a class="link-button" href="/">Home</a></li>
-                <li><a class="link-button" href="/blog">Blog</a></li>
-            </ol>
-
-            <div class="nav-bar-subheading">Current Subheading Here</div>
-        </nav>
+            <nav>
+                <ol>
+                    <li><a class="link-button" href="/">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.707 2.293l9 9c.63.63.184 1.707-.707 1.707h-1v6a3 3 0 0 1-3 3h-1v-7a3 3 0 0 0-2.824-2.995L13 12h-2a3 3 0 0 0-3 3v7H7a3 3 0 0 1-3-3v-6H3c-.89 0-1.337-1.077-.707-1.707l9-9a1 1 0 0 1 1.414 0M13 14a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883-.993L11 14z"/></svg>
+                        Home
+                    </a></li>
+                    <li><a class="link-button" href="/blog">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/bubble-text-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.4 2l.253.005a6.34 6.34 0 0 1 5.235 3.166l.089.163l.178.039a6.33 6.33 0 0 1 4.254 3.406l.105.228a6.334 6.334 0 0 1-5.74 8.865l-.144-.002l-.037.052a5.26 5.26 0 0 1-5.458 1.926l-.186-.051l-3.435 2.06a1 1 0 0 1-1.508-.743L6 21v-2.435l-.055-.026a3.67 3.67 0 0 1-1.554-1.498l-.102-.199a3.67 3.67 0 0 1-.312-2.14l.038-.21l-.116-.092a5.8 5.8 0 0 1-1.887-6.025l.071-.238a5.8 5.8 0 0 1 5.42-4.004h.157l.15-.165a6.33 6.33 0 0 1 4.33-1.963zM14 13H9a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2m3-4H7a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2"/></svg>
+                        Blog
+                    </a></li>
+                    <li><a class="link-button" href="#">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+                        Search
+                    </a></li>
+                </ol>
+            </nav>
+        </header>
 
         <main>{% block content %} {% endblock content %}</main>
     </body>
