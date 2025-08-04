@@ -158,6 +158,9 @@ blockquote::before, blockquote::after {
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
 }
+blockquote::before {
+    transform: scaleX(-1);
+}
 blockquote::after {
     margin-left: 100%;
     transform: translateX(-100%);

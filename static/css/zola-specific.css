@@ -105,6 +105,7 @@ blockquote.markdown-alert-caution:before {
     mask-size: initial;
     margin: 0;
     padding: 0;
+    transform: none;
 
     --icon-size: 1em;
 
