@@ -75,6 +75,14 @@ blockquote.markdown-alert-caution {
     border-left: var(--main-line-thickness) solid var(--main-text-colour);
     padding-left: 0.5em;
 }
+blockquote.markdown-alert-note > *,
+blockquote.markdown-alert-tip > *,
+blockquote.markdown-alert-important > *,
+blockquote.markdown-alert-warning > *,
+blockquote.markdown-alert-caution > * {
+    margin-left: 0;
+    margin-right: 0;
+}
 blockquote.markdown-alert-note > *:first-child,
 blockquote.markdown-alert-tip > *:first-child,
 blockquote.markdown-alert-important > *:first-child,
