@@ -39,6 +39,11 @@ in `zola-specific.css`
     animation-name: target-highlight;
 }
 
+:focus-visible {
+    outline: var(--main-line-thickness) solid var(--focus-ring-colour) !important;
+    outline-offset: calc(var(--main-line-thickness) / 2) !important;
+}
+
 body {
     background-color: var(--distant-bg-colour);
 }
@@ -216,7 +221,7 @@ button {
     text-decoration: inherit;
     text-align: center;
 
-    background-color: var(--main-bg-colour);
+    background-color: var(--secondary-bg-colour);
 
     border: var(--default-border);
     border-radius: 1.25em;

@@ -1,0 +1,96 @@
+/*****************************************************************************
+This file contains style specific to the serach page
+*****************************************************************************/
+
+.search-container .search-bar-container {
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+    width: 40%;
+}
+
+.search-container input[type="search"] {
+    color: var(--main-text-colour);
+    background-color: var(--secondary-bg-colour);
+
+    border: var(--default-border);
+    border-radius: 1.25em;
+
+    padding: 0 0.5em;
+    text-indent: 1em;
+
+    flex: 1;
+}
+
+.search-container .search-bar-container svg:has(+ input[type="search"]) {
+    display: inline;
+    width: 1em;
+    margin: 0.25em;
+
+    position: absolute;
+    margin-left: 0.5em;
+}
+
+.search-container .search-results {
+    margin: 1em 10%;
+
+    border: var(--default-border);
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.search-container .search-results ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-container .search-results li {
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 1em 0;
+
+    background-color: var(--secondary-bg-colour);
+}
+
+.search-container .search-results li:first-child {
+    margin-top: 0;
+}
+
+.search-container .search-results li:last-child {
+    margin-bottom: 0;
+}
+
+@media (992px <= width < 1200px) {
+    .search-container .search-bar-container {
+        width: 50%;
+    }
+}
+
+@media (768px <= width < 992px) {
+    .search-container .search-bar-container {
+        width: 60%;
+    }
+}
+
+@media (576px <= width < 768px) {
+    .search-container .search-bar-container {
+        width: 75%;
+    }
+
+    .search-container .search-results {
+        margin: 1em 12.5%;
+    }
+}
+
+@media (width < 576px) {
+    .search-container .search-bar-container {
+        width: 100%;
+    }
+
+    .search-container .search-results {
+        margin: 1em 0;
+    }
+}

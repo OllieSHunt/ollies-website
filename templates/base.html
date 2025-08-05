@@ -20,9 +20,11 @@
         <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
         <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
 
+        {% block extraStyle %}{% endblock extraStyle %}
+
         <script defer src="/js/header-bar.js"></script>
 
-        {% block head %}{% endblock head %}
+        {% block extraScripts %}{% endblock extraScripts %}
     </head>
 
     <body>

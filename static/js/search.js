@@ -1,5 +1,7 @@
-// File coped from:
+// Orriginal file coped from:
 // https://github.com/getzola/zola/blob/45d3f8d6285f0b47013c5fa31eb405332118af8b/docs/templates/index.html
+
+const noResultsMsg = '<div class="no-results-msg">No search results</div>';
 
 function debounce(func, wait) {
   var timeout;
@@ -137,7 +139,9 @@ function initSearch() {
   var $searchInput = document.getElementById("search");
   var $searchResults = document.querySelector(".search-results");
   var $searchResultsItems = document.querySelector(".search-results__items");
-  var MAX_ITEMS = 10;
+  var MAX_ITEMS = 32;
+
+  $searchResultsItems.innerHTML = noResultsMsg;
 
   var options = {
     bool: "AND",
@@ -166,8 +170,7 @@ function initSearch() {
       if (term === currentTerm) {
         return;
       }
-      $searchResults.style.display = term === "" ? "none" : "block";
-      $searchResultsItems.innerHTML = "";
+      $searchResultsItems.innerHTML = term === "" ? noResultsMsg : "";
       currentTerm = term;
       if (term === "") {
         return;
@@ -175,7 +178,7 @@ function initSearch() {
 
       var results = (await initIndex()).search(term, options);
       if (results.length === 0) {
-        $searchResults.style.display = "none";
+        $searchResultsItems.innerHTML = noResultsMsg;
         return;
       }
 
@@ -192,7 +195,7 @@ function initSearch() {
       $searchResults.style.display == "block" &&
       !$searchResults.contains(e.target)
     ) {
-      $searchResults.style.display = "none";
+      $searchResultsItems.innerHTML = noResultsMsg;
     }
   });
 }
