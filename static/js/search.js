@@ -127,11 +127,20 @@ function makeTeaser(body, terms) {
 }
 
 function formatSearchResultItem(item, terms) {
+  // Reason for `aria-hidden="true"` on search result preview:
+  //
+  // When testing with a screen reader, I found that I could not get it to put a
+  // pause between the page title and the preview. This resulted in a confusing
+  // experience where you could not tell what was part of the title and what was
+  // part of the preview. As the preview is not essential anyway, I decided to
+  // just hide it for now and come back to it later.
   return (
-    '<div class="search-results__item">' +
-    `<a href="${item.ref}">${item.doc.title}</a>` +
-    `<div>${makeTeaser(item.doc.body, terms)}</div>` +
-    "</div>"
+    `<a href="${item.ref}">` +
+    `<div class="search-results__item">` +
+    `<div class="search-results__title">${item.doc.title}</div>` +
+    `<div class="search-results__preview" aria-hidden="true">${makeTeaser(item.doc.body, terms)}</div>` +
+    `</div>` +
+    `</a>`
   );
 }
 

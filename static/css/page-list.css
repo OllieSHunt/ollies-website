@@ -15,21 +15,32 @@ ol.page-list {
 ol.page-list li {
     border: var(--thin-border);
     border-radius: 1em;
-    padding: 0.5em;
+    padding: 0;
     margin: 1em 0;
 
     background-color: var(--secondary-bg-colour);
 }
 
-ol.page-list li:first-child {
+ol.page-list > li:first-child {
     margin-top: 0;
 }
 
-ol.page-list li:last-child {
+ol.page-list > li:last-child {
     margin-bottom: 0;
 }
 
-.page-list-link {
+ol.page-list > li > a {
+    color: var(--main-text-colour);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5em;
+}
+
+.page-list-title {
+    font-weight: bold;
 }
 
 .page-list-metadata {
