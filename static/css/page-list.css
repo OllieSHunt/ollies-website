@@ -1,0 +1,103 @@
+/*****************************************************************************
+This file contains misc css for the blog.html page.
+*****************************************************************************/
+
+ol.page-list {
+    margin: 1em 10%;
+
+    border: var(--default-border);
+    border-radius: 2em;
+    padding: 1em;
+
+    list-style-type: none;
+}
+
+ol.page-list li {
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 1em 0;
+
+    background-color: var(--secondary-bg-colour);
+}
+
+ol.page-list li:first-child {
+    margin-top: 0;
+}
+
+ol.page-list li:last-child {
+    margin-bottom: 0;
+}
+
+.page-list-link {
+}
+
+.page-list-metadata {
+    background-color: var(--main-bg-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0 0.5em;
+    margin: 0 auto;
+    margin-top: 0.5em;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+
+    width: fit-content;
+
+    overflow: scroll;
+}
+
+.page-list-metadata > * {
+    display: inline;
+}
+
+.page-list-metadata > *::after {
+    content: " | ";
+    color: var(--distant-bg-colour);
+}
+
+.page-list-metadata > *:last-child::after {
+    display: none;
+    content: none;
+}
+
+.page-list-desc {
+}
+
+@media (992px <= width < 1200px) {
+}
+
+@media (768px <= width < 992px) {
+    ol.page-list {
+        margin: 1em 0;
+    }
+}
+
+@media (576px <= width < 768px) {
+    ol.page-list {
+        margin: 1em 0;
+    }
+}
+
+@media (width < 576px) {
+    ol.page-list {
+        margin: 1em 0;
+    }
+
+    .page-list-metadata {
+        width: 100%;
+    }
+
+    .page-list-metadata > * {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-list-metadata > *::after {
+        display: none;
+        content: none;
+    }
+}

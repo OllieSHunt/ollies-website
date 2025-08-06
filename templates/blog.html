@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
+{% block extraStyle %}
+<link rel="stylesheet" type="text/css" href="/css/page-list.css" />
+{% endblock extraStyle %}
+
 {% block content %}
 <h1>{{ section.title }}</h1>
-<ul>
+<ol class="page-list">
     {% for page in section.pages %}
-    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    <li>
+        <a href="{{ page.permalink | safe }}" class="page-list-link">{{ page.title }}</a>
+        <div class="page-list-desc">{{ page.description }}</div>
+        <div class="page-list-metadata">
+            <div>Published on {{ page.date }}</div>
+            <div>Reading time: {{ page.reading_time }} minute{% if page.reading_time > 1 %}s{% endif %}</div>
+        </div>
+    </li>
     {% endfor %}
-</ul>
+</ol>
 {% endblock content %}

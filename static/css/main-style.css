@@ -296,8 +296,6 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     margin-top: 2em;
 }
 .page-metadata {
-    /* width: fit-content; */
-
     background-color: var(--secondary-bg-colour);
     border: var(--thin-border);
     border-radius: 1em;
