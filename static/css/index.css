@@ -20,22 +20,6 @@ ul.socials-list {
     gap: 1em;
 }
 
-ul.socials-list > li > a {
-    text-decoration: none;
-    color: var(--main-text-colour);
-
-    background-color: var(--secondary-bg-colour);
-    border: var(--thin-border);
-    border-radius: 1em;
-    padding: 0 0.5em;
-
-    vertical-align: middle;
-
-    display: flex;
-    align-items: center;
-    gap: 0.25em;
-}
-
 ol.latest-posts {
     list-style-type: none;
     margin: 0;
