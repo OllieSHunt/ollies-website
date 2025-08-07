@@ -1,0 +1,48 @@
+/*****************************************************************************
+This file contains css code for blog-article.html
+*****************************************************************************/
+
+#article-metadata-heading {
+    font-size: 1.5em;
+    text-align: initial;
+
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+#article-metadata-heading::before {
+    content: none;
+}
+#article-metadata-heading::after {
+    content: none;
+}
+
+.article-metadata-section {
+    background-color: var(--secondary-bg-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0.5em;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.article-metadata-section > * {
+    margin: 0.25em 0;
+}
+
+.article-metadata-section .article-publish-date {
+}
+
+.article-metadata-section .article-updates {
+}
+
+.article-metadata-section .article-updates ol {
+    list-style: none;
+    margin: 0;
+    margin-left: 1.5em;
+    padding: 0;
+    padding-left: 0.25em;
+
+    border-left: var(--default-border);
+    border-color: var(--distant-bg-colour);
+}

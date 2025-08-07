@@ -2,7 +2,18 @@
 title = "Example Article"
 description = "This blog post is a test to make sure that everything works correctly."
 date = 2019-11-27
-updated = 2020-05-05
+
+[[extra.updates]]
+date = 2020-06-06
+change_note = "On this day, I made changes."
+
+[[extra.updates]]
+date = 2020-08-08
+change_note = "Out of order date!"
+
+[[extra.updates]]
+date = 2020-07-07
+change_note = "On this day, I also made changes."
 +++
 
 # I am a markdown doc

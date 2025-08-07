@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 
+{% block extraStyle %}
+<link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
+{% endblock extraStyle %}
+
 {% block content %}
 <article>
     {{ page.content | safe }}
 </article>
-<ul class="page-metadata-section">
-    <li class="page-metadata"><strong>Published: </strong><em>{{ page.date }}</em></li>
-    {% if page.updated %}
-    <li class="page-metadata"><strong>Updated: </strong><em>{{ page.updated }}</em></li>
-    {% endif %}
-</ul>
+<section class="article-metadata-section" aria-labelledby="article-metadata-heading">
+    <h1 id="article-metadata-heading">Article Metadata</h1>
+    <span class="article-publish-date"><strong>Published: </strong><em>{{ page.date }}</em></span>
+    <div class="article-updates">
+        <strong>Updates:</strong>
+        <ol>
+            {% if page.extra.updates %}
+            {% for update in page.extra.updates | sort(attribute="date") %}
+            <li><em>{{ update.date }}</em>: {{ update.change_note }}</li>
+            {% endfor %}
+            {% else %}
+            <li>No updates</li>
+            {% endif %}
+        </ol>
+    </div>
+</section>
 {% endblock content %}

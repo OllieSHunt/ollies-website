@@ -281,34 +281,6 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     width: 1px;
 }
 
-.page-metadata-section {
-    display: flex;
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    /*
-    If I ever move the metadata section back to the top, then I must remember
-    to change the margin from margin-top to margin-bottom
-    */
-    margin-top: 2em;
-}
-.page-metadata {
-    background-color: var(--secondary-bg-colour);
-    border: var(--thin-border);
-    border-radius: 1em;
-    padding: 0 0.5em;
-
-    overflow: hidden;
-    text-wrap: nowrap;
-}
-
 /*
 EXAMPLE:
 
@@ -416,20 +388,6 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
     main {
         width: 100%;
         border-radius: 1em;
-    }
-
-    .page-metadata-section {
-        background-color: var(--secondary-bg-colour);
-        border: var(--thin-border);
-        border-radius: 1em;
-        padding: 0.5em;
-    }
-    .page-metadata {
-        background-color: initial;
-        border: none;
-        border-radius: 0;
-
-        margin: auto;
     }
 
     a.clickable-box > ul.clickable-box-info {
