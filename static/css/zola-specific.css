@@ -22,6 +22,34 @@ section.footnotes ol {
     list-style-type: decimal;
 }
 
+/*
+These are hacks to try and insert screen reader accessible text into the
+automatically generated html for footnotes. It only half works, but its better
+than nothing.
+*/
+section.footnotes ol > li::before {
+    content: "Footnote: ";
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+section.footnotes ol > li::after {
+    content: "Backlink";
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 /* Inline code and code blocks */
 pre {
     overflow: auto;
