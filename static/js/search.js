@@ -135,11 +135,9 @@ function formatSearchResultItem(item, terms) {
   // part of the preview. As the preview is not essential anyway, I decided to
   // just hide it for now and come back to it later.
   return (
-    `<a href="${item.ref}">` +
-    `<div class="search-results__item">` +
-    `<div class="search-results__title">${item.doc.title}</div>` +
-    `<div class="search-results__preview" aria-hidden="true">${makeTeaser(item.doc.body, terms)}</div>` +
-    `</div>` +
+    `<a href="${item.ref}" class="clickable-box">` +
+    `<div class="clickable-box-title">${item.doc.title}</div>` +
+    `<div class="clickable-box-content" aria-hidden="true">${makeTeaser(item.doc.body, terms)}</div>` +
     `</a>`
   );
 }
@@ -147,7 +145,7 @@ function formatSearchResultItem(item, terms) {
 function initSearch() {
   var $searchInput = document.getElementById("search");
   var $searchResults = document.querySelector(".search-results");
-  var $searchResultsItems = document.querySelector(".search-results__items");
+  var $searchResultsItems = document.querySelector(".search-results-items");
   var MAX_ITEMS = 32;
 
   $searchResultsItems.innerHTML = noResultsMsg;

@@ -236,6 +236,8 @@ button {
 a.link-button:hover,
 button:hover {
     background-color: var(--selected-element-colour);
+
+    scale: 106%;
 }
 
 a.link-button:active,
@@ -244,6 +246,8 @@ button:active {
 
     background-color: var(--secondary-accent-colour);
     color: var(--main-bg-colour);
+
+    scale: 100%;
 }
 
 /* EXAMPLE:
@@ -305,6 +309,70 @@ https://www.a11yproject.com/posts/how-to-hide-content/
     text-wrap: nowrap;
 }
 
+/*
+EXAMPLE:
+
+<a href="#" class="clickable-box">
+    <div class="clickable-box-title">My title</div>
+    <div class="clickable-box-content">You can click this box</div>
+    <ul class="clickable-box-info">
+        <li>Box created: 2025-08-07</li>
+        <li>Extra info here</li>
+    </ul>
+</a>
+*/
+a.clickable-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    border: var(--thin-border);
+    border-radius: 1em;
+    margin: 0;
+
+    background-color: var(--secondary-bg-colour);
+    color: var(--main-text-colour);
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5em;
+}
+a.clickable-box > .clickable-box-title {
+    font-weight: bold;
+}
+a.clickable-box > *:nth-last-child(2):has(+ ul.clickable-box-info) {
+    margin-bottom: 0.5em;
+}
+a.clickable-box > ul.clickable-box-info {
+    text-decoration: none;
+    background-color: var(--main-bg-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0 0.5em;
+    margin: 0 auto;
+    margin-top: auto;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+
+    width: fit-content;
+
+    overflow: scroll;
+}
+a.clickable-box > ul.clickable-box-info > * {
+    display: inline;
+}
+a.clickable-box > ul.clickable-box-info > *::after {
+    content: " | ";
+    color: var(--distant-bg-colour);
+}
+a.clickable-box > ul.clickable-box-info > *:last-child::after {
+    display: none;
+    content: none;
+}
+
 @media (992px <= width < 1200px) {
     main {none
         width: 75%;
@@ -341,5 +409,19 @@ https://www.a11yproject.com/posts/how-to-hide-content/
         border-radius: 0;
 
         margin: auto;
+    }
+
+    a.clickable-box > ul.clickable-box-info {
+        width: 100%;
+    }
+    a.clickable-box > ul.clickable-box-info > * {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a.clickable-box > ul.clickable-box-info > *::after {
+        display: none;
+        content: none;
     }
 }

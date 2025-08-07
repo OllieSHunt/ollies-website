@@ -9,15 +9,15 @@
 <ol class="page-list" aria-label="Blog posts">
     {% for page in section.pages %}
     <li>
-        <a href="{{ page.permalink | safe }}">
-            <div class="page-list-title">{{ page.title }}</div>
+        <a href="{{ page.permalink | safe }}" class="clickable-box">
+            <div class="clickable-box-title">{{ page.title }}</div>
             {% if page.description %}
-            <div class="page-list-desc">{{ page.description | markdown(inline=true) | safe }}</div>
+            <div class="clickable-box-content">{{ page.description | markdown(inline=true) | safe }}</div>
             {% endif %}
-            <div class="page-list-metadata">
-                <div>Published on {{ page.date }}</div>
-                <div>Reading time: {{ page.reading_time }} minute{% if page.reading_time > 1 %}s{% endif %}</div>
-            </div>
+            <ul class="clickable-box-info">
+                <li>Published on {{ page.date }}</li>
+                <li>Reading time: {{ page.reading_time }} minute{% if page.reading_time > 1 %}s{% endif %}</li>
+            </ul>
         </a>
     </li>
     {% endfor %}
