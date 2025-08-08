@@ -25,4 +25,18 @@
         <ol class="search-results-items" aria-label="Search results" aria-live="polite"></ol>
     </div>
 </search>
+<!-- Hide search if JavaScript is disabled -->
+<noscript>
+    <style>
+        .search-container {
+            display: none;
+        }
+        .search-no-js-message {
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+    <p class="search-no-js-message">Sorry, searching requires JavaScript to be enabled.</p>
+    <p class="search-no-js-message">If you really don't want to enable JavaScript, then you can still browse pages manually by selecting "Blog" from the navigation bar.</p>
+</noscript>
 {% endblock content %}
