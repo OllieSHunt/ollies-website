@@ -1,6 +1,6 @@
 +++
 title = "Accidentally Reinventing The Static Site Generator"
-description = "How I accidentally made a static site generator using Python's `str.replace` method and server side includes (SSI). I also cover how to use SSI and why it is useful."
+description = "How I accidentally made a static site generator using Python's `str.replace` method and server side includes (SSI). I also talk about how to use SSI and why it is useful."
 date = 2025-08-03
 draft = true
 +++

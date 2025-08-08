@@ -1,8 +1,21 @@
 # The URL the site will be built for
 base_url = "/"
 
+# The site title and description; used in feeds by default.
+title = "Ollie's Website"
+description = "Ollie Hunt's blog/personal website. I write about coding, computers, and anything else I find interesting."
+
+author = "Ollie S Hunt"
+
+# The default language; used in feeds.
+default_language = "en"
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+# When set to "true", a feed is automatically generated.
+generate_feeds = false # Enable for individual sections instead (e.g. in `content/blog/_index.md`).
+feed_filenames = ["atom.xml"]
 
 [search]
 include_title = true

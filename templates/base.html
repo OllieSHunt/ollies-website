@@ -6,9 +6,12 @@
         <meta name="color-scheme" content="dark light" />
         <meta
           name="description"
-          content="{% block description %}Ollie Hunt's blog/personal website. I write about coding, computers, and anything else I find interesting.{% endblock description %}" />
+          content="{% block description %}{{ config.description }}{% endblock description %}" />
 
-        <title>{% block pageTitle %}Ollie's Website{% endblock pageTitle %}</title>
+        <title>{% block pageTitle %}{{ config.title }}{% endblock pageTitle %}</title>
+
+        <!-- Atom feed discovery -->
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
 
         <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
