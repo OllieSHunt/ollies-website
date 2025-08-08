@@ -1,4 +1,7 @@
-// Orriginal file coped from:
+// Originally, this file was coped from the Zola docs source code and I have
+// since made some modifications to it.
+//
+// Link:
 // https://github.com/getzola/zola/blob/45d3f8d6285f0b47013c5fa31eb405332118af8b/docs/templates/index.html
 
 const noResultsMsg = '<div class="no-results-msg">No search results</div>';
@@ -127,17 +130,15 @@ function makeTeaser(body, terms) {
 }
 
 function formatSearchResultItem(item, terms) {
-  // Reason for `aria-hidden="true"` on search result preview:
-  //
-  // When testing with a screen reader, I found that I could not get it to put a
-  // pause between the page title and the preview. This resulted in a confusing
-  // experience where you could not tell what was part of the title and what was
-  // part of the preview. As the preview is not essential anyway, I decided to
-  // just hide it for now and come back to it later.
+  // Here, I have written some odd looking HTML here with random hidden text.
+  // The reason is to try to get screen readers to read these results properly
+  // and to pause in between each result when reading them off all at once for
+  // the user. Its not perfect, but I will revisit it later.
   return (
     `<a href="${item.ref}" class="clickable-box">` +
-    `<div class="clickable-box-title">${item.doc.title}</div>` +
-    `<div class="clickable-box-content" aria-hidden="true">${makeTeaser(item.doc.body, terms)}</div>` +
+    `<span class="hidden-text">${item.doc.title}.</span>` +
+    `<div aria-hidden="true" class="clickable-box-title">${item.doc.title}</div>` +
+    `<div aria-hidden="true" class="clickable-box-content">${makeTeaser(item.doc.body, terms)}</div>` +
     `</a>`
   );
 }

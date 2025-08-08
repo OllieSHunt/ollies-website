@@ -16,11 +16,11 @@
     <div class="search-bar-container">
         <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
-        <input id="search" type="search" placeholder="Search..." size="1" />
+        <input id="search" type="search" placeholder="Search..." size="1" aria-roledescription="Search results will appear bellow as you type" />
     </div>
 
     <div class="search-results">
-        <ol class="search-results-items" aria-label="Search results"></ol>
+        <ol class="search-results-items" aria-label="Search results" aria-live="polite"></ol>
     </div>
 </search>
 {% endblock content %}
