@@ -2,11 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-
-        <!-- TODO: Add more meta tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name -->
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="color-scheme" content="dark light" />
+        <meta
+          name="description"
+          content="{% block description %}Ollie Hunt's blog/personal website. I write about coding, computers, and anything else I find interesting.{% endblock description %}" />
 
-        <title>Ollie's Website</title>
+        <title>{% block pageTitle %}Ollie's Website{% endblock pageTitle %}</title>
 
         <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />

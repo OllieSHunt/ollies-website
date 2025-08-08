@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block pageTitle %}{{ page.title }}{% endblock pageTitle %}
+
+{% block description %}{{ page.description }}{% endblock description %}
+
 {% block extraStyle %}
 <link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
 {% endblock extraStyle %}
