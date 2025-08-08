@@ -60,4 +60,12 @@
 
         <main>{% block content %} {% endblock content %}</main>
     </body>
+    <noscript>
+        <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
+        <style>
+            #header-bar {
+                position: relative;
+            }
+        </style>
+    </noscript>
 </html>
