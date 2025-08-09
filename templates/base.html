@@ -13,6 +13,11 @@
         <!-- Atom feed discovery -->
         <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
 
+        <!-- Favicon svg and fallback ico -->
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+        <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
 
@@ -27,6 +32,7 @@
 
         {% block extraStyle %}{% endblock extraStyle %}
 
+        <!-- JavaScript -->
         <script defer src="/js/header-bar.js"></script>
 
         {% block extraScripts %}{% endblock extraScripts %}
