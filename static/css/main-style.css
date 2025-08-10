@@ -155,6 +155,10 @@ a {
     text-decoration: underline;
 }
 
+img {
+    /* TODO */
+}
+
 blockquote::before, blockquote::after {
     content: "";
     display: inline-block;
