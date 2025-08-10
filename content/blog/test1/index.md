@@ -36,3 +36,30 @@ Test 4: [direct link to html](../test2/index.html)
 
 ### Images
 ![image alt text](spinning_doghnut.gif)
+
+#### More image tests
+
+Standalone image:
+
+![image alt text](../2025-08-09/theme-button-light.png)
+
+Multi image:
+
+![image alt text](../2025-08-09/theme-button-light.png)
+![image alt text](../2025-08-09/theme-button-light.png)
+
+Combined with above:
+![image alt text](../2025-08-09/theme-button-light.png)
+
+![image alt text](../2025-08-09/theme-button-light.png)
+Combined with bellow ^
+
+![image alt text](../2025-08-09/theme-button-light.png)
+Sandwich ^v
+![image alt text](../2025-08-09/theme-button-light.png)
+
+Inline > ![image alt text](../2025-08-09/theme-button-light.png) < Inline
+
+Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline  > ![image alt text](../2025-08-09/theme-button-light.png) < Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline Inline
+
+![image alt text](../2025-08-09/theme-button-light.png) At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start. At start.

@@ -155,8 +155,28 @@ a {
     text-decoration: underline;
 }
 
+/*p:has(> img) {
+    display: flow-root;
+}*/
 img {
-    /* TODO */
+    /*float: inline-start;*/
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    border: var(--thin-border);
+    border-radius: 0.25em;
+    /*padding: 0.25em;*/
+    /*background-color: var(--secondary-bg-colour);*/
+
+    margin: 0 0.25em;
+}
+img:last-child {
+    margin-right: 0;
+}
+img:first-child {
+    margin-left: 0;
 }
 
 blockquote::before, blockquote::after {
@@ -164,8 +184,6 @@ blockquote::before, blockquote::after {
     display: inline-block;
     width: 100%;
     height: 1em;
-
-    background-color: var(--secondary-accent-colour);
 
     /* Icon credit: https://icon-sets.iconify.design/tabler/quote-filled/ */
     display: inline-block;

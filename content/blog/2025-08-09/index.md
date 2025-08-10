@@ -88,7 +88,6 @@ After creating the nav bar, I made a theme switching button that would toggle be
 ```
 
 ![Theme switching button in dark mode](theme-button-dark.png)
-
 ![Theme switching button in light mode](theme-button-light.png)
 
 ## Markdown
