@@ -209,7 +209,7 @@ blockquote > *:last-child {
 .important-centred-text {
     text-align: center;
     font-size: 1.5em;
-    margin: 2em;
+    margin: 1em 2em;
 }
 
 /* Hyperlink around headings */
