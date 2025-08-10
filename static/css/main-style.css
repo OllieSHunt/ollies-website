@@ -203,6 +203,15 @@ blockquote > *:last-child {
     margin-bottom: 0;
 }
 
+.centred-text {
+    text-align: center;
+}
+.important-centred-text {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 2em;
+}
+
 /* Hyperlink around headings */
 a.heading-anchor {
     color: inherit;

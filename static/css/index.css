@@ -2,10 +2,6 @@
 This file contains css code for index.html
 *****************************************************************************/
 
-.welcome-text {
-    text-align: center;
-}
-
 ul.socials-list {
     list-style: none;
     margin: 1em auto;
