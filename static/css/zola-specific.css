@@ -213,3 +213,23 @@ blockquote.markdown-alert-caution:before {
     content: "CAUTION";
     color: #cc241d;
 }
+
+@media (992px <= width < 1200px) {
+}
+
+@media (768px <= width < 992px) {
+}
+
+@media (576px <= width < 768px) {
+}
+
+@media (width < 576px) {
+    blockquote.markdown-alert-note,
+    blockquote.markdown-alert-tip,
+    blockquote.markdown-alert-important,
+    blockquote.markdown-alert-warning,
+    blockquote.markdown-alert-caution {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

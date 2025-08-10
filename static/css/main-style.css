@@ -421,6 +421,11 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
         border-radius: 1em;
     }
 
+    blockquote {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
     a.clickable-box > ul.clickable-box-info {
         width: 100%;
     }
