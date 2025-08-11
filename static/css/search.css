@@ -10,7 +10,7 @@ This file contains style specific to the serach page
     width: 40%;
 }
 
-.search-container input[type="search"] {
+.search-container input#search {
     color: var(--main-text-colour);
     background-color: var(--secondary-bg-colour);
 
@@ -23,7 +23,7 @@ This file contains style specific to the serach page
     flex: 1;
 }
 
-.search-container .search-bar-container svg:has(+ input[type="search"]) {
+.search-container .search-bar-container svg:has(+ input#search) {
     display: inline;
     width: 1em;
     margin: 0.25em;
