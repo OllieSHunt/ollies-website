@@ -14,7 +14,7 @@ The first thing I did after the usual HTML boilerplate was to start work on a na
 
 After a few notebook sketches and indecision, I eventually settled on the following design:
 
-![Initial navigation bar prototype](nav-bar.png)
+![Initial navigation bar prototype](nav-bar.webp)
 
 When you scrolled, it visually changed its style and followed you down the page. Overall, I was quite happy with this design.
 
@@ -87,8 +87,8 @@ After creating the nav bar, I made a theme switching button that would toggle be
 </body>
 ```
 
-![Theme switching button in dark mode](theme-button-dark.png)
-![Theme switching button in light mode](theme-button-light.png)
+![Theme switching button in dark mode](theme-button-dark.webp)
+![Theme switching button in light mode](theme-button-light.webp)
 
 ## Markdown
 
