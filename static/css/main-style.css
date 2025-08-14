@@ -170,13 +170,12 @@ img {
     /*padding: 0.25em;*/
     /*background-color: var(--secondary-bg-colour);*/
 
-    margin: 0 0.25em;
-}
-img:last-child {
-    margin-right: 0;
-}
-img:first-child {
-    margin-left: 0;
+    --img-margin: 0.25em;
+    margin: var(--img-margin);
+
+    max-width: calc(50% - (var(--img-margin) * 2) - (var(--secondary-line-thickness) * 2));
+
+    /* See also: img style in the media queries at the bottom */
 }
 
 blockquote::before, blockquote::after {
@@ -409,6 +408,10 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
     main {
         width: 90%;
     }
+
+    img {
+        max-width: 100%;
+    }
 }
 
 @media (width < 576px) {
@@ -420,6 +423,10 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
     blockquote {
         margin-left: 1em;
         margin-right: 1em;
+    }
+
+    img {
+        max-width: 100%;
     }
 
     a.clickable-box > ul.clickable-box-info {

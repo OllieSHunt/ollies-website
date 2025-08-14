@@ -13,7 +13,18 @@ date = 2025-08-16
 change_note = "Change note 2!"
 +++
 
-# Hi
+# Test Page
+
 [Image Processing](https://www.getzola.org/documentation/content/image-processing/)
 
 ![Test image](/blog/reinventing-the-ssg/nav-bar.png)
+![Test image](/blog/reinventing-the-ssg/nav-bar.png)
+![Test image](/blog/reinventing-the-ssg/nav-bar.png)
+![Test image](/blog/reinventing-the-ssg/nav-bar.png)
+![Test image](/blog/reinventing-the-ssg/nav-bar.png)
+
+![Test image](/blog/reinventing-the-ssg/theme-button-light.png)
+![Test image](/blog/reinventing-the-ssg/theme-button-light.png)
+![Test image](/blog/reinventing-the-ssg/theme-button-light.png)
+![Test image](/blog/reinventing-the-ssg/theme-button-light.png)
+![Test image](/blog/reinventing-the-ssg/theme-button-light.png)
