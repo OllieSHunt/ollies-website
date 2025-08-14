@@ -267,8 +267,6 @@ button {
 a.link-button:hover,
 button:hover {
     background-color: var(--selected-element-colour);
-
-    scale: 106%;
 }
 
 a.link-button:active,
@@ -277,8 +275,6 @@ button:active {
 
     background-color: var(--secondary-accent-colour);
     color: var(--main-bg-colour);
-
-    scale: 100%;
 }
 
 /* EXAMPLE:
