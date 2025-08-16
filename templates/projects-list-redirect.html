@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+<!-- TODO: Stop search engines indexing this page -->
+
+{% block pageTitle %}{{ config.title }}: Project{% endblock pageTitle %}
+
+{% block extraStyle %}
+<style>
+    #header-bar {
+        /* This is a bit of a hack, but I don't want the header bar visible on this page and this was the easiest way I could think to do it */
+        display: none;
+    }
+</style>
+{% endblock extraStyle %}
+
+{% block head %}
+<!-- I do not want search engines indexing this page as it is just a redirect page -->
+<meta name="robots" content="noindex">
+
+<meta http-equiv="refresh" content="0; url=/projects#{{ page.slug }}" />
+<script type="text/javascript">
+    window.location.href = "/projects#{{ page.slug }}"
+</script>
+{% endblock head %}
+
+{% block content %}
+<!-- The purpose of this page is to redirect the user to the appropriate place in the projects list. This is needed because users may end up on this page via the search function. -->
+
+<h1>Redirect To Projects List</h1>
+<p class="important-centred-text">If you are not redirected automatically, please follow <a href="/projects#{{ page.slug }}">this link</a>.</p>
+{% endblock content %}

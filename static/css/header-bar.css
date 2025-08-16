@@ -1,10 +1,15 @@
+/*****************************************************************************
+This file is a CSS is for the header bar that appears at the top of every
+page.
+*****************************************************************************/
+
 #header-bar {
     background-color: var(--main-bg-colour);
 
     position: sticky;
     top: 1.25em;
     height: 2.5em;
-    width: 33.33%;
+    width: 40%;
     margin: 0 auto;
     padding: 0 0.5em;
 
@@ -71,24 +76,26 @@
 }
 
 @media (992px <= width < 1200px) {
-    /* do nothing */
-}
-
-@media (768px <= width < 992px) {
     #header-bar {
         width: 50%;
     }
 }
 
+@media (768px <= width < 992px) {
+    #header-bar {
+        width: 60%;
+    }
+}
+
 @media (576px <= width < 768px) {
     #header-bar {
-        width: 66.66%;
+        width: 80%;
     }
 }
 
 @media (width < 576px) {
     #header-bar {
-        width: 66.66%;
+        width: 90%;
     }
 
     #header-bar .link-button span {
