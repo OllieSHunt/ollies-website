@@ -519,7 +519,7 @@ ul.impotant-list-box > li:last-child {
 }
 
 @media (992px <= width < 1200px) {
-    main {none
+    main {
         width: 75%;
     }
 }
@@ -529,7 +529,8 @@ ul.impotant-list-box > li:last-child {
         width: 80%;
     }
 
-    .impotant-list-box {
+    ol.impotant-list-box,
+    ul.impotant-list-box {
         margin: 1em 0;
     }
 }
@@ -543,7 +544,8 @@ ul.impotant-list-box > li:last-child {
         max-width: 100%;
     }
 
-    .impotant-list-box {
+    ol.impotant-list-box,
+    ul.impotant-list-box {
         margin: 1em 0;
     }
 }
@@ -577,7 +579,8 @@ ul.impotant-list-box > li:last-child {
         content: none;
     }
 
-    .impotant-list-box {
+    ol.impotant-list-box,
+    ul.impotant-list-box {
         margin: 1em 0;
 
         border: none;

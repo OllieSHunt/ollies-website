@@ -137,7 +137,7 @@ function formatSearchResultItem(item, terms) {
   // the user. Its not perfect, but I will revisit it later.
   return (
     `<a href="${item.ref}" class="card">` +
-    `<span class="hidden-text">${item.doc.title}.</span>` + // Notice the "." here
+    `<p class="hidden-text">${item.doc.title}.</p>` + // Notice the ", " here
     `<div aria-hidden="true" class="card-title">${item.doc.title}</div>` +
     `<div aria-hidden="true" class="card-content">${makeTeaser(item.doc.body, terms)}</div>` +
     `</a>`
