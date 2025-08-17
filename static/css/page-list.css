@@ -43,5 +43,12 @@ ol.page-list > li:last-child {
 @media (width < 576px) {
     ol.page-list {
         margin: 1em 0;
+
+        /*border-left: none;
+        border-right: none;*/
+        border: none;
+        border-radius: 0;
+        /*padding: 1em 0;*/
+        padding: 0;
     }
 }
