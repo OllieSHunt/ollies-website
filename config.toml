@@ -20,7 +20,7 @@ feed_filenames = ["atom.xml"]
 [search]
 include_title = true
 include_description = true
-include_date = true
+include_date = false
 include_path = false
 include_content = true
 index_format = "elasticlunr_json"
