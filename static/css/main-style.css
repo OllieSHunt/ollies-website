@@ -325,18 +325,34 @@ https://www.a11yproject.com/posts/how-to-hide-content/
 }
 
 /*
-EXAMPLE:
+EXAMPLE (link):
 
-<a href="#" class="clickable-box">
-    <div class="clickable-box-title">My title</div>
-    <div class="clickable-box-content">You can click this box</div>
-    <ul class="clickable-box-info">
-        <li>Box created: 2025-08-07</li>
+<a href="#" class="card">
+    <div class="card-title">My title</div>
+    <div class="card-content">You can click this box</div>
+    <ul class="card-info">
+        <li>Card created: 2025-08-07</li>
         <li>Extra info here</li>
     </ul>
 </a>
+
+EXAMPLE (expandable):
+
+<details class="card">
+    <summary>
+        <div class="card-title">My title</div>
+        <div class="card-summary">You can click this box</div>
+        <ul class="card-info">
+            <li>Card created: 2025-08-17</li>
+            <li>Extra info here</li>
+        </ul>
+    </summary>
+    <div class="card-content">
+        Hidden content!
+    </div>
+</details>
 */
-a.clickable-box {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -354,13 +370,23 @@ a.clickable-box {
 
     padding: 0.5em;
 }
-a.clickable-box > .clickable-box-title {
+.card .card-title {
+    font-size: 1.05em;
+    /*font-style: italic;*/
     font-weight: bold;
+
+    /*border-top: var(--secondary-line-thickness) solid var(--tertiary-accent-colour);*/
+    /*border-bottom: var(--secondary-line-thickness) solid var(--tertiary-accent-colour);*/
+    /*border-radius: 1em;*/
+    /*padding: 0 0.5em;*/
+    border-bottom: var(--thin-border);
+    padding-bottom: 0.25em;
+    margin-bottom: 0.25em;
 }
-a.clickable-box > *:nth-last-child(2):has(+ ul.clickable-box-info) {
+.card *:nth-last-child(2):has(+ ul.card-info) {
     margin-bottom: 0.5em;
 }
-a.clickable-box > ul.clickable-box-info {
+.card ul.card-info {
     text-decoration: none;
     background-color: var(--main-bg-colour);
     border: var(--thin-border);
@@ -376,20 +402,74 @@ a.clickable-box > ul.clickable-box-info {
 
     overflow: scroll;
 }
-a.clickable-box > ul.clickable-box-info > * {
+.card ul.card-info > * {
     display: inline;
 }
-a.clickable-box > ul.clickable-box-info > *::after {
+.card ul.card-info > *::after {
     content: " | ";
     color: var(--distant-bg-colour);
 }
-a.clickable-box > ul.clickable-box-info > *:last-child::after {
+.card ul.card-info > *:last-child::after {
     display: none;
     content: none;
 }
+details.card {
+    padding: 0;
+}
+details.card > * {
+    padding: 0.5em;
+}
+details.card > summary {
+    width: 100%;
+    height: 100%;
 
-/* Box with curved edges that is designed to hold exactly one line of text */
-.inline-info-box {
+    border-radius: 1em;
+}
+details.card > summary::marker {
+    content: none;
+}
+details.card:open > summary {
+    border-bottom: var(--thin-border);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+details.card > summary > *:last-child::after {
+    content: "- Click to expand -";
+    display: block;
+    font-size: 0.975em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+details.card:open > summary > *:last-child::after {
+    content: "- Click to hide -";
+}
+a.card,
+details.card > summary {
+    /* Cards that can be clicked */
+    cursor: pointer;
+}
+a.card:hover,
+details.card > summary:hover,
+details.card:open > summary {
+    /* Hovered and active cards */
+    background-color: var(--selected-element-colour);
+}
+a.card:hover ul.card-info,
+details.card > summary:hover ul.card-info,
+details.card:open > summary ul.card-info {
+    /* things within a hovered or active card */
+    background-color: var(--secondary-bg-colour);
+}
+
+/*
+Box with curved edges that is designed to hold exactly one line of text.
+
+<a href="#" class="inline-card">
+    <svg aria-hidden="true" focusable="false">...</svg>
+    <span>Inline Card</span>
+</a>
+*/
+.inline-card {
     display: inline-block;
 
     background-color: var(--secondary-bg-colour);
@@ -407,6 +487,12 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
 
     text-decoration: none;
     color: var(--main-text-colour);
+}
+a.inline-card {
+    cursor: pointer;
+}
+a.inline-card:hover {
+    background-color: var(--selected-element-colour);
 }
 
 @media (992px <= width < 1200px) {
@@ -446,16 +532,16 @@ a.clickable-box > ul.clickable-box-info > *:last-child::after {
         max-width: 100%;
     }
 
-    a.clickable-box > ul.clickable-box-info {
+    a.card > ul.card-info {
         width: 100%;
     }
-    a.clickable-box > ul.clickable-box-info > * {
+    a.card > ul.card-info > * {
         display: block;
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
     }
-    a.clickable-box > ul.clickable-box-info > *::after {
+    a.card > ul.card-info > *::after {
         display: none;
         content: none;
     }

@@ -8,15 +8,15 @@
 
 {% block content %}
 <h1>{{ section.title }}</h1>
-<ol class="page-list" aria-label="Blog posts">
+<ol class="box-list" aria-label="Blog posts">
     {% for page in section.pages %}
     <li>
-        <a href="{{ page.permalink | safe }}" class="clickable-box">
-            <div class="clickable-box-title">{{ page.title }}</div>
+        <a href="{{ page.permalink | safe }}" class="card">
+            <div class="card-title">{{ page.title }}</div>
             {% if page.description %}
-            <div class="clickable-box-content">{{ page.description | markdown(inline=true) | safe }}</div>
+            <div class="card-content">{{ page.description | markdown(inline=true) | safe }}</div>
             {% endif %}
-            <ul class="clickable-box-info">
+            <ul class="card-info">
                 <li>Published on {{ page.date }}</li>
                 <li>Reading time: {{ page.reading_time }} minute{% if page.reading_time > 1 %}s{% endif %}</li>
             </ul>

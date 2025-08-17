@@ -3,7 +3,7 @@ This file contains misc css for the blog-list.html and projects-list.html
 pages.
 *****************************************************************************/
 
-ol.page-list {
+ol.box-list {
     margin: 1em 10%;
 
     border: var(--default-border);
@@ -13,15 +13,15 @@ ol.page-list {
     list-style-type: none;
 }
 
-ol.page-list > li {
+ol.box-list > li {
     margin: 1em 0;
 }
 
-ol.page-list > li:first-child {
+ol.box-list > li:first-child {
     margin-top: 0;
 }
 
-ol.page-list > li:last-child {
+ol.box-list > li:last-child {
     margin-bottom: 0;
 }
 
@@ -29,19 +29,19 @@ ol.page-list > li:last-child {
 }
 
 @media (768px <= width < 992px) {
-    ol.page-list {
+    ol.box-list {
         margin: 1em 0;
     }
 }
 
 @media (576px <= width < 768px) {
-    ol.page-list {
+    ol.box-list {
         margin: 1em 0;
     }
 }
 
 @media (width < 576px) {
-    ol.page-list {
+    ol.box-list {
         margin: 1em 0;
 
         /*border-left: none;

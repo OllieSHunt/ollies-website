@@ -135,10 +135,10 @@ function formatSearchResultItem(item, terms) {
   // and to pause in between each result when reading them off all at once for
   // the user. Its not perfect, but I will revisit it later.
   return (
-    `<a href="${item.ref}" class="clickable-box">` +
-    `<span class="hidden-text">${item.doc.title}.</span>` +
-    `<div aria-hidden="true" class="clickable-box-title">${item.doc.title}</div>` +
-    `<div aria-hidden="true" class="clickable-box-content">${makeTeaser(item.doc.body, terms)}</div>` +
+    `<a href="${item.ref}" class="card">` +
+    `<span class="hidden-text">${item.doc.title}.</span>` + // Notice the "." here
+    `<div aria-hidden="true" class="card-title">${item.doc.title}</div>` +
+    `<div aria-hidden="true" class="card-content">${makeTeaser(item.doc.body, terms)}</div>` +
     `</a>`
   );
 }

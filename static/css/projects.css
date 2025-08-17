@@ -2,7 +2,8 @@
 This file contains misc css for the projects-list.html page.
 *****************************************************************************/
 
-.page-list details {
+/*
+.box-list details {
     border: var(--thin-border);
     border-radius: 1em;
     margin: 0;
@@ -13,11 +14,11 @@ This file contains misc css for the projects-list.html page.
     width: 100%;
 }
 
-.page-list details > * {
+.box-list details > * {
     padding: 0.5em;
 }
 
-.page-list details > summary {
+.box-list details > summary {
     cursor: pointer;
 
     width: 100%;
@@ -25,15 +26,15 @@ This file contains misc css for the projects-list.html page.
 
     border-radius: 1em;
 }
-.page-list details > summary::marker {
+.box-list details > summary::marker {
     content: none;
 }
-.page-list details:open > summary {
+.box-list details:open > summary {
     border-bottom: var(--thin-border);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-.page-list details > summary > h2 {
+.box-list details > summary > h2 {
     display: inline;
     font-size: 1.5em;
     font-style: italic;
@@ -41,20 +42,21 @@ This file contains misc css for the projects-list.html page.
     margin: 0;
     padding: 0;
 }
-.page-list details > summary > h2::before {
+.box-list details > summary > h2::before {
     content: none;
 }
-.page-list details > summary > p {
+.box-list details > summary > p {
     margin: 0;
     padding: 0;
 }
-.page-list details > summary > *:last-child::after {
+.box-list details > summary > *:last-child::after {
     content: "- Click to expand -";
     display: block;
     font-size: 0.975em;
     margin-top: 0.5em;
     text-align: center;
 }
-.page-list details:open > summary > *:last-child::after {
+.box-list details:open > summary > *:last-child::after {
     content: "- Click to hide -";
 }
+*/
