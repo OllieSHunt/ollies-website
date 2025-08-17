@@ -433,15 +433,15 @@ details.card:open > summary {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-details.card > summary > *:last-child::after {
-    content: "- Click to expand -";
+details.card > summary::after {
+    content: "Select to expand";
     display: block;
     font-size: 0.975em;
     margin-top: 0.5em;
     text-align: center;
 }
-details.card:open > summary > *:last-child::after {
-    content: "- Click to hide -";
+details.card:open > summary::after {
+    content: "Select to hide";
 }
 a.card,
 details.card > summary {
