@@ -34,9 +34,6 @@ highlight_themes_css = [
   { theme = "gruvbox-light", filename = "css/syntax-theme-light.css" },
 ]
 
-# Make headings clickable (see `templates/anchor-link.html`)
-insert_anchor_links = "heading"
-
 # GitHub style alerts: e.g. IMPORTANT, NOTE, WARNING, etc...
 github_alerts = true
 
