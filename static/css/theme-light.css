@@ -5,6 +5,7 @@ https://github.com/morhetz/gruvbox-contrib
 
 :root {
     --main-text-colour: #3c3836;
+    --secondary-text-colour: #928374;
 
     --main-bg-colour: #fbf1c7;
     --secondary-bg-colour: #f2e5bc;

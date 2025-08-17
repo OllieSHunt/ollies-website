@@ -154,6 +154,23 @@ a {
     color: var(--hyperlink-colour);
     text-decoration: underline;
 }
+/* Custom styling for external links */
+a[href*='//']:not([class])::after {
+    content: "";
+    display: inline-block;
+
+    width: 0.975em;
+    height: 0.975em;
+    vertical-align: -0.125em;
+
+    background-color: var(--secondary-text-colour);
+    text-decoration: underline;
+
+    /* Icon credit: https://icon-sets.iconify.design/tabler/external-link/ */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+}
 
 /*p:has(> img) {
     display: flow-root;
