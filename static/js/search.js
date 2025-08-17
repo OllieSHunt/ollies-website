@@ -4,7 +4,8 @@
 // Link:
 // https://github.com/getzola/zola/blob/45d3f8d6285f0b47013c5fa31eb405332118af8b/docs/templates/index.html
 
-const noResultsMsg = '<div class="no-results-msg">No search results</div>';
+const noResultsMsg =
+  '<div class="no-search-results inline-card">No search results</div>';
 
 function debounce(func, wait) {
   var timeout;

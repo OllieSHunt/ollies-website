@@ -2,11 +2,6 @@
 
 {% block pageTitle %}{{ config.title }}: Projects{% endblock pageTitle %}
 
-{% block extraStyle %}
-<link rel="stylesheet" type="text/css" href="/css/page-list.css" />
-<link rel="stylesheet" type="text/css" href="/css/projects.css" />
-{% endblock extraStyle %}
-
 {% block content %}
 <h1>{{ section.title }}</h1>
 <p class="centred-text">
@@ -15,7 +10,7 @@
 <p class="centred-text">
     Very approximately ordered with the newest first:
 </p>
-<ol class="box-list" aria-label="My projects">
+<ol class="impotant-list-box" aria-label="My projects">
     {% for project in section.pages | reverse %}
     <li>
         <details id="project-{{ project.slug }}" class="card">

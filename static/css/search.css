@@ -32,34 +32,9 @@ This file contains style specific to the serach page
     margin-left: 0.5em;
 }
 
-.search-container .search-results {
-    margin: 1em 10%;
-
-    border: var(--default-border);
-    border-radius: 2em;
-    padding: 1em;
-}
-
-.search-container .search-results ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.search-container .search-results li {
-    border: var(--thin-border);
-    border-radius: 1em;
-    margin: 1em 0;
-
-    background-color: var(--secondary-bg-colour);
-}
-
-.search-container .search-results li:first-child {
-    margin-top: 0;
-}
-
-.search-container .search-results li:last-child {
-    margin-bottom: 0;
+.no-search-results {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (992px <= width < 1200px) {
@@ -78,18 +53,10 @@ This file contains style specific to the serach page
     .search-container .search-bar-container {
         width: 75%;
     }
-
-    .search-container .search-results {
-        margin: 1em 12.5%;
-    }
 }
 
 @media (width < 576px) {
     .search-container .search-bar-container {
         width: 100%;
-    }
-
-    .search-container .search-results {
-        margin: 1em 0;
     }
 }

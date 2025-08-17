@@ -2,13 +2,9 @@
 
 {% block pageTitle %}{{ config.title }}: Blog{% endblock pageTitle %}
 
-{% block extraStyle %}
-<link rel="stylesheet" type="text/css" href="/css/page-list.css" />
-{% endblock extraStyle %}
-
 {% block content %}
 <h1>{{ section.title }}</h1>
-<ol class="box-list" aria-label="Blog posts">
+<ol class="impotant-list-box" aria-label="Blog posts">
     {% for page in section.pages %}
     <li>
         <a href="{{ page.permalink | safe }}" class="card">
