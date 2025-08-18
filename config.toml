@@ -33,6 +33,7 @@ highlight_themes_css = [
   { theme = "gruvbox-dark", filename = "css/syntax-theme-dark.css" },
   { theme = "gruvbox-light", filename = "css/syntax-theme-light.css" },
 ]
+lazy_async_image = true
 
 # GitHub style alerts: e.g. IMPORTANT, NOTE, WARNING, etc...
 github_alerts = true

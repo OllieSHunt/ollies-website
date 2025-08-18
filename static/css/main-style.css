@@ -565,7 +565,7 @@ ul.important-list-box > li:last-child {
     }
 
     img {
-        max-width: 100%;
+        max-width: calc(100% - var(--img-margin) - var(--secondary-line-thickness));
     }
 
     ol.important-list-box,
@@ -586,7 +586,7 @@ ul.important-list-box > li:last-child {
     }
 
     img {
-        max-width: 100%;
+        max-width: calc(100% - var(--img-margin) - var(--secondary-line-thickness));
     }
 
     a.card > ul.card-info {
