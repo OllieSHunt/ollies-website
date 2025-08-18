@@ -2,9 +2,6 @@
 title = "Custom Keyboard V2"
 description = "The second version of my fully custom keyboard."
 weight = 2
-
-[extra]
-source = "https://github.com/OllieSHunt/custom-keyboard-v2"
 +++
 
 # Custom Keyboard V2
@@ -24,4 +21,4 @@ I made use of QMK's [Quantum Painter](https://docs.qmk.fm/quantum_painter) to co
 
 ---
 
-See also, [the first version of this project](/projects/1-keyboard-v1).
+See also, [the first version of this project](/projects/1-keyboard-v1) and the [GitHub repository for this project](https://github.com/OllieSHunt/custom-keyboard-v2).

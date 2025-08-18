@@ -342,10 +342,6 @@ EXAMPLE (expandable):
     <summary>
         <div class="card-title">My title</div>
         <div class="card-summary">You can click this box</div>
-        <ul class="card-info">
-            <li>Card created: 2025-08-17</li>
-            <li>Extra info here</li>
-        </ul>
     </summary>
     <div class="card-content">
         Hidden content!
@@ -401,14 +397,14 @@ EXAMPLE (expandable):
 
     transition: background-color var(--button-fade-time);
 }
-.card ul.card-info > * {
+.card ul.card-info > li {
     display: inline;
 }
-.card ul.card-info > *::after {
+.card ul.card-info > li::after {
     content: " | ";
     color: var(--distant-bg-colour);
 }
-.card ul.card-info > *:last-child::after {
+.card ul.card-info > li:last-child::after {
     display: none;
     content: none;
 }
@@ -486,8 +482,6 @@ Box with curved edges that is designed to hold exactly one line of text.
 </a>
 */
 .inline-card {
-    display: inline-block;
-
     background-color: var(--secondary-bg-colour);
     border: var(--thin-border);
     border-radius: 1em;
@@ -495,7 +489,7 @@ Box with curved edges that is designed to hold exactly one line of text.
 
     vertical-align: middle;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.25em;
 
@@ -503,6 +497,9 @@ Box with curved edges that is designed to hold exactly one line of text.
 
     text-decoration: none;
     color: var(--main-text-colour);
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
 
     transition: background-color var(--button-fade-time);
 }
