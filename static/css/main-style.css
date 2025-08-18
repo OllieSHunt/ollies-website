@@ -1,6 +1,6 @@
 /*****************************************************************************
 This file contains generic style for the whole site. For example, it contains
-style for headings, paragraphs, the body element, and fonts.
+style for headings, paragraphs, the body element, as well as fonts.
 *****************************************************************************/
 
 /* Used by `::target { ... }` */
@@ -277,14 +277,14 @@ button {
 
     cursor: pointer;
 
-    transition: background-color 64ms;
+    transition: background-color var(--button-fade-time);
 }
-
-a.link-button:hover,
-button:hover {
-    background-color: var(--selected-element-colour);
+@media (hover: hover) and (pointer: fine) {
+    a.link-button:hover,
+    button:hover {
+        background-color: var(--selected-element-colour);
+    }
 }
-
 a.link-button:active,
 button:active {
     transition: background-color 0ms;
@@ -369,16 +369,13 @@ EXAMPLE (expandable):
     height: 100%;
 
     padding: 0.5em;
+
+    transition: background-color var(--button-fade-time);
 }
 .card .card-title {
     font-size: 1.05em;
-    /*font-style: italic;*/
     font-weight: bold;
 
-    /*border-top: var(--secondary-line-thickness) solid var(--tertiary-accent-colour);*/
-    /*border-bottom: var(--secondary-line-thickness) solid var(--tertiary-accent-colour);*/
-    /*border-radius: 1em;*/
-    /*padding: 0 0.5em;*/
     border-bottom: var(--thin-border);
     padding-bottom: 0.25em;
     margin-bottom: 0.25em;
@@ -401,6 +398,8 @@ EXAMPLE (expandable):
     width: fit-content;
 
     overflow: scroll;
+
+    transition: background-color var(--button-fade-time);
 }
 .card ul.card-info > * {
     display: inline;
@@ -424,6 +423,8 @@ details.card > summary {
     height: 100%;
 
     border-radius: 1em;
+
+    transition: background-color var(--button-fade-time);
 }
 details.card > summary::marker {
     content: none;
@@ -432,6 +433,11 @@ details.card:open > summary {
     border-bottom: var(--thin-border);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
+    background-color: var(--selected-element-colour);
+}
+details.card:open > summary ul.card-info {
+    background-color: var(--secondary-bg-colour);
 }
 details.card > summary::after {
     content: "Select to expand";
@@ -448,17 +454,27 @@ details.card > summary {
     /* Cards that can be clicked */
     cursor: pointer;
 }
-a.card:hover,
-details.card > summary:hover,
-details.card:open > summary {
-    /* Hovered and active cards */
-    background-color: var(--selected-element-colour);
+@media (hover: hover) and (pointer: fine) {
+    a.card:hover,
+    details.card > summary:hover {
+        /* Hovered and active cards */
+        background-color: var(--selected-element-colour);
+    }
+    a.card:hover ul.card-info,
+    details.card > summary:hover ul.card-info {
+        /* things within a hovered or active card */
+        background-color: var(--secondary-bg-colour);
+    }
 }
-a.card:hover ul.card-info,
-details.card > summary:hover ul.card-info,
-details.card:open > summary ul.card-info {
-    /* things within a hovered or active card */
-    background-color: var(--secondary-bg-colour);
+@media (not (hover: hover)) or (not (pointer: fine)) {
+    a.card:active {
+        transition: background-color 0ms;
+        background-color: var(--selected-element-colour);
+    }
+    a.card:active ul.card-info {
+        transition: background-color 0ms;
+        background-color: var(--secondary-bg-colour);
+    }
 }
 
 /*
@@ -487,12 +503,23 @@ Box with curved edges that is designed to hold exactly one line of text.
 
     text-decoration: none;
     color: var(--main-text-colour);
+
+    transition: background-color var(--button-fade-time);
 }
 a.inline-card {
     cursor: pointer;
 }
-a.inline-card:hover {
-    background-color: var(--selected-element-colour);
+@media (hover: hover) and (pointer: fine) {
+    a.inline-card:hover {
+        background-color: var(--selected-element-colour);
+    }
+}
+@media (not (hover: hover)) or (not (pointer: fine)) {
+    a.inline-card:active {
+        transition: background-color 0ms;
+
+        background-color: var(--selected-element-colour);
+    }
 }
 
 ol.impotant-list-box,
