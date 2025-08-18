@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>{{ section.title }}</h1>
-<ol class="impotant-list-box" aria-label="Blog posts">
+<ol class="important-list-box" aria-label="Blog posts">
     {% for page in section.pages %}
     <li>
         <a href="{{ page.permalink | safe }}" class="card">

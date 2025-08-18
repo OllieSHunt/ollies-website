@@ -33,6 +33,7 @@ This file contains style specific to the serach page
 }
 
 .no-search-results {
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
