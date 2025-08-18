@@ -1,7 +1,7 @@
 +++
 title = "Custom Keyboard V2"
 description = "The second version of my fully custom keyboard."
-weight = 2
+weight = 3
 +++
 
 # Custom Keyboard V2
