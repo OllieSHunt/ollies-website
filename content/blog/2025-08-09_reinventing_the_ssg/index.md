@@ -71,7 +71,7 @@ The benefit of this is that now, whenever I want to make changes to the navigati
 > You may also have noticed the file extension `.shtml` instead of `.html`. This
 > tells the server to look for server side includes within the file.
 
-After creating the nav bar, I made a theme switching button that would toggle between light and dark modes when you pressed it. This feature also benefited from SSI for the same reasons as the nav bar.
+After creating the nav bar, I also experimented with making a theme switching button that would toggle between light and dark modes when you pressed it. This feature also benefited from SSI for the same reasons as the nav bar.
 
 ```html
 <!-- index.shtml -->

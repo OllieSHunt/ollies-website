@@ -31,9 +31,10 @@ highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
   { theme = "gruvbox-dark", filename = "css/syntax-theme-dark.css" },
-  { theme = "gruvbox-light", filename = "css/syntax-theme-light.css" },
 ]
-lazy_async_image = true
+
+# This option breaks heading anchor links for some reason? See: https://github.com/getzola/zola/issues/2679
+# lazy_async_image = true
 
 # GitHub style alerts: e.g. IMPORTANT, NOTE, WARNING, etc...
 github_alerts = true
