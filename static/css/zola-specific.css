@@ -15,7 +15,6 @@ section.footnotes::before, hr {
     background-color: var(--main-accent-colour);
     content: "";
 
-    vertical-align: middle;
     margin: 3rem auto;
 }
 section.footnotes ol {
@@ -71,6 +70,9 @@ pre.z-code > code {
 }
 pre.z-code {
     margin: 1em 0;
+}
+:not(pre.z-code) > code {
+    white-space: nowrap;
 }
 
 /*

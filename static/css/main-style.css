@@ -107,7 +107,6 @@ h1::before {
     background-color: var(--heading1);
     content: "";
 
-    vertical-align: middle;
     margin: 0.25em auto;
 }
 

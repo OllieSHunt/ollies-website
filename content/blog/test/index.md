@@ -1,7 +1,7 @@
 +++
 title = "Test page"
-description = "This page is just for testing. If you can see it then something has gone wrong."
-date = 2025-08-14
+description = "This page is just for testing. If you can see it then I have made a mistake."
+date = 9999-12-24
 draft = true
 
 [[extra.updates]]
