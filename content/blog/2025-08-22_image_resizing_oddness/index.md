@@ -24,7 +24,7 @@ $ ls -lh image*.webp
 -rw-r--r-- 1 ollie users  13K Aug 21 20:18 image.webp
 ```
 
-Hang on a minute! The the resized image is over 14 times the size! Did I make a mistake and accidentally *increase* the resolution instead? Let's use ImageMagick to check.
+Hang on a minute! The resized image is over 14 times the size! Did I make a mistake and accidentally *increase* the resolution instead? Let's use ImageMagick to check.
 
 ```
 $ magick identify image*.webp
@@ -86,7 +86,7 @@ Well here is an [excerpt from the ImageMagick docs](https://imagemagick.org/scri
 
 So basically, `-sample` uses a much simpler algorithm for shrinking images that just deletes rows/columns instead of doing some fancy filtering like `-resize`.
 
-If your curious, [this Stack Overflow comment](https://stackoverflow.com/a/13078621) provides an excellent breakdown of all the different ways to resize images with ImageMagick.
+If you're curious, [this Stack Overflow comment](https://stackoverflow.com/a/13078621) provides an excellent breakdown of all the different ways to resize images with ImageMagick.
 
 ## Conclusion
 The whole reason for doing this was to optimise my website's load times by reducing the size of a single large image (1366x768 pixels). However, the resized version was only actually 2kB smaller than original which was already only 13kB. Because of this negligible size difference and the enormous drop in quality, I did not end up using the minified image on my site.

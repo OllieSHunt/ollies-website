@@ -20,6 +20,9 @@ style for headings, paragraphs, the body element, as well as fonts.
         16px Arial,
         Helvetica,
         sans-serif;
+
+    scrollbar-color: color-mix(in srgb, var(--main-text-colour) 66.6666%, transparent) transparent;
+    scrollbar-width: thin;
 }
 
 /* The colour of highlighted text */
@@ -156,9 +159,10 @@ a {
 /* Custom styling for external links */
 a[href*='//']:not([class])::after {
     content: "";
-    display: inline-block;
+    display: inline;
 
-    width: 0.975em;
+    /* Using padding-right instead of width so that the icon does not wrap onto a new line */
+    padding-right: 0.975em;
     height: 0.975em;
     vertical-align: -0.125em;
 
@@ -391,8 +395,6 @@ EXAMPLE (expandable):
     text-wrap: nowrap;
 
     width: fit-content;
-
-    overflow: scroll;
 
     transition: background-color var(--button-fade-time);
 }
