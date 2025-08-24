@@ -246,6 +246,7 @@ blockquote > *:last-child {
 
 .centred-text {
     text-align: center;
+    margin: 1em 2em;
 }
 .important-centred-text {
     text-align: center;
