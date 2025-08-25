@@ -613,4 +613,9 @@ ul.important-list-box > li:last-child {
         border-radius: 0;
         padding: 0;
     }
+
+    .centred-text,
+    .important-centred-text {
+        margin: 1em 1em;
+    }
 }
