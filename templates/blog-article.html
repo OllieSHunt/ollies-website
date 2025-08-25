@@ -11,21 +11,23 @@
 {% block content %}
 <article>
     {{ page.content | safe }}
+    <footer>
+        <ul>
+            <li class="footer-comment">If you have any questions, feedback, or corrections please feel free to contact me at: <a href="mailto:{{ config.extra.contact_email }}">{{ config.extra.contact_email }}</a>.</li>
+            <li><strong>Published: </strong><em>{{ page.date }}</em></li>
+            <li class="article-updates">
+                <strong id="article-updates-heading">Updates:</strong>
+                <ol aria-labelledby="article-updates-heading">
+                    {% if page.extra.updates %}
+                    {% for update in page.extra.updates | sort(attribute="date") %}
+                    <li><em>{{ update.date }}</em>: {{ update.change_note }}</li>
+                    {% endfor %}
+                    {% else %}
+                    <li>No updates</li>
+                    {% endif %}
+                </ol>
+            </li>
+        </ul>
+    </footer>
 </article>
-<section class="article-metadata-section" aria-labelledby="article-metadata-heading">
-    <h1 id="article-metadata-heading">Article Metadata</h1>
-    <span class="article-publish-date"><strong>Published: </strong><em>{{ page.date }}</em></span>
-    <div class="article-updates">
-        <strong>Updates:</strong>
-        <ol>
-            {% if page.extra.updates %}
-            {% for update in page.extra.updates | sort(attribute="date") %}
-            <li><em>{{ update.date }}</em>: {{ update.change_note }}</li>
-            {% endfor %}
-            {% else %}
-            <li>No updates</li>
-            {% endif %}
-        </ol>
-    </div>
-</section>
 {% endblock content %}
