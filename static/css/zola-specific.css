@@ -80,8 +80,7 @@ Highlight the parent of a footnote-reference if it is targeted.
 The contents of this block should be the same as :target in main-style.css
 */
 *:has(>.footnote-reference:target) {
-    animation-duration: 2s;
-    animation-name: target-highlight;
+    animation: 3s ease-out target-highlight;
 }
 .footnote-reference:target {
     animation-name: none;

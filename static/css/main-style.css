@@ -38,8 +38,7 @@ If you update this, also update `*:has(>.footnote-reference:target) { ... }`
 in `zola-specific.css`
 */
 :target {
-    animation-duration: 2s;
-    animation-name: target-highlight;
+    animation: 3s ease-out target-highlight;
 }
 
 :focus-visible {
