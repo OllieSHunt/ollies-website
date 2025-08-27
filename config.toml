@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "/"
+base_url = "https://olliehunt.dev"
 
 # The site title and description; used in feeds by default.
 title = "Ollie's Website"
@@ -14,7 +14,7 @@ default_language = "en"
 build_search_index = true
 
 # When set to "true", a feed is automatically generated.
-generate_feeds = false # Enable for individual sections instead (e.g. in `content/blog/_index.md`).
+generate_feeds = false        # Enable for individual sections instead (e.g. in `content/blog/_index.md`).
 feed_filenames = ["atom.xml"]
 
 [search]
@@ -30,7 +30,7 @@ index_format = "elasticlunr_json"
 highlight_code = true
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "gruvbox-dark", filename = "css/syntax-theme-dark.css" },
+    { theme = "gruvbox-dark", filename = "css/syntax-theme-dark.css" },
 ]
 
 # This option breaks heading anchor links for some reason? See: https://github.com/getzola/zola/issues/2679
