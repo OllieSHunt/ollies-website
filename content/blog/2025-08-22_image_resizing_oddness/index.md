@@ -15,7 +15,7 @@ So, recently I was writing about a project I made a while ago on [the projects s
 $ magick image.webp -resize 600x600 image-RESIZED.webp
 ```
 
-This command successfully resized the image from 1366x768 pixels to 600x337 pixels, so used `ls` to check the file size:
+This command successfully resized the image from 1366x768 pixels to 600x337 pixels, so I used `ls` to check the file size:
 
 ```
 $ ls -lh image*.webp
@@ -55,7 +55,7 @@ In the resized image however, the newly introduced noise and blurriness brakes u
 ## The Solution
 So, if the blur is causing the image size to be larger, how do we remove the blur? Well my first thought was to disable anti-aliasing with the `+antialias` option, however this seemed to have no effect on image quality or file size. After that I tried all of the following options, also with no or limited effect: `-filter point`, `-interpolate integer`, `-interpolate nearest-neighbor`, `-filter box`, and `-scale 50%`.
 
-Eventually, I tracked down [comment on a GitHub issue](https://github.com/ImageMagick/ImageMagick/discussions/6788#discussioncomment-7282750) that suggested using the `-sample` option for cleaner resizing of pixel art.
+Eventually, I tracked down [this comment on a GitHub issue](https://github.com/ImageMagick/ImageMagick/discussions/6788#discussioncomment-7282750) that suggested using the `-sample` option for cleaner resizing of pixel art.
 
 ```
 $ magick image.webp -sample 600x600 image-SAMPLE.webp

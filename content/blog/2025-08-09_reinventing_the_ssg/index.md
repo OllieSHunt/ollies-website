@@ -10,7 +10,7 @@ date = 2025-08-09
 
 So a while ago, I decided to build my own website/blog (your reading it right now!).
 
-The first thing I did after the usual HTML boilerplate was to start work on a navigation bar. The nav bar is, in my opinion, the "core" of any website. Its on every single page and users will keep coming back to it again and again to move around your page.
+The first thing I did after the usual HTML boilerplate was to start work on a navigation bar. The nav bar is, in my opinion, the "core" of any website. It's on every single page and users will keep coming back to it again and again to move around your page.
 
 After a few notebook sketches and indecision, I eventually settled on the following design:
 
@@ -29,7 +29,7 @@ After some research, I found a better solution: *server side includes*.
 > Server Side Includes (SSI) is a simple interpreted server-side scripting
 > language used almost exclusively for the World Wide Web.
 
-For my use case, this means that I can have the server dynamically *build* a HTML file before sending it of to be displayed in the users browser.
+For my use case, this means that I can have the server dynamically *build* a HTML file before sending it of to be displayed in the user's browser.
 
 Here's an example:
 
@@ -164,12 +164,12 @@ Here are some excerpts from Wikipedia that explain SSGs very concisely:
 > reStructuredText, or in a structural meta format such as JSON or XML. A single
 > plain-text file may correspond to a single web page.
 
-Hang on a second, this almost perfectly describes what I have just spent dozens of hours creating! My templating system just is a combination of SSI and Python's `str.replace` method, and my content is written in Markdown!
+Hang on a second, this almost perfectly describes what I have just spent dozens of hours creating! My templating system is just a combination of SSI and Python's `str.replace` method, and my content is written in Markdown!
 
 I have unintentionally made a very basic, slightly inflexible, static site generator.
 
 ## Zola
-So, i've made an SSG. Oops. As were here, I may as well make my life easier by doubling down and pivot towards a proper, purpose built static site generator that's better build, has more features, and is generally a lot more robust.
+So, i've made an SSG. Oops. As we're here, I may as well make my life easier by doubling down and pivot towards a proper, purpose built static site generator that's better built, has more features, and is generally a lot more robust.
 
 There are [lots](https://github.com/topics/static-site-generator) of excellent sounding options here, but after some thought I picked out [Zola](https://www.getzola.org/) as my favourite. Honestly, the main reason for this was that it is written in Rust. I know this is not the most sensible reason to choose based off of, but there were so many options, I decided to just pick one and Zola is the one I picked.
 
@@ -202,10 +202,10 @@ And here's a new page that creates a very simple list of all blog posts.
 {% endblock content %}
 ```
 
-Do you see that? A for loop! That is way out of the scope my little Python script. In fact, in between those curly brackets, Zola essentially allows for a whole other programming language with support for variables, if statements, and of course, loops! This allows for much more power and flexibility going forward with my site and I am definitely glad I decided to switch.
+Do you see that? A `for` loop! That is way out of the scope of my little Python script. In fact, in between those curly brackets, Zola essentially allows for a whole other programming language with support for variables, if statements, and of course, loops! This allows for much more power and flexibility going forward with my site and I am definitely glad I decided to switch.
 
-Moral of the story? Don't reinvent the wheel because someone has already done it better.
+Moral of the story? You probably don't need to reinvent the wheel, but it's still fun to try!
 
 [^1]: If your using [Nginx](https://nginx.org/en/) like I was, then SSI will be disabled by default, you can use [this configuration file](https://github.com/OllieSHunt/ollies-website/blob/ccc93d9cb187cbb11fb65173553a5e9c274b77c9/dev-scripts/nginx-dev.conf) as an example of how to enable it.
 
-[^2]: In case you want to see it, [here is a link to the last commit](https://github.com/OllieSHunt/ollies-website/tree/ccc93d9cb187cbb11fb65173553a5e9c274b77c9) of of my site that did not use Zola.
+[^2]: In case you want to see it, [here is a link to the last commit](https://github.com/OllieSHunt/ollies-website/tree/ccc93d9cb187cbb11fb65173553a5e9c274b77c9) of my site that did not use Zola.
