@@ -17,4 +17,4 @@ I briefly experimented with writing the firmware by hand in C, but I greatly und
 
 ---
 
-See also, [the second version of this project](/projects/2-keyboard-v2).
+See also, [the second version of this project](/projects/3-keyboard-v2).
