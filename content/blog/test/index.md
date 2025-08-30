@@ -2,6 +2,7 @@
 title = "Test page"
 description = "This page is just for testing. If you can see it then I have made a mistake."
 date = 9999-12-24
+updated = 2025-08-16
 draft = true
 
 [[extra.updates]]

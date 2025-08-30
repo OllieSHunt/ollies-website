@@ -1,6 +1,6 @@
 +++
 title = "Accidentally Reinventing The Static Site Generator"
-description = "Making a basic static site generator using Python's `str.replace` method and server side includes (SSI). I also talk about how to use SSI, why it is useful, as well as the benefits of Zola."
+description = "Creating a makeshift static site generator using server side includes (SSI) and Python's `str.replace` method. I also talk about how to use SSI, why it is useful, and why Zola is great."
 date = 2025-08-09
 +++
 

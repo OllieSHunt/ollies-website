@@ -1,6 +1,6 @@
 +++
 title = "Image Resizing Oddness"
-description = "How reducing an image's resolution can increase its file size + how to fix it using ImageMagick."
+description = "How reducing an image's resolution can sometimes increase its file size + how to fix it using ImageMagick."
 date = 2025-08-22
 +++
 
