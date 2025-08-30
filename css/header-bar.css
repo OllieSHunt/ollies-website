@@ -1,0 +1,110 @@
+/*****************************************************************************
+This file is a CSS is for the header bar that appears at the top of every
+page.
+*****************************************************************************/
+
+#header-bar {
+    background-color: var(--main-bg-colour);
+
+    position: sticky;
+    top: 1.25em;
+    height: 2.5em;
+    width: 40%;
+    margin: 0 auto;
+    padding: 0 0.5em;
+
+    border: var(--default-border);
+    border-radius: 1.25em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1em;
+
+    z-index: 999;
+
+    transition:
+        top 100ms,
+        border-radius 100ms,
+        border-top 100ms,
+        box-shadow 100ms;
+}
+
+#header-bar.header-bar-moving {
+    top: 0;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: var(--default-shadow);
+}
+
+#header-bar nav {
+    width: 100%;
+}
+
+#header-bar nav ol {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 0.5em;
+}
+
+#header-bar nav li {
+    list-style-type: none;
+
+    display: inline-block;
+
+    width: 50%;
+}
+
+#header-bar .link-button {
+    width: 100%;
+    height: 100%;
+}
+
+#header-bar .link-button svg {
+    display: inline;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
+@media (992px <= width < 1200px) {
+    #header-bar {
+        width: 50%;
+    }
+}
+
+@media (768px <= width < 992px) {
+    #header-bar {
+        width: 60%;
+    }
+}
+
+@media (576px <= width < 768px) {
+    #header-bar {
+        width: 80%;
+    }
+}
+
+@media (width < 576px) {
+    #header-bar {
+        width: 90%;
+    }
+
+    #header-bar .link-button span {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}

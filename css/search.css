@@ -1,0 +1,63 @@
+/*****************************************************************************
+This file contains style specific to the serach page
+*****************************************************************************/
+
+.search-container .search-bar-container {
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+    width: 40%;
+}
+
+.search-container input#search {
+    color: var(--main-text-colour);
+    background-color: var(--secondary-bg-colour);
+
+    border: var(--default-border);
+    border-radius: 1.25em;
+
+    padding: 0 0.5em;
+    text-indent: 1em;
+
+    flex: 1;
+}
+
+.search-container .search-bar-container svg:has(+ input#search) {
+    display: inline;
+    width: 1em;
+    margin: 0.25em;
+
+    position: absolute;
+    margin-left: 0.5em;
+}
+
+.no-search-results {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (992px <= width < 1200px) {
+    .search-container .search-bar-container {
+        width: 50%;
+    }
+}
+
+@media (768px <= width < 992px) {
+    .search-container .search-bar-container {
+        width: 60%;
+    }
+}
+
+@media (576px <= width < 768px) {
+    .search-container .search-bar-container {
+        width: 75%;
+    }
+}
+
+@media (width < 576px) {
+    .search-container .search-bar-container {
+        width: 100%;
+    }
+}

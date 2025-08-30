@@ -1,0 +1,52 @@
+/*****************************************************************************
+This file contains css code for index.html
+*****************************************************************************/
+
+ul.socials-list {
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+    width: fit-content;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+ol.latest-posts {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 1rem;
+}
+
+ol.latest-posts > li {
+    flex-basis: calc(50% - 0.5rem);
+}
+
+@media (992px <= width < 1200px) {
+}
+
+@media (768px <= width < 992px) {
+}
+
+@media (576px <= width < 768px) {
+}
+
+@media (width < 576px) {
+    ol.latest-posts {
+        flex-direction: column;
+    }
+
+    ol.latest-posts > li {
+        flex-basis: auto;
+    }
+}
