@@ -2,8 +2,6 @@
 title = "Super Simple Downtime Checker"
 description = "A ridiculously simple downtime checker in only 6 lines of Bash (with optional NixOS and Systemd integration). It runs on your desktop, so no self-hosting needed."
 date = 2025-08-31
-
-draft = true # TODO: update publish date when you remove draft=true
 +++
 
 # Super Simple Downtime Checker
@@ -16,7 +14,7 @@ There are plenty of services that can do this, however I don't need any of the f
 The solution I have come up with is a simple 6-line bash script that just checks the [HTTP response code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status) of my website to make sure it is [200 OK](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200).
 
 ## Making The Script
-So, the core part of this program will be something that sends a request to the server and gets a response back. One option would be to use the `ping` command. However, while this would tell us if the server was switched on or not, it would not allow us to receive HTTP response codes such as [404 Not Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404) or other critical errors.
+So, the core part of this program will be something that sends a request to the server and gets a response back. One option would be to use the `ping` command. However, while this would tell us if the server was switched on or not, it would not allow us to receive HTTP response codes such as [404 Not Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404), [418 I'm a teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418), or other similarity critical errors.
 
 The solution I found uses `curl` with the `-I` (or `--head`) option. This allows us to view HTTP response codes (like 404 not found), along with a lot of other miscellaneous information that I don't need for this particular script.
 
@@ -48,7 +46,7 @@ else
 fi
 ```
 
-We now have a functional script! There are still a couple of improvements we could made though...
+We now have a functional script! There are still a couple of improvements we could make though...
 
 Right now, this script will only work with one URL. The simplest, and easiest way I could think to solve this was to use Bash's `$@` variable. This variable simply contains all the arguments passed to the script. This is not perfect and is probably not how you are meant to handle arguments, but it does get the job done.
 
@@ -88,7 +86,7 @@ Well there are many great options for this, and you can pick your favourite. I'm
 ### Notifications
 Before we get to creating our systemd unit and timer, there is one last change that needs to be made to the script.
 
-Currently, the success or failure is just echoed to stdout. For a script run in the commandline, this is fine. However, if we plan on running this script automatically in the background, the user won't be able to see stdout. For this we need to notify the user of issues some other way. Luckily, [libnotify](https://gitlab.gnome.org/GNOME/libnotify) provides and [excellent utility]((https://man.archlinux.org/man/notify-send.1)) called `notify-send` that allows us to send notifications from the command line. To use it, simply pass your message as an argument to the command. For example:
+Currently, the success or failure is just echoed to stdout. For a script run in the commandline, this is fine. However, if we plan on running this script automatically in the background, the user won't be able to see stdout. For this we need to notify the user of issues some other way. Luckily, [libnotify](https://gitlab.gnome.org/GNOME/libnotify) provides an [excellent utility]((https://man.archlinux.org/man/notify-send.1)) called `notify-send` that allows us to send notifications from the command line. To use it, simply pass your message as an argument to the command. For example:
 
 ```bash
 $ notify-send "Hello World!"
