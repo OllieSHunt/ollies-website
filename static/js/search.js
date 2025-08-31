@@ -105,7 +105,7 @@ function makeTeaser(body, terms) {
     }
   }
 
-  var teaser = [];
+  var teaser = ["…"];
   var startIndex = weighted[maxSumIndex][2];
   for (var i = maxSumIndex; i < maxSumIndex + windowSize; i++) {
     var word = weighted[i];
