@@ -194,7 +194,9 @@ img {
 
     max-width: calc(50% - (var(--img-margin) * 2) - (var(--secondary-line-thickness) * 2));
 
-    /* See also: img style in the media queries at the bottom */
+    box-shadow: var(--default-shadow);
+
+    /* See also: img style in the media queries at the bottom of this file */
 }
 
 blockquote::before, blockquote::after {
@@ -231,6 +233,8 @@ blockquote {
     border: var(--thin-border);
     border-radius: 0.5em;
     padding: 0 0.25em;
+
+    box-shadow: var(--default-shadow);
 }
 blockquote > * {
     margin-left: 1em;
@@ -369,6 +373,9 @@ EXAMPLE (expandable):
 
     padding: 0.5em;
 
+    box-shadow: var(--default-shadow);
+    overflow: hidden;
+
     transition: background-color var(--button-fade-time);
 }
 .card .card-title {
@@ -432,6 +439,8 @@ details.card:open > summary {
     border-bottom-right-radius: 0;
 
     background-color: var(--selected-element-colour);
+
+    box-shadow: var(--default-shadow);
 }
 details.card:open > summary ul.card-info {
     background-color: var(--secondary-bg-colour);
@@ -450,6 +459,10 @@ a.card,
 details.card > summary {
     /* Cards that can be clicked */
     cursor: pointer;
+}
+a.card:active {
+    box-shadow: none;
+    transform: translateY(2px);
 }
 @media (hover: hover) and (pointer: fine) {
     a.card:hover,
@@ -506,6 +519,12 @@ Box with curved edges that is designed to hold exactly one line of text.
 }
 a.inline-card {
     cursor: pointer;
+
+    box-shadow: var(--default-shadow);
+}
+a.inline-card:active {
+    box-shadow: none;
+    transform: translateY(2px);
 }
 @media (hover: hover) and (pointer: fine) {
     a.inline-card:hover {

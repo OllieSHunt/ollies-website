@@ -5,11 +5,14 @@ This file contains css code for blog-article.html
 article > footer {
     background-color: var(--secondary-bg-colour);
     border: var(--thin-border);
+    border-color: var(--tertiary-accent-colour);
     border-radius: 1em;
     padding: 0.5em;
 
     overflow: hidden;
     text-wrap: nowrap;
+
+    box-shadow: var(--default-shadow);
 }
 
 article > footer > ul {

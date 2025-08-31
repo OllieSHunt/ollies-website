@@ -52,6 +52,7 @@ section.footnotes ol > li::after {
 /* Inline code and code blocks */
 pre {
     overflow: auto;
+    box-shadow: var(--default-shadow);
 }
 code, pre.z-code {
     font-family: monospace;
@@ -103,6 +104,8 @@ blockquote.markdown-alert-caution {
 
     border-left: var(--main-line-thickness) solid var(--main-text-colour);
     padding-left: 0.5em;
+
+    box-shadow: var(--default-shadow);
 }
 blockquote.markdown-alert-note > *,
 blockquote.markdown-alert-tip > *,

@@ -29,3 +29,6 @@ change_note = "Change note 2!"
 ![Test image](/blog/reinventing-the-ssg/theme-button-light.webp)
 ![Test image](/blog/reinventing-the-ssg/theme-button-light.webp)
 ![Test image](/blog/reinventing-the-ssg/theme-button-light.webp)
+
+> [!WARNING]
+> test
