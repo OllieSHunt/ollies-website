@@ -1,0 +1,239 @@
+/*****************************************************************************
+This file contains misc css that is unlikely to work if I ever switch away
+from Zola. This is mainly because of classes that Zola creates with specific
+names. Other static site generators may use different class names.
+*****************************************************************************/
+
+section.footnotes::before, hr {
+    width: 100%;
+    height: var(--main-line-thickness);
+    border: none;
+    border-radius: calc(var(--main-line-thickness) / 2);
+
+    position: static;
+    display: block;
+    background-color: var(--main-accent-colour);
+    content: "";
+
+    margin: 3rem auto;
+}
+section.footnotes ol {
+    list-style-type: decimal;
+}
+
+/*
+These are hacks to try and insert screen reader accessible text into the
+automatically generated html for footnotes. It only half works, but its better
+than nothing.
+*/
+section.footnotes ol > li::before {
+    content: "Footnote: ";
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+section.footnotes ol > li::after {
+    content: "Backlink";
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Inline code and code blocks */
+pre {
+    overflow: auto;
+    box-shadow: var(--default-shadow);
+}
+code, pre.z-code {
+    font-family: monospace;
+    background-color: var(--secondary-bg-colour);
+
+    border: var(--thin-border);
+    border-radius: 0.5em;
+    padding: 0 0.25em;
+}
+pre.z-code > code {
+    background-color: initial;
+
+    border: none;
+    border-radius: initial;
+    padding: initial;
+}
+pre.z-code {
+    margin: 1em 0;
+}
+:not(pre.z-code) > code {
+    white-space: nowrap;
+}
+
+/*
+Highlight the parent of a footnote-reference if it is targeted.
+The contents of this block should be the same as :target in main-style.css
+*/
+*:has(>.footnote-reference:target) {
+    animation: 3s ease-out target-highlight;
+}
+.footnote-reference:target {
+    animation-name: none;
+}
+
+/* GitHub style markdown alerts */
+blockquote.markdown-alert-note,
+blockquote.markdown-alert-tip,
+blockquote.markdown-alert-important,
+blockquote.markdown-alert-warning,
+blockquote.markdown-alert-caution {
+    /* Overwrite regular blockquote style */
+    border: none;
+    border-radius: 0;
+    background-color: initial;
+    padding: 0;
+    margin: 0;
+
+    margin: 1em 2em;
+
+    border-left: var(--main-line-thickness) solid var(--main-text-colour);
+    padding-left: 0.5em;
+
+    box-shadow: var(--default-shadow);
+}
+blockquote.markdown-alert-note > *,
+blockquote.markdown-alert-tip > *,
+blockquote.markdown-alert-important > *,
+blockquote.markdown-alert-warning > *,
+blockquote.markdown-alert-caution > * {
+    margin-left: 0;
+    margin-right: 0;
+}
+blockquote.markdown-alert-note > *:first-child,
+blockquote.markdown-alert-tip > *:first-child,
+blockquote.markdown-alert-important > *:first-child,
+blockquote.markdown-alert-warning > *:first-child,
+blockquote.markdown-alert-caution > *:first-child {
+    margin-top: 0;
+}
+blockquote.markdown-alert-note > *:last-child,
+blockquote.markdown-alert-tip > *:last-child,
+blockquote.markdown-alert-important > *:last-child,
+blockquote.markdown-alert-warning > *:last-child,
+blockquote.markdown-alert-caution > *:last-child {
+    margin-bottom: 0;
+}
+blockquote.markdown-alert-note:after,
+blockquote.markdown-alert-tip:after,
+blockquote.markdown-alert-important:after,
+blockquote.markdown-alert-warning:after,
+blockquote.markdown-alert-caution:after {
+    /* Overwrite regular blockquote style */
+    content: none;
+}
+blockquote.markdown-alert-note:before,
+blockquote.markdown-alert-tip:before,
+blockquote.markdown-alert-important:before,
+blockquote.markdown-alert-warning:before,
+blockquote.markdown-alert-caution:before {
+    /* NOTE:
+    Currently, the colour of each icon is hardcoded and does not change with
+    the rest of the theme.
+    */
+
+    /* Overwrite regular blockquote style */
+    background-color: initial;
+    -webkit-mask-image: none;
+    mask-image: none;
+    -webkit-mask-repeat: initial;
+    mask-repeat: initial;
+    -webkit-mask-size: initial;
+    mask-size: initial;
+    margin: 0;
+    padding: 0;
+    transform: none;
+
+    --icon-size: 1em;
+
+    display: inline;
+    width: 100%;
+    padding-left: calc(var(--icon-size) + 0.25em);
+    vertical-align: middle;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    background-repeat: no-repeat;
+    background-size: var(--icon-size) 100%;
+}
+blockquote.markdown-alert-note {
+    border-color: #458588;
+}
+blockquote.markdown-alert-note:before {
+    /* Icon credit: https://icon-sets.iconify.design/tabler/info-circle-filled/ */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23458588' d='M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1-19.995.324L2 12l.004-.28C2.152 6.327 6.57 2 12 2m0 9h-1l-.117.007a1 1 0 0 0 0 1.986L11 13v3l.007.117a1 1 0 0 0 .876.876L12 17h1l.117-.007a1 1 0 0 0 .876-.876L14 16l-.007-.117a1 1 0 0 0-.764-.857l-.112-.02L13 15v-3l-.007-.117a1 1 0 0 0-.876-.876zm.01-3l-.127.007a1 1 0 0 0 0 1.986L12 10l.127-.007a1 1 0 0 0 0-1.986z'/%3E%3C/svg%3E");
+    content: "NOTE";
+    color: #458588;
+}
+blockquote.markdown-alert-tip {
+    border-color: #98971a;
+}
+blockquote.markdown-alert-tip:before {
+    /* Icon credit: https://icon-sets.iconify.design/tabler/bulb-filled/ */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2398971a' d='M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm8-9a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m9 9a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM4.893 4.893a1 1 0 0 1 1.32-.083l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 0-1.414m12.8 0a1 1 0 0 1 1.497 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094zM14 18a1 1 0 0 1 1 1a3 3 0 0 1-6 0a1 1 0 0 1 .883-.993L10 18zM12 6a6 6 0 0 1 3.6 10.8a1 1 0 0 1-.471.192L15 17H9a1 1 0 0 1-.6-.2A6 6 0 0 1 12 6'/%3E%3C/svg%3E");
+    content: "TIP";
+    color: #98971a;
+}
+blockquote.markdown-alert-important {
+    border-color: #b16286;
+}
+blockquote.markdown-alert-important:before {
+    /* Icon credit: https://icon-sets.iconify.design/tabler/message-report-filled/ */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b16286' d='M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4.724l-4.762 2.857a1 1 0 0 1-1.508-.743L7 21v-2H6a4 4 0 0 1-3.995-3.8L2 15V7a4 4 0 0 1 4-4zm-6 10a1 1 0 0 0-1 1v.01a1 1 0 0 0 2 0V14a1 1 0 0 0-1-1m0-6a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0V8a1 1 0 0 0-1-1'/%3E%3C/svg%3E");
+    content: "IMPORTANT";
+    color: #b16286;
+}
+blockquote.markdown-alert-warning {
+    border-color: #d79921;
+}
+blockquote.markdown-alert-warning:before {
+    /* Icon credit: https://icon-sets.iconify.design/tabler/alert-triangle-filled/ */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d79921' d='M12 1.67c.955 0 1.845.467 2.39 1.247l.105.16l8.114 13.548a2.914 2.914 0 0 1-2.307 4.363l-.195.008H3.882a2.914 2.914 0 0 1-2.582-4.2l.099-.185l8.11-13.538A2.91 2.91 0 0 1 12 1.67M12.01 15l-.127.007a1 1 0 0 0 0 1.986L12 17l.127-.007a1 1 0 0 0 0-1.986zM12 8a1 1 0 0 0-.993.883L11 9v4l.007.117a1 1 0 0 0 1.986 0L13 13V9l-.007-.117A1 1 0 0 0 12 8'/%3E%3C/svg%3E");
+    content: "WARNING";
+    color: #d79921;
+}
+blockquote.markdown-alert-caution {
+    border-color: #cc241d;
+}
+blockquote.markdown-alert-caution:before {
+    /* Icon credit: https://icon-sets.iconify.design/tabler/alert-hexagon-filled/ */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23cc241d' d='M10.425 1.414a3.33 3.33 0 0 1 3.026-.097l.19.097l6.775 3.995l.096.063l.092.077l.107.075a3.22 3.22 0 0 1 1.266 2.188l.018.202l.005.204v7.284c0 1.106-.57 2.129-1.454 2.693l-.17.1l-6.803 4.302c-.918.504-2.019.535-3.004.068l-.196-.1l-6.695-4.237a3.23 3.23 0 0 1-1.671-2.619L2 15.502V8.217c0-1.106.57-2.128 1.476-2.705zM12.01 15l-.127.007a1 1 0 0 0 0 1.986L12 17l.127-.007a1 1 0 0 0 0-1.986zM12 7a1 1 0 0 0-.993.883L11 8v4l.007.117a1 1 0 0 0 1.986 0L13 12V8l-.007-.117A1 1 0 0 0 12 7'/%3E%3C/svg%3E");
+    content: "CAUTION";
+    color: #cc241d;
+}
+
+@media (992px <= width < 1200px) {
+}
+
+@media (768px <= width < 992px) {
+}
+
+@media (576px <= width < 768px) {
+}
+
+@media (width < 576px) {
+    blockquote.markdown-alert-note,
+    blockquote.markdown-alert-tip,
+    blockquote.markdown-alert-important,
+    blockquote.markdown-alert-warning,
+    blockquote.markdown-alert-caution {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

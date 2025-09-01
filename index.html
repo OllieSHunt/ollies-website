@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="description"
+          content="Ollie Hunt&#x27;s blog&#x2F;personal website. I write about coding, computers, and anything else I find interesting." />
+
+        <title>Ollie&#x27;s Website</title>
+
+        <!-- Atom feed discovery -->
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
+
+        <!-- Favicon svg and fallback ico -->
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/theme-dark.css" />
+        <link rel="stylesheet" type="text/css" href="/css/syntax-theme-dark.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
+        <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
+
+        
+<link rel="stylesheet" type="text/css" href="/css/index.css" />
+
+
+        <!-- JavaScript -->
+        <script defer src="/js/header-bar.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+        <div id="header-bar-anchor" aria-hidden="true">
+            <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
+        </div>
+
+        <header id="header-bar">
+            <!-- Nav bar displayed at the top of the screen -->
+
+            <nav>
+                <ol>
+                    <li><a class="link-button" href="/">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.707 2.293l9 9c.63.63.184 1.707-.707 1.707h-1v6a3 3 0 0 1-3 3h-1v-7a3 3 0 0 0-2.824-2.995L13 12h-2a3 3 0 0 0-3 3v7H7a3 3 0 0 1-3-3v-6H3c-.89 0-1.337-1.077-.707-1.707l9-9a1 1 0 0 1 1.414 0M13 14a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883-.993L11 14z"/></svg>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a class="link-button" href="/blog">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/bubble-text-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.4 2l.253.005a6.34 6.34 0 0 1 5.235 3.166l.089.163l.178.039a6.33 6.33 0 0 1 4.254 3.406l.105.228a6.334 6.334 0 0 1-5.74 8.865l-.144-.002l-.037.052a5.26 5.26 0 0 1-5.458 1.926l-.186-.051l-3.435 2.06a1 1 0 0 1-1.508-.743L6 21v-2.435l-.055-.026a3.67 3.67 0 0 1-1.554-1.498l-.102-.199a3.67 3.67 0 0 1-.312-2.14l.038-.21l-.116-.092a5.8 5.8 0 0 1-1.887-6.025l.071-.238a5.8 5.8 0 0 1 5.42-4.004h.157l.15-.165a6.33 6.33 0 0 1 4.33-1.963zM14 13H9a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2m3-4H7a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2"/></svg>
+                        <span>Blog</span>
+                    </a></li>
+                    <li><a class="link-button" href="/projects">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/file-code-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="m12 2l.117.007a1 1 0 0 1 .876.876L13 3v4l.005.15a2 2 0 0 0 1.838 1.844L15 9h4l.117.007a1 1 0 0 1 .876.876L20 10v9a3 3 0 0 1-2.824 2.995L17 22H7a3 3 0 0 1-2.995-2.824L4 19V5a3 3 0 0 1 2.824-2.995L7 2zm-1.553 11.106a1 1 0 0 0-1.341.447l-1 2a1 1 0 0 0 0 .894l1 2a1 1 0 0 0 1.341.447l.102-.058a1 1 0 0 0 .345-1.283L10.118 16l.776-1.553a1 1 0 0 0-.447-1.341m4.447.447a1 1 0 0 0-1.341-.447l-.102.058a1 1 0 0 0-.345 1.283L13.88 16l-.775 1.553a1 1 0 0 0 1.788.894l1-2a1 1 0 0 0 0-.894z"/><path d="M19 7h-4l-.001-4.001z"/></g></svg>
+                        <span>Projects</span>
+                    </a></li>
+                    <li><a class="link-button" href="/search">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+                        <span>Search</span>
+                    </a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <main>
+<h1>Welcome!</h1>
+<p class="centred-text">This is my website where I write about anything I find interesting</p>
+<nav aria-label="External links">
+    <ul class="socials-list">
+        <li>
+            <a href="mailto:olliehuntcontact@gmail.com" class="inline-card">
+                <!-- Icon credit: hhttps://icon-sets.iconify.design/tabler/mail-filled/ -->
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><path d="M22 7.535V17a3 3 0 0 1-2.824 2.995L19 20H5a3 3 0 0 1-2.995-2.824L2 17V7.535l9.445 6.297l.116.066a1 1 0 0 0 .878 0l.116-.066z"/><path d="M19 4c1.08 0 2.027.57 2.555 1.427L12 11.797l-9.555-6.37a3 3 0 0 1 2.354-1.42L5 4z"/></g></svg>
+                <span>Contact</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/OllieSHunt" class="inline-card">
+                <!-- Icon credit: https://icon-sets.iconify.design/tabler/brand-github-filled/ -->
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5.315 2.1c.791-.113 1.9.145 3.333.966l.272.161l.16.1l.397-.083a13.3 13.3 0 0 1 4.59-.08l.456.08l.396.083l.161-.1c1.385-.84 2.487-1.17 3.322-1.148l.164.008l.147.017l.076.014l.05.011l.144.047a1 1 0 0 1 .53.514a5.2 5.2 0 0 1 .397 2.91l-.047.267l-.046.196l.123.163c.574.795.93 1.728 1.03 2.707l.023.295L21 9.5c0 3.855-1.659 5.883-4.644 6.68l-.245.061l-.132.029l.014.161l.008.157l.004.365l-.002.213L16 21a1 1 0 0 1-.883.993L15 22H9a1 1 0 0 1-.993-.883L8 21v-.734c-1.818.26-3.03-.424-4.11-1.878l-.535-.766c-.28-.396-.455-.579-.589-.644l-.048-.019a1 1 0 0 1 .564-1.918c.642.188 1.074.568 1.57 1.239l.538.769c.76 1.079 1.36 1.459 2.609 1.191L8 17.562l-.018-.168a5 5 0 0 1-.021-.824l.017-.185l.019-.12l-.108-.024c-2.976-.71-4.703-2.573-4.875-6.139l-.01-.31L3 9.5a5.6 5.6 0 0 1 .908-3.051l.152-.222l.122-.163l-.045-.196a5.2 5.2 0 0 1 .145-2.642l.1-.282l.106-.253a1 1 0 0 1 .529-.514l.144-.047z"/></svg>
+                <span>GitHub</span>
+            </a>
+        </li>
+        <li>
+            <a href="/blog/atom.xml" class="inline-card">
+                <!-- Icon credit: https://icon-sets.iconify.design/tabler/rss/ -->
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></svg>
+                <span>Feed</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/OllieSHunt/ollies-website" class="inline-card">
+                <!-- Icon credit: https://icon-sets.iconify.design/tabler/brand-git/ -->
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m-4-4a1 1 0 1 0 2 0a1 1 0 1 0-2 0m0 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m1-1V9m3 2l-2-2m-2-2L9.1 5.1"/><path d="m13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1-2.892 0l-7.955-7.955a2.045 2.045 0 0 1 0-2.892l7.955-7.955a2.045 2.045 0 0 1 2.892 0z"/></g></svg>
+                <span>Source</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<hr />
+<h2 id="latest-posts-heading">Latest Posts</h2>
+<ol class="latest-posts" aria-labelledby="latest-posts-heading">
+    
+    
+    
+    <li>
+        <a href="https://olliehunt.dev/blog/simple-downtime-checker/" class="card">
+            <div class="card-title">Super Simple Downtime Checker</div>
+            
+            <div class="card-content">A ridiculously simple downtime checker in only 6 lines of Bash (with optional NixOS and Systemd integration). It runs on your desktop, so no self-hosting needed.</div>
+            
+            <ul class="card-info">
+                <li>Published on 2025-08-31</li>
+            </ul>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://olliehunt.dev/blog/image-resizing-oddness/" class="card">
+            <div class="card-title">Image Resizing Oddness</div>
+            
+            <div class="card-content">How reducing an image's resolution can sometimes increase its file size + how to fix it using ImageMagick.</div>
+            
+            <ul class="card-info">
+                <li>Published on 2025-08-22</li>
+            </ul>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://olliehunt.dev/blog/reinventing-the-ssg/" class="card">
+            <div class="card-title">Accidentally Reinventing The Static Site Generator</div>
+            
+            <div class="card-content">Creating a makeshift static site generator using server side includes (SSI) and Python's <code>str.replace</code> method. I also talk about how to use SSI, why it is useful, and why Zola is great.</div>
+            
+            <ul class="card-info">
+                <li>Published on 2025-08-09</li>
+            </ul>
+        </a>
+    </li>
+    
+</ol>
+<hr />
+<p class="centred-text">
+    This website's colour scheme is inspired by <a href="https://github.com/morhetz/gruvbox">Gruvbox</a> and uses icons from <a href="https://github.com/tabler/tabler-icons">Tabler</a>.<br/>
+    It's built using the static site generator <a href="https://www.getzola.org/">Zola</a>, and its source code is available on <a href="https://github.com/OllieSHunt/ollies-website">GitHub</a>.
+</p>
+</main>
+    </body>
+    <noscript>
+        <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
+        <style>
+            #header-bar {
+                position: relative;
+            }
+        </style>
+    </noscript>
+</html>

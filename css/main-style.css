@@ -1,0 +1,639 @@
+/*****************************************************************************
+This file contains generic style for the whole site. For example, it contains
+style for headings, paragraphs, the body element, as well as fonts.
+*****************************************************************************/
+
+/* Used by `::target { ... }` */
+@keyframes target-highlight {
+    from {
+        background-color: var(--highlight-colour);
+    }
+    to {
+        background-color: initial;
+    }
+}
+
+:root {
+    color: var(--main-text-colour);
+
+    font:
+        16px Arial,
+        Helvetica,
+        sans-serif;
+
+    scrollbar-color: color-mix(in srgb, var(--main-text-colour) 66.6666%, transparent) transparent;
+    scrollbar-width: thin;
+}
+
+/* The colour of highlighted text */
+::selection {
+    background-color: var(--highlight-colour);
+    color: var(--main-bg-colour);
+}
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+
+If you update this, also update `*:has(>.footnote-reference:target) { ... }`
+in `zola-specific.css`
+*/
+:target {
+    animation: 3s ease-out target-highlight;
+}
+
+:focus-visible {
+    outline: var(--main-line-thickness) solid var(--focus-ring-colour) !important;
+    outline-offset: calc(var(--main-line-thickness) / 2) !important;
+}
+
+body {
+    background-color: var(--distant-bg-colour);
+}
+
+/* Main area for displaying content */
+main {
+    background-color: var(--main-bg-colour);
+
+    width: 66.66%;
+    margin: 0em auto;
+    padding: 1.5em 1em;
+
+    border: var(--default-border);
+    border-radius: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-style: italic;
+    font-weight: bold;
+    margin: 0.75em 0 0.25em 0;
+    position: relative;
+
+    --heading-left-margin: 0.5em;
+    margin-left: var(--heading-left-margin);
+}
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    position: absolute;
+    content: "";
+    width: var(--main-line-thickness);
+    height: 100%;
+    vertical-align: middle;
+    left: calc(var(--heading-left-margin) * -1);
+
+    border-radius: calc(var(--main-line-thickness) / 2);
+    background-color: var(--tertiary-accent-colour);
+}
+
+h1 {
+    font-size: 2.1em;
+    text-align: center;
+    margin: 1em auto;
+}
+h1::after,
+h1::before {
+    width: 80%;
+    height: var(--main-line-thickness);
+    border-radius: calc(var(--main-line-thickness) / 2);
+
+    position: static;
+    display: block;
+    background-color: var(--heading1);
+    content: "";
+
+    margin: 0.25em auto;
+}
+
+h2 {
+    font-size: 2.1em;
+}
+h2::before {
+    background-color: var(--heading2);
+}
+
+h3 {
+    font-size: 1.5em;
+}
+h3::before {
+    background-color: var(--heading3);
+}
+
+h4 {
+    font-size: 1.2em;
+}
+h4::before {
+    background-color: var(--heading4);
+}
+
+h5 {
+    font-size: 1.05em;
+}
+h5::before {
+    background-color: var(--heading5);
+}
+
+h6 {
+    font-size: 0.975em;
+}
+h6::before {
+    background-color: var(--heading6);
+}
+
+p {
+    margin: 1em 0;
+}
+
+a {
+    color: var(--hyperlink-colour);
+    text-decoration: underline;
+}
+/* Custom styling for external links */
+a[href*='//']:not([class])::after {
+    content: "";
+    display: inline;
+
+    /* Using padding-right instead of width so that the icon does not wrap onto a new line */
+    padding-right: 0.975em;
+    height: 0.975em;
+    vertical-align: -0.125em;
+
+    background-color: var(--secondary-text-colour);
+    text-decoration: underline;
+
+    /* Icon credit: https://icon-sets.iconify.design/tabler/external-link/ */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+}
+
+/*p:has(> img) {
+    display: flow-root;
+}*/
+img {
+    /*float: inline-start;*/
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    border: var(--thin-border);
+    border-radius: 0.25em;
+    /*padding: 0.25em;*/
+    /*background-color: var(--secondary-bg-colour);*/
+
+    --img-margin: 0.25em;
+    margin: var(--img-margin);
+
+    max-width: calc(50% - (var(--img-margin) * 2) - (var(--secondary-line-thickness) * 2));
+
+    box-shadow: var(--default-shadow);
+
+    /* See also: img style in the media queries at the bottom of this file */
+}
+
+blockquote::before, blockquote::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1em;
+
+    /* Icon credit: https://icon-sets.iconify.design/tabler/quote-filled/ */
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 5a2 2 0 0 1 2 2v6c0 3.13-1.65 5.193-4.757 5.97a1 1 0 1 1-.486-1.94C7.984 16.473 9 15.203 9 13v-1H6a2 2 0 0 1-1.995-1.85L4 10V7a2 2 0 0 1 2-2zm9 0a2 2 0 0 1 2 2v6c0 3.13-1.65 5.193-4.757 5.97a1 1 0 1 1-.486-1.94C16.984 16.473 18 15.203 18 13v-1h-3a2 2 0 0 1-1.995-1.85L13 10V7a2 2 0 0 1 2-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+blockquote::before {
+    transform: scaleX(-1);
+}
+blockquote::after {
+    margin-left: 100%;
+    transform: translateX(-100%);
+}
+blockquote {
+    background-color: var(--secondary-bg-colour);
+
+    margin: 1em 2em;
+
+    border: var(--thin-border);
+    border-radius: 0.5em;
+    padding: 0 0.25em;
+
+    box-shadow: var(--default-shadow);
+}
+blockquote > * {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+blockquote > *:first-child {
+    margin-top: 0;
+}
+blockquote > *:last-child {
+    margin-bottom: 0;
+}
+
+.centred-text {
+    text-align: center;
+    margin: 1em 2em;
+}
+.important-centred-text {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 2em;
+}
+
+/* Hyperlink around headings */
+a.heading-anchor {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/*
+Style for A hyperlink (<a> tag) that looks and feels like a button as well as
+literal buttons.
+*/
+a.link-button,
+button {
+    display: inline-block;
+
+    color: var(--main-text-colour);
+    text-decoration: inherit;
+    text-align: center;
+
+    background-color: var(--secondary-bg-colour);
+
+    border: var(--default-border);
+    border-radius: 1.25em;
+
+    padding: 0 0.5em;
+
+    cursor: pointer;
+
+    transition: background-color var(--button-fade-time);
+}
+@media (hover: hover) and (pointer: fine) {
+    a.link-button:hover,
+    button:hover {
+        background-color: var(--selected-element-colour);
+    }
+}
+a.link-button:active,
+button:active {
+    transition: background-color 0ms;
+
+    background-color: var(--secondary-accent-colour);
+    color: var(--main-bg-colour);
+}
+
+/* EXAMPLE:
+<button type="button" class="icon-button">
+    <!-- Put an <svg aria-hidden="true" focusable="false"> tag here -->
+    <!-- Good site for icons: https://iconify.design/ -->
+
+    <!-- Text for screen readers (and the Lynx browser) -->
+    <span class="hidden-text">Accessible description</span>
+</button>
+*/
+button.icon-button {
+    padding: 0.25em;
+    border-radius: 9999em;
+}
+
+/*
+Hide text that is intended for screen readers only.
+
+NOTE: This does NOT hide text from the Lynx text based browser.
+
+https://www.a11yproject.com/posts/how-to-hide-content/
+*/
+.hidden-text {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/*
+EXAMPLE (link):
+
+<a href="#" class="card">
+    <div class="card-title">My title</div>
+    <div class="card-content">You can click this box</div>
+    <ul class="card-info">
+        <li>Card created: 2025-08-07</li>
+        <li>Extra info here</li>
+    </ul>
+</a>
+
+EXAMPLE (expandable):
+
+<details class="card">
+    <summary>
+        <div class="card-title">My title</div>
+        <div class="card-summary">You can click this box</div>
+    </summary>
+    <div class="card-content">
+        Hidden content!
+    </div>
+</details>
+*/
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    border: var(--thin-border);
+    border-radius: 1em;
+    margin: 0;
+
+    background-color: var(--secondary-bg-colour);
+    color: var(--main-text-colour);
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5em;
+
+    box-shadow: var(--default-shadow);
+    overflow: hidden;
+
+    transition: background-color var(--button-fade-time);
+}
+.card .card-title {
+    font-size: 1.05em;
+    font-weight: bold;
+
+    border-bottom: var(--thin-border);
+    padding-bottom: 0.25em;
+    margin-bottom: 0.25em;
+}
+.card *:nth-last-child(2):has(+ ul.card-info) {
+    margin-bottom: 0.5em;
+}
+.card ul.card-info {
+    text-decoration: none;
+    background-color: var(--main-bg-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0 0.5em;
+    margin: 0 auto;
+    margin-top: auto;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+
+    width: fit-content;
+
+    transition: background-color var(--button-fade-time);
+}
+.card ul.card-info > li {
+    display: inline;
+}
+.card ul.card-info > li::after {
+    content: " | ";
+    color: var(--distant-bg-colour);
+}
+.card ul.card-info > li:last-child::after {
+    display: none;
+    content: none;
+}
+details.card {
+    padding: 0;
+}
+details.card > * {
+    padding: 0.5em;
+}
+details.card > summary {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 1em;
+
+    transition: background-color var(--button-fade-time);
+}
+details.card > summary::marker {
+    content: none;
+}
+details.card:open > summary {
+    border-bottom: var(--thin-border);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    background-color: var(--selected-element-colour);
+
+    box-shadow: var(--default-shadow);
+}
+details.card:open > summary ul.card-info {
+    background-color: var(--secondary-bg-colour);
+}
+details.card > summary::after {
+    content: "Select to expand";
+    display: block;
+    font-size: 0.975em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+details.card:open > summary::after {
+    content: "Select to hide";
+}
+a.card,
+details.card > summary {
+    /* Cards that can be clicked */
+    cursor: pointer;
+}
+a.card:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+@media (hover: hover) and (pointer: fine) {
+    a.card:hover,
+    details.card > summary:hover {
+        /* Hovered and active cards */
+        background-color: var(--selected-element-colour);
+    }
+    a.card:hover ul.card-info,
+    details.card > summary:hover ul.card-info {
+        /* things within a hovered or active card */
+        background-color: var(--secondary-bg-colour);
+    }
+}
+@media (not (hover: hover)) or (not (pointer: fine)) {
+    a.card:active {
+        transition: background-color 0ms;
+        background-color: var(--selected-element-colour);
+    }
+    a.card:active ul.card-info {
+        transition: background-color 0ms;
+        background-color: var(--secondary-bg-colour);
+    }
+}
+
+/*
+Box with curved edges that is designed to hold exactly one line of text.
+
+<a href="#" class="inline-card">
+    <svg aria-hidden="true" focusable="false">...</svg>
+    <span>Inline Card</span>
+</a>
+*/
+.inline-card {
+    background-color: var(--secondary-bg-colour);
+    border: var(--thin-border);
+    border-radius: 1em;
+    padding: 0 0.5em;
+
+    vertical-align: middle;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+
+    width: fit-content;
+
+    text-decoration: none;
+    color: var(--main-text-colour);
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+
+    transition: background-color var(--button-fade-time);
+}
+a.inline-card {
+    cursor: pointer;
+
+    box-shadow: var(--default-shadow);
+}
+a.inline-card:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+@media (hover: hover) and (pointer: fine) {
+    a.inline-card:hover {
+        background-color: var(--selected-element-colour);
+    }
+}
+@media (not (hover: hover)) or (not (pointer: fine)) {
+    a.inline-card:active {
+        transition: background-color 0ms;
+
+        background-color: var(--selected-element-colour);
+    }
+}
+
+ol.important-list-box,
+ul.important-list-box {
+    margin: 1em 10%;
+
+    border: var(--default-border);
+    border-radius: 2em;
+    padding: 1em;
+
+    list-style-type: none;
+}
+ol.important-list-box > li,
+ul.important-list-box > li {
+    margin: 1em 0;
+}
+ol.important-list-box > li:first-child,
+ul.important-list-box > li:first-child {
+    margin-top: 0;
+}
+ol.important-list-box > li:last-child,
+ul.important-list-box > li:last-child {
+    margin-bottom: 0;
+}
+
+@media (992px <= width < 1200px) {
+    main {
+        width: 75%;
+    }
+}
+
+@media (768px <= width < 992px) {
+    main {
+        width: 80%;
+    }
+
+    ol.important-list-box,
+    ul.important-list-box {
+        margin: 1em 0;
+    }
+}
+
+@media (576px <= width < 768px) {
+    main {
+        width: 90%;
+    }
+
+    img {
+        max-width: calc(100% - var(--img-margin) - var(--secondary-line-thickness));
+    }
+
+    ol.important-list-box,
+    ul.important-list-box {
+        margin: 1em 0;
+    }
+}
+
+@media (width < 576px) {
+    main {
+        width: 100%;
+        border-radius: 1em;
+    }
+
+    blockquote {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    img {
+        max-width: calc(100% - var(--img-margin) - var(--secondary-line-thickness));
+    }
+
+    a.card > ul.card-info {
+        width: 100%;
+    }
+    a.card > ul.card-info > * {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a.card > ul.card-info > *::after {
+        display: none;
+        content: none;
+    }
+
+    ol.important-list-box,
+    ul.important-list-box {
+        margin: 1em 0;
+
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .centred-text,
+    .important-centred-text {
+        margin: 1em 1em;
+    }
+}

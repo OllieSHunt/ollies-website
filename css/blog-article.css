@@ -1,0 +1,53 @@
+/*****************************************************************************
+This file contains css code for blog-article.html
+*****************************************************************************/
+
+article > footer {
+    background-color: var(--secondary-bg-colour);
+    border: var(--thin-border);
+    border-color: var(--tertiary-accent-colour);
+    border-radius: 1em;
+    padding: 0.5em;
+
+    overflow: hidden;
+    text-wrap: nowrap;
+
+    box-shadow: var(--default-shadow);
+}
+
+article > footer > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+article > footer > * {
+    margin: 0.25em 0;
+}
+
+article > footer > ul > li {
+    margin: 0.5em 0;
+}
+article > footer > ul > li:first-child {
+    margin-top: 0;
+}
+article > footer > ul > li:lst-child {
+    margin-bottom: 0;
+}
+
+article > footer > ul > .footer-comment {
+    margin: 1em 1em;
+    text-wrap: balance;
+    text-align: center;
+}
+
+article > footer .article-updates ol {
+    list-style: none;
+    margin: 0;
+    margin-left: 1.5em;
+    padding: 0;
+    padding-left: 0.25em;
+
+    border-left: var(--default-border);
+    border-color: var(--distant-bg-colour);
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="description"
+          content="A ridiculously simple downtime checker in only 6 lines of Bash (with optional NixOS and Systemd integration). It runs on your desktop, so no self-hosting needed." />
+
+        <title>Super Simple Downtime Checker | Ollie&#x27;s Website</title>
+
+        <!-- Atom feed discovery -->
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
+
+        <!-- Favicon svg and fallback ico -->
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/theme-dark.css" />
+        <link rel="stylesheet" type="text/css" href="/css/syntax-theme-dark.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
+        <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
+
+        
+<link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
+
+
+        <!-- JavaScript -->
+        <script defer src="/js/header-bar.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+        <div id="header-bar-anchor" aria-hidden="true">
+            <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
+        </div>
+
+        <header id="header-bar">
+            <!-- Nav bar displayed at the top of the screen -->
+
+            <nav>
+                <ol>
+                    <li><a class="link-button" href="/">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.707 2.293l9 9c.63.63.184 1.707-.707 1.707h-1v6a3 3 0 0 1-3 3h-1v-7a3 3 0 0 0-2.824-2.995L13 12h-2a3 3 0 0 0-3 3v7H7a3 3 0 0 1-3-3v-6H3c-.89 0-1.337-1.077-.707-1.707l9-9a1 1 0 0 1 1.414 0M13 14a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883-.993L11 14z"/></svg>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a class="link-button" href="/blog">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/bubble-text-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.4 2l.253.005a6.34 6.34 0 0 1 5.235 3.166l.089.163l.178.039a6.33 6.33 0 0 1 4.254 3.406l.105.228a6.334 6.334 0 0 1-5.74 8.865l-.144-.002l-.037.052a5.26 5.26 0 0 1-5.458 1.926l-.186-.051l-3.435 2.06a1 1 0 0 1-1.508-.743L6 21v-2.435l-.055-.026a3.67 3.67 0 0 1-1.554-1.498l-.102-.199a3.67 3.67 0 0 1-.312-2.14l.038-.21l-.116-.092a5.8 5.8 0 0 1-1.887-6.025l.071-.238a5.8 5.8 0 0 1 5.42-4.004h.157l.15-.165a6.33 6.33 0 0 1 4.33-1.963zM14 13H9a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2m3-4H7a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2"/></svg>
+                        <span>Blog</span>
+                    </a></li>
+                    <li><a class="link-button" href="/projects">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/file-code-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="m12 2l.117.007a1 1 0 0 1 .876.876L13 3v4l.005.15a2 2 0 0 0 1.838 1.844L15 9h4l.117.007a1 1 0 0 1 .876.876L20 10v9a3 3 0 0 1-2.824 2.995L17 22H7a3 3 0 0 1-2.995-2.824L4 19V5a3 3 0 0 1 2.824-2.995L7 2zm-1.553 11.106a1 1 0 0 0-1.341.447l-1 2a1 1 0 0 0 0 .894l1 2a1 1 0 0 0 1.341.447l.102-.058a1 1 0 0 0 .345-1.283L10.118 16l.776-1.553a1 1 0 0 0-.447-1.341m4.447.447a1 1 0 0 0-1.341-.447l-.102.058a1 1 0 0 0-.345 1.283L13.88 16l-.775 1.553a1 1 0 0 0 1.788.894l1-2a1 1 0 0 0 0-.894z"/><path d="M19 7h-4l-.001-4.001z"/></g></svg>
+                        <span>Projects</span>
+                    </a></li>
+                    <li><a class="link-button" href="/search">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+                        <span>Search</span>
+                    </a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <main>
+<article>
+    <h1 id="super-simple-downtime-checker"><a href="#super-simple-downtime-checker" class="heading-anchor">Super Simple Downtime Checker</a></h1>
+<h2 id="why"><a href="#why" class="heading-anchor">Why?</a></h2>
+<p>So, recently I made a website. I would like an automated way to make sure it's still online. Nothing fancy, I just want to make sure it hasn't self-destructed.</p>
+<p>There are plenty of services that can do this, however I don't need any of the fancy features that these services offer. And, for my purposes, most of them are just overkill.</p>
+<p>The solution I have come up with is a simple 6-line bash script that just checks the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status">HTTP response code</a> of my website to make sure it is <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200">200 OK</a>.</p>
+<h2 id="making-the-script"><a href="#making-the-script" class="heading-anchor">Making The Script</a></h2>
+<p>So, the core part of this program will be something that sends a request to the server and gets a response back. One option would be to use the <code>ping</code> command. However, while this would tell us if the server was switched on or not, it would not allow us to receive HTTP response codes such as <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404">404 Not Found</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418">418 I'm a teapot</a>, or other similarity critical errors.</p>
+<p>The solution I found uses <code>curl</code> with the <code>-I</code> (or <code>--head</code>) option. This allows us to view HTTP response codes (like 404 not found), along with a lot of other miscellaneous information that I don't need for this particular script.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">curl</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>I</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://olliehunt.dev/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">HTTP/2</span></span><span class="z-meta z-function-call z-arguments z-shell"> 200</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">server:</span></span><span class="z-meta z-function-call z-arguments z-shell"> GitHub.com</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">content-type:</span></span><span class="z-meta z-function-call z-arguments z-shell"> text/html</span><span class="z-keyword z-operator z-logical z-continue z-shell">;</span> <span class="z-variable z-other z-readwrite z-assignment z-shell">charset</span><span class="z-keyword z-operator z-assignment z-shell">=</span><span class="z-string z-unquoted z-shell">utf-8</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">last-modified:</span></span><span class="z-meta z-function-call z-arguments z-shell"> Wed, 27 Aug 2025 20:33:10 GMT</span>
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">---OUTPUT</span></span><span class="z-meta z-function-call z-arguments z-shell"> TRUNCATED---</span>
+</span></code></pre>
+<p>As we don't need most of this information, we can extract just the response code from this command's output by piping <code>curl</code>'s output through some other commands:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">$</span></span><span class="z-meta z-function-call z-arguments z-shell"> curl<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>Is</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://olliehunt.dev/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">head</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>n</span> 1</span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">xargs</span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">HTTP/2</span></span><span class="z-meta z-function-call z-arguments z-shell"> 200</span>
+</span></code></pre>
+<p>Let's break that line down: Firstly, the <code>-s</code> option on <code>curl</code> is used to suppress its loading bar. Secondly, the <code>head</code> command is used to extract just the first line from <code>curl</code>'s output. Finally, <code>xargs</code> is used to strip any whitespace that could mess up a string comparison in an if statement. And speaking of if statements...</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-if z-shell">if</span> <span class="z-meta z-function-call z-arguments z-shell"><span class="z-support z-function z-double-brace z-begin z-shell">[[</span> <span class="z-meta z-group z-expansion z-command z-parens z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-punctuation z-section z-parens z-begin z-shell">(</span><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">curl</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>Is</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://olliehunt.dev/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">head</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>n</span> 1</span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">xargs</span></span><span class="z-punctuation z-section z-parens z-end z-shell">)</span></span> <span class="z-keyword z-operator z-logical z-shell">==</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>HTTP/2 200<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span> <span class="z-support z-function z-double-brace z-end z-shell">]]</span></span><span class="z-keyword z-operator z-logical z-continue z-shell">;</span> <span class="z-keyword z-control z-conditional z-then z-shell">then</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Success!<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-else z-shell">else</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Failure :(<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-end z-shell">fi</span>
+</span></code></pre>
+<p>We now have a functional script! There are still a couple of improvements we could make though...</p>
+<p>Right now, this script will only work with one URL. The simplest, and easiest way I could think to solve this was to use Bash's <code>$@</code> variable. This variable simply contains all the arguments passed to the script. This is not perfect and is probably not how you are meant to handle arguments, but it does get the job done.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-if z-shell">if</span> <span class="z-meta z-function-call z-arguments z-shell"><span class="z-support z-function z-double-brace z-begin z-shell">[[</span> <span class="z-meta z-group z-expansion z-command z-parens z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-punctuation z-section z-parens z-begin z-shell">(</span><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">curl</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>Is</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span><span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span><span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">head</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>n</span> 1</span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">xargs</span></span><span class="z-punctuation z-section z-parens z-end z-shell">)</span></span> <span class="z-keyword z-operator z-logical z-shell">==</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>HTTP/2 200<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span> <span class="z-support z-function z-double-brace z-end z-shell">]]</span></span><span class="z-keyword z-operator z-logical z-continue z-shell">;</span> <span class="z-keyword z-control z-conditional z-then z-shell">then</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Success!<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-else z-shell">else</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Failure :(<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-end z-shell">fi</span>
+</span></code></pre>
+<p>We can now simply call our script from the command line, specifying any URL we want to check:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">$</span></span><span class="z-meta z-function-call z-arguments z-shell"> bash ./path/to/script.sh <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://olliehunt.dev/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Success!</span></span>
+</span></code></pre>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">$</span></span><span class="z-meta z-function-call z-arguments z-shell"> bash ./path/to/script.sh <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://example.com/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Failure</span></span><span class="z-meta z-function-call z-arguments z-shell"> :(</span>
+</span></code></pre>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">$</span></span><span class="z-meta z-function-call z-arguments z-shell"> bash ./path/to/script.sh <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>https://www.wikipedia.org/<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">
+</span><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">Success!</span></span>
+</span></code></pre>
+<h2 id="automating"><a href="#automating" class="heading-anchor">Automating</a></h2>
+<p>So obviously we don't want to have to manually run this script all the time, so how do we automate it?</p>
+<p>Well there are many great options for this, and you can pick your favourite. I'm going to be using <a href="https://wiki.archlinux.org/title/Systemd/Timers">systemd timers</a> (although <a href="https://en.wikipedia.org/wiki/Cron">cron</a> is a great alternative if you don't like systemd). Additionally, as I'm running a <a href="https://nixos.org/">NixOS</a> system, I will be setting everything up using the Nix programming language instead of manually creating <code>.service</code> and <code>.timer</code> files. Most general concepts I talk about here should still be applicable if you are not using NixOS, however.</p>
+<h3 id="notifications"><a href="#notifications" class="heading-anchor">Notifications</a></h3>
+<p>Before we get to creating our systemd unit and timer, there is one last change that needs to be made to the script.</p>
+<p>Currently, the success or failure is just echoed to stdout. For a script run in the commandline, this is fine. However, if we plan on running this script automatically in the background, the user won't be able to see stdout. For this we need to notify the user of issues some other way. Luckily, <a href="https://gitlab.gnome.org/GNOME/libnotify">libnotify</a> provides an <a href="https://olliehunt.dev/blog/simple-downtime-checker/(https://man.archlinux.org/man/notify-send.1)">excellent utility</a> called <code>notify-send</code> that allows us to send notifications from the command line. To use it, simply pass your message as an argument to the command. For example:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">$</span></span><span class="z-meta z-function-call z-arguments z-shell"> notify-send <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Hello World!<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span></code></pre>
+<p>Here is the final script with <code>notify-send</code> added + some slightly more detailed error messages:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-if z-shell">if</span> <span class="z-meta z-function-call z-arguments z-shell"><span class="z-support z-function z-double-brace z-begin z-shell">[[</span> <span class="z-meta z-group z-expansion z-command z-parens z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-punctuation z-section z-parens z-begin z-shell">(</span><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">curl</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>Is</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span><span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span><span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">head</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>n</span> 1</span> <span class="z-keyword z-operator z-logical z-pipe z-shell">|</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">xargs</span></span><span class="z-punctuation z-section z-parens z-end z-shell">)</span></span> <span class="z-keyword z-operator z-logical z-shell">==</span> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>HTTP/2 200<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span> <span class="z-support z-function z-double-brace z-end z-shell">]]</span></span><span class="z-keyword z-operator z-logical z-continue z-shell">;</span> <span class="z-keyword z-control z-conditional z-then z-shell">then</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Success: <span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span> returned response code 200.<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-else z-shell">else</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>Failure: <span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span> did not return a response code of 200. Use &#39;curl -Is <span class="z-constant z-character z-escape z-shell">\&quot;</span><span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span><span class="z-constant z-character z-escape z-shell">\&quot;</span>&#39; for more info.<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">notify-send</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>WARNING: <span class="z-meta z-group z-expansion z-parameter z-shell"><span class="z-punctuation z-definition z-variable z-shell">$</span><span class="z-variable z-language z-shell">@</span></span> has returned a response code that is not 200!<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-end z-shell">fi</span>
+</span></code></pre>
+<h3 id="systemd-nixos-integration"><a href="#systemd-nixos-integration" class="heading-anchor">Systemd/NixOS Integration</a></h3>
+<p>As I mentioned earlier, I will be using systemd and NixOS for automatically running the script.</p>
+<p>I don't really have much to talk about in this section. Just copy this into your NixOS system config and it <em>should</em> just work. I'll let the code comments do the explaining:</p>
+<blockquote class="markdown-alert-note">
+<p>In case you are not familiar with the process of turning a script into a
+systemd unit using NixOS, here is an excellent article that I used to learn:
+<a href="https://blog.withsam.org/blog/nixos-systemd-local-script/">https://blog.withsam.org/blog/nixos-systemd-local-script/</a></p>
+</blockquote>
+<pre data-lang="nix" class="language-nix z-code"><code class="language-nix" data-lang="nix"><span class="z-source z-nix"><span class="z-punctuation z-definition z-attrset-or-function z-nix">{</span>
+</span><span class="z-source z-nix">  <span class="z-comment z-line z-number-sign z-nix"># This is the timer will run `downtime-check.service` every hour</span>
+</span><span class="z-source z-nix">  <span class="z-entity z-other z-attribute-name z-multipart z-nix">systemd</span>.<span class="z-entity z-other z-attribute-name z-multipart z-nix">user</span>.<span class="z-entity z-other z-attribute-name z-multipart z-nix">timers</span>.<span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>downtime-check<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-punctuation z-definition z-attrset-or-function z-nix">{</span>
+</span><span class="z-source z-nix">    <span class="z-entity z-other z-attribute-name z-multipart z-nix">wantedBy</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-punctuation z-definition z-list z-nix">[</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>timers.target<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span> <span class="z-punctuation z-definition z-list z-nix">]</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">
+</span><span class="z-source z-nix">    <span class="z-entity z-other z-attribute-name z-multipart z-nix">timerConfig</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-punctuation z-definition z-attrset-or-function z-nix">{</span>
+</span><span class="z-source z-nix">      <span class="z-comment z-line z-number-sign z-nix"># Timer runs every hour</span>
+</span><span class="z-source z-nix">      <span class="z-entity z-other z-attribute-name z-multipart z-nix">OnActiveSec</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>1h<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">      <span class="z-entity z-other z-attribute-name z-multipart z-nix">OnUnitActiveSec</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>1h<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">
+</span><span class="z-source z-nix">      <span class="z-comment z-line z-number-sign z-nix"># This service will be activated every time the timer triggers</span>
+</span><span class="z-source z-nix">      <span class="z-entity z-other z-attribute-name z-multipart z-nix">Unit</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>downtime-check.service<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">    <span class="z-punctuation z-definition z-attrset z-nix">}</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">  <span class="z-punctuation z-definition z-attrset z-nix">}</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">
+</span><span class="z-source z-nix">  <span class="z-comment z-line z-number-sign z-nix"># This is the service that will actually call the script we made earlier</span>
+</span><span class="z-source z-nix">  <span class="z-entity z-other z-attribute-name z-multipart z-nix">systemd</span>.<span class="z-entity z-other z-attribute-name z-multipart z-nix">user</span>.<span class="z-entity z-other z-attribute-name z-multipart z-nix">services</span>.<span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>downtime-check<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-punctuation z-definition z-attrset-or-function z-nix">{</span>
+</span><span class="z-source z-nix">    <span class="z-comment z-line z-number-sign z-nix"># List of packages this unit needs access to</span>
+</span><span class="z-source z-nix">    <span class="z-entity z-other z-attribute-name z-multipart z-nix">path</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-keyword z-other z-nix">with</span> <span class="z-variable z-parameter z-name z-nix">pkgs</span>; <span class="z-punctuation z-definition z-list z-nix">[</span>
+</span><span class="z-source z-nix">      <span class="z-variable z-parameter z-name z-nix">bash</span>
+</span><span class="z-source z-nix">      <span class="z-variable z-parameter z-name z-nix">libnotify</span>
+</span><span class="z-source z-nix">      <span class="z-variable z-parameter z-name z-nix">curl</span>
+</span><span class="z-source z-nix">      <span class="z-variable z-parameter z-name z-nix">coreutils-full</span>
+</span><span class="z-source z-nix">      <span class="z-variable z-parameter z-name z-nix">findutils</span>
+</span><span class="z-source z-nix">    <span class="z-punctuation z-definition z-list z-nix">]</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">
+</span><span class="z-source z-nix">    <span class="z-comment z-line z-number-sign z-nix"># Call the script we made earlier.</span>
+</span><span class="z-source z-nix">    <span class="z-comment z-line z-number-sign z-nix"># You can call the script multiple times here to check multiple URLs.</span>
+</span><span class="z-source z-nix">    <span class="z-entity z-other z-attribute-name z-multipart z-nix">script</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>bash <span class="z-markup z-italic"><span class="z-punctuation z-section z-embedded z-begin z-nix">${</span><span class="z-string z-unquoted z-path z-nix">./path/to/script.sh</span><span class="z-punctuation z-section z-embedded z-end z-nix">}</span></span> https://olliehunt.dev/<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">
+</span><span class="z-source z-nix">    <span class="z-entity z-other z-attribute-name z-multipart z-nix">serviceConfig</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-punctuation z-definition z-attrset-or-function z-nix">{</span>
+</span><span class="z-source z-nix">      <span class="z-comment z-line z-number-sign z-nix"># Ensure this script will just run once and then exit</span>
+</span><span class="z-source z-nix">      <span class="z-entity z-other z-attribute-name z-multipart z-nix">Type</span> <span class="z-keyword z-operator z-bind z-nix">=</span> <span class="z-string z-quoted z-double z-nix"><span class="z-punctuation z-definition z-string z-double z-start z-nix">&quot;</span>oneshot<span class="z-punctuation z-definition z-string z-double z-end z-nix">&quot;</span></span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">    <span class="z-punctuation z-definition z-attrset z-nix">}</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix">  <span class="z-punctuation z-definition z-attrset z-nix">}</span><span class="z-punctuation z-terminator z-bind z-nix">;</span>
+</span><span class="z-source z-nix"><span class="z-punctuation z-definition z-attrset z-nix">}</span>
+</span></code></pre>
+<p>This should run every hour in the background and notify you of any problems with your website(s).</p>
+
+    <footer>
+        <ul>
+            <li class="footer-comment"><em>If you have any questions, feedback, or corrections please feel free to contact me at: <a href="mailto:olliehuntcontact@gmail.com">olliehuntcontact@gmail.com</a>.</em></li>
+            <li><strong>Published: </strong><em>2025-08-31</em></li>
+            <li class="article-updates">
+                <strong id="article-updates-heading">Updates:</strong>
+                <ol aria-labelledby="article-updates-heading">
+                    
+                    <li>No updates</li>
+                    
+                </ol>
+            </li>
+        </ul>
+    </footer>
+</article>
+</main>
+    </body>
+    <noscript>
+        <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
+        <style>
+            #header-bar {
+                position: relative;
+            }
+        </style>
+    </noscript>
+</html>

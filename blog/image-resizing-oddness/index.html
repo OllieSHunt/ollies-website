@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="description"
+          content="How reducing an image&#x27;s resolution can sometimes increase its file size + how to fix it using ImageMagick." />
+
+        <title>Image Resizing Oddness | Ollie&#x27;s Website</title>
+
+        <!-- Atom feed discovery -->
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
+
+        <!-- Favicon svg and fallback ico -->
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/theme-dark.css" />
+        <link rel="stylesheet" type="text/css" href="/css/syntax-theme-dark.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
+        <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
+
+        
+<link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
+
+
+        <!-- JavaScript -->
+        <script defer src="/js/header-bar.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+        <div id="header-bar-anchor" aria-hidden="true">
+            <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
+        </div>
+
+        <header id="header-bar">
+            <!-- Nav bar displayed at the top of the screen -->
+
+            <nav>
+                <ol>
+                    <li><a class="link-button" href="/">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.707 2.293l9 9c.63.63.184 1.707-.707 1.707h-1v6a3 3 0 0 1-3 3h-1v-7a3 3 0 0 0-2.824-2.995L13 12h-2a3 3 0 0 0-3 3v7H7a3 3 0 0 1-3-3v-6H3c-.89 0-1.337-1.077-.707-1.707l9-9a1 1 0 0 1 1.414 0M13 14a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883-.993L11 14z"/></svg>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a class="link-button" href="/blog">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/bubble-text-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.4 2l.253.005a6.34 6.34 0 0 1 5.235 3.166l.089.163l.178.039a6.33 6.33 0 0 1 4.254 3.406l.105.228a6.334 6.334 0 0 1-5.74 8.865l-.144-.002l-.037.052a5.26 5.26 0 0 1-5.458 1.926l-.186-.051l-3.435 2.06a1 1 0 0 1-1.508-.743L6 21v-2.435l-.055-.026a3.67 3.67 0 0 1-1.554-1.498l-.102-.199a3.67 3.67 0 0 1-.312-2.14l.038-.21l-.116-.092a5.8 5.8 0 0 1-1.887-6.025l.071-.238a5.8 5.8 0 0 1 5.42-4.004h.157l.15-.165a6.33 6.33 0 0 1 4.33-1.963zM14 13H9a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2m3-4H7a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2"/></svg>
+                        <span>Blog</span>
+                    </a></li>
+                    <li><a class="link-button" href="/projects">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/file-code-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="m12 2l.117.007a1 1 0 0 1 .876.876L13 3v4l.005.15a2 2 0 0 0 1.838 1.844L15 9h4l.117.007a1 1 0 0 1 .876.876L20 10v9a3 3 0 0 1-2.824 2.995L17 22H7a3 3 0 0 1-2.995-2.824L4 19V5a3 3 0 0 1 2.824-2.995L7 2zm-1.553 11.106a1 1 0 0 0-1.341.447l-1 2a1 1 0 0 0 0 .894l1 2a1 1 0 0 0 1.341.447l.102-.058a1 1 0 0 0 .345-1.283L10.118 16l.776-1.553a1 1 0 0 0-.447-1.341m4.447.447a1 1 0 0 0-1.341-.447l-.102.058a1 1 0 0 0-.345 1.283L13.88 16l-.775 1.553a1 1 0 0 0 1.788.894l1-2a1 1 0 0 0 0-.894z"/><path d="M19 7h-4l-.001-4.001z"/></g></svg>
+                        <span>Projects</span>
+                    </a></li>
+                    <li><a class="link-button" href="/search">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+                        <span>Search</span>
+                    </a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <main>
+<article>
+    <h1 id="image-resizing-oddness"><a href="#image-resizing-oddness" class="heading-anchor">Image Resizing Oddness</a></h1>
+<p><img src="https://olliehunt.dev/blog/image-resizing-oddness/image.webp" alt="Screenshot of a game I made recently" /></p>
+<h2 id="the-scenario"><a href="#the-scenario" class="heading-anchor">The Scenario</a></h2>
+<p>So, recently I was writing about a project I made a while ago on <a href="/projects">the projects section</a> of my website. I decided to reduce the resolution of an image in order to improve site load times and I chose to do this using <a href="https://imagemagick.org/">ImageMagick</a> with the following command:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ magick image.webp -resize 600x600 image-RESIZED.webp
+</span></code></pre>
+<p>This command successfully resized the image from 1366x768 pixels to 600x337 pixels, so I used <code>ls</code> to check the file size:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ ls -lh image*.webp
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">-rw-r--r-- 1 ollie users 187K Aug 21 20:22 image-RESIZED.webp
+</span><span class="z-text z-plain">-rw-r--r-- 1 ollie users  13K Aug 21 20:18 image.webp
+</span></code></pre>
+<p>Hang on a minute! The resized image is over 14 times the size! Did I make a mistake and accidentally <em>increase</em> the resolution instead? Let's use ImageMagick to check.</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ magick identify image*.webp
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">image-RESIZED.webp WEBP 600x337 600x337+0+0 8-bit sRGB 190624B 0.000u 0:00.000
+</span><span class="z-text z-plain">image.webp WEBP 1366x768 1366x768+0+0 8-bit sRGB 12710B 0.000u 0:00.000
+</span></code></pre>
+<p>There is no mistake. The one with the smaller resolution is definitely much much larger!</p>
+<p>But why?...</p>
+<h2 id="my-theory"><a href="#my-theory" class="heading-anchor">My Theory</a></h2>
+<p>After opening up the resized image in an image viewer, it was obvious that the pixel art had become extremely blurred. The image below shows this (you can right click, open image in new tab, and zoom in if the image is too small to see the blur).</p>
+<p><img src="https://olliehunt.dev/blog/image-resizing-oddness/image-RESIZED.webp" alt="Very blurry screenshot of a game I made recently" /></p>
+<p>Now, I am defiantly <strong>not</strong> and expert on image compression, but I do know that if there are multiple pixels of the same colour next to each other, then they can be compressed into one piece of information. e.g. instead of <code>blue, blue, blue, blue, blue</code> the image will just store <code>5 blue</code>. This is called <a href="https://en.wikipedia.org/wiki/Run-length_encoding">run-length encoding</a>.</p>
+<p>Because the original image was pixel art, and each "pixel" in the pixel art is just a small square block of actual pixels, there is a very large number of pixels with the same colour next to each other. This provides many many opportunities for run-length encoding, reducing file size significantly.</p>
+<p>In the resized image however, the newly introduced noise and blurriness brakes up these perfect blocks of solid colour, destroying the run-length encoding.</p>
+<blockquote class="markdown-alert-important">
+<p>I am not an image compression expert. This is just my best guess as to what's
+happening, I could be wrong.</p>
+</blockquote>
+<h2 id="the-solution"><a href="#the-solution" class="heading-anchor">The Solution</a></h2>
+<p>So, if the blur is causing the image size to be larger, how do we remove the blur? Well my first thought was to disable anti-aliasing with the <code>+antialias</code> option, however this seemed to have no effect on image quality or file size. After that I tried all of the following options, also with no or limited effect: <code>-filter point</code>, <code>-interpolate integer</code>, <code>-interpolate nearest-neighbor</code>, <code>-filter box</code>, and <code>-scale 50%</code>.</p>
+<p>Eventually, I tracked down <a href="https://github.com/ImageMagick/ImageMagick/discussions/6788#discussioncomment-7282750">this comment on a GitHub issue</a> that suggested using the <code>-sample</code> option for cleaner resizing of pixel art.</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ magick image.webp -sample 600x600 image-SAMPLE.webp
+</span></code></pre>
+<p>This worked perfectly! The image quality is now lower and the image size reflects that by also being lower:</p>
+<pre class="z-code"><code><span class="z-text z-plain">$ ls -lh image*.webp
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">-rw-r--r-- 1 ollie users  11K Aug 21 21:01 image-SAMPLE.webp
+</span><span class="z-text z-plain">-rw-r--r-- 1 ollie users  13K Aug 21 20:18 image.webp
+</span></code></pre>
+<p>So a size reduction of only 2kB is not really worth the dramatic dip in quality, but at least we have successfully reduced its file size.</p>
+<p>Here is the image resized using <code>-sample</code>. As before, if the image is too small to see the details, then you can right click, open image in new tab, and zoom in.</p>
+<p><img src="https://olliehunt.dev/blog/image-resizing-oddness/image-SAMPLE.webp" alt="Properly resized screenshot of a game I made recently" /></p>
+<h2 id="what-does-sample-do-differently"><a href="#what-does-sample-do-differently" class="heading-anchor">What Does <code>-sample</code> Do Differently?</a></h2>
+<p>So why does <code>-sample 600x600</code> introduce less noise and blur than <code>-resize 600x600</code>?</p>
+<p>Well here is an <a href="https://imagemagick.org/script/command-line-options.php?#sample">excerpt from the ImageMagick docs</a> about the <code>-sample</code> option:</p>
+<blockquote>
+<p>When minifying, pixels are sub-sampled (i.e., some rows and columns are
+skipped over).</p>
+</blockquote>
+<p>So basically, <code>-sample</code> uses a much simpler algorithm for shrinking images that just deletes rows/columns instead of doing some fancy filtering like <code>-resize</code>.</p>
+<p>If you're curious, <a href="https://stackoverflow.com/a/13078621">this Stack Overflow comment</a> provides an excellent breakdown of all the different ways to resize images with ImageMagick.</p>
+<h2 id="conclusion"><a href="#conclusion" class="heading-anchor">Conclusion</a></h2>
+<p>The whole reason for doing this was to optimise my website's load times by reducing the size of a single large image (1366x768 pixels). However, the resized version was only actually 2kB smaller than original which was already only 13kB. Because of this negligible size difference and the enormous drop in quality, I did not end up using the minified image on my site.</p>
+<p>I do not think this was a waste of time however, because I leaned some very useful things about ImageMagick that I think will be useful in the future.</p>
+
+    <footer>
+        <ul>
+            <li class="footer-comment"><em>If you have any questions, feedback, or corrections please feel free to contact me at: <a href="mailto:olliehuntcontact@gmail.com">olliehuntcontact@gmail.com</a>.</em></li>
+            <li><strong>Published: </strong><em>2025-08-22</em></li>
+            <li class="article-updates">
+                <strong id="article-updates-heading">Updates:</strong>
+                <ol aria-labelledby="article-updates-heading">
+                    
+                    <li>No updates</li>
+                    
+                </ol>
+            </li>
+        </ul>
+    </footer>
+</article>
+</main>
+    </body>
+    <noscript>
+        <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
+        <style>
+            #header-bar {
+                position: relative;
+            }
+        </style>
+    </noscript>
+</html>

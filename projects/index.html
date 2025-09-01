@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          name="description"
+          content="Ollie Hunt&#x27;s blog&#x2F;personal website. I write about coding, computers, and anything else I find interesting." />
+
+        <title>Projects | Ollie&#x27;s Website</title>
+
+        <!-- Atom feed discovery -->
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/atom.xml" />
+
+        <!-- Favicon svg and fallback ico -->
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="/css/css-reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/misc-variables.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/theme-dark.css" />
+        <link rel="stylesheet" type="text/css" href="/css/syntax-theme-dark.css" />
+
+        <link rel="stylesheet" type="text/css" href="/css/main-style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/zola-specific.css" />
+        <link rel="stylesheet" type="text/css" href="/css/header-bar.css" />
+
+        
+
+        <!-- JavaScript -->
+        <script defer src="/js/header-bar.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+        <div id="header-bar-anchor" aria-hidden="true">
+            <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
+        </div>
+
+        <header id="header-bar">
+            <!-- Nav bar displayed at the top of the screen -->
+
+            <nav>
+                <ol>
+                    <li><a class="link-button" href="/">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.707 2.293l9 9c.63.63.184 1.707-.707 1.707h-1v6a3 3 0 0 1-3 3h-1v-7a3 3 0 0 0-2.824-2.995L13 12h-2a3 3 0 0 0-3 3v7H7a3 3 0 0 1-3-3v-6H3c-.89 0-1.337-1.077-.707-1.707l9-9a1 1 0 0 1 1.414 0M13 14a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883-.993L11 14z"/></svg>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a class="link-button" href="/blog">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/bubble-text-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m12.4 2l.253.005a6.34 6.34 0 0 1 5.235 3.166l.089.163l.178.039a6.33 6.33 0 0 1 4.254 3.406l.105.228a6.334 6.334 0 0 1-5.74 8.865l-.144-.002l-.037.052a5.26 5.26 0 0 1-5.458 1.926l-.186-.051l-3.435 2.06a1 1 0 0 1-1.508-.743L6 21v-2.435l-.055-.026a3.67 3.67 0 0 1-1.554-1.498l-.102-.199a3.67 3.67 0 0 1-.312-2.14l.038-.21l-.116-.092a5.8 5.8 0 0 1-1.887-6.025l.071-.238a5.8 5.8 0 0 1 5.42-4.004h.157l.15-.165a6.33 6.33 0 0 1 4.33-1.963zM14 13H9a1 1 0 0 0 0 2h5a1 1 0 0 0 0-2m3-4H7a1 1 0 1 0 0 2h10a1 1 0 0 0 0-2"/></svg>
+                        <span>Blog</span>
+                    </a></li>
+                    <li><a class="link-button" href="/projects">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/file-code-filled/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="m12 2l.117.007a1 1 0 0 1 .876.876L13 3v4l.005.15a2 2 0 0 0 1.838 1.844L15 9h4l.117.007a1 1 0 0 1 .876.876L20 10v9a3 3 0 0 1-2.824 2.995L17 22H7a3 3 0 0 1-2.995-2.824L4 19V5a3 3 0 0 1 2.824-2.995L7 2zm-1.553 11.106a1 1 0 0 0-1.341.447l-1 2a1 1 0 0 0 0 .894l1 2a1 1 0 0 0 1.341.447l.102-.058a1 1 0 0 0 .345-1.283L10.118 16l.776-1.553a1 1 0 0 0-.447-1.341m4.447.447a1 1 0 0 0-1.341-.447l-.102.058a1 1 0 0 0-.345 1.283L13.88 16l-.775 1.553a1 1 0 0 0 1.788.894l1-2a1 1 0 0 0 0-.894z"/><path d="M19 7h-4l-.001-4.001z"/></g></svg>
+                        <span>Projects</span>
+                    </a></li>
+                    <li><a class="link-button" href="/search">
+                        <!-- Icon credit: https://icon-sets.iconify.design/tabler/search/ -->
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+                        <span>Search</span>
+                    </a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <main>
+<h1>Projects</h1>
+<p class="centred-text">
+    I have worked on quite a lot of small random projects but here are a few of the more notable, interesting, and complete personal projects I have worked on.
+</p>
+<p class="centred-text">
+    Very approximately ordered with the newest first:
+</p>
+<ol class="important-list-box" aria-label="My projects">
+    
+    <li>
+        <details id="project-4-website" class="card">
+            <summary>
+                <div class="card-title">This Website</div>
+                <div class="card-summary">The website you are viewing right now!</div>
+            </summary>
+            <artice class="card-content">
+                <h1 id="this-website">This Website</h1>
+<h2 id="why">Why?</h2>
+<p>This website's main reason for existing is that I felt like making a website. It also serves as a good place to talk about and share my thoughts as well as to showcase what I can do to any potential future employers.</p>
+<h2 id="ssi-and-zola">SSI and Zola</h2>
+<p>I originally used <a href="https://en.wikipedia.org/wiki/Server_Side_Includes">SSI (Server Side Includes)</a> to make reusable components that could be shared between pages such as the navigation bar, but eventually decided to switch to using the static site generator <a href="https://www.getzola.org/">Zola</a> and its excellent templating engine, <a href="https://keats.github.io/tera/">Tera</a>.</p>
+<p>For more information on this, see <a href="/blog/reinventing-the-ssg">this blog post</a>.</p>
+<hr />
+<p>The source code for this website can be found <a href="https://github.com/OllieSHunt/ollies-website">here</a>.</p>
+
+            </artice>
+        </details>
+    </li>
+    
+    <li>
+        <details id="project-3-keyboard-v2" class="card">
+            <summary>
+                <div class="card-title">Custom Keyboard V2</div>
+                <div class="card-summary">The second version of my fully custom keyboard.</div>
+            </summary>
+            <artice class="card-content">
+                <h1 id="custom-keyboard-v2">Custom Keyboard V2</h1>
+<p><img src="https://olliehunt.dev/projects/3-keyboard-v2/custom_keyboard_v2.webp" alt="Photo of finished keyboard" /></p>
+<p>Like the first version of this project, this keyboard is a semi split design and supports n-key rollover. Unlike the first design however, this keyboard has an RGB LED under every key as well as an OLED display.</p>
+<h2 id="hardware">Hardware</h2>
+<p>The design process for this keyboard was very similar to the first one. I designed the PCB using <a href="https://www.kicad.org/">KiCad</a> and then got it printed using <a href="https://jlcpcb.com/">JLCPCB</a>.</p>
+<p>The LEDs are the <code>WS2812C-2020</code> model. These are daisy-chained together for easy control via QMK's inbuilt driver.</p>
+<h2 id="software">Software</h2>
+<p>I used <a href="https://qmk.fm/">QMK</a> to write this keyboard's firmware (just like in V1).</p>
+<p>I made use of QMK's <a href="https://docs.qmk.fm/quantum_painter">Quantum Painter</a> to control and render to the small OLED display. I designed the UI for the display myself. On it you can see your current typing speed, num/caps/scroll lock indicators, the current hue, saturation, and brightness values for the LEDs, as well as a few other miscellaneous pieces of information.</p>
+<hr />
+<p>See also, <a href="/projects/1-keyboard-v1">the first version of this project</a> and the <a href="https://github.com/OllieSHunt/custom-keyboard-v2">GitHub repository for this project</a>.</p>
+
+            </artice>
+        </details>
+    </li>
+    
+    <li>
+        <details id="project-2-space-gravity-game" class="card">
+            <summary>
+                <div class="card-title">Space Gravity Game</div>
+                <div class="card-summary">A short game about a small robot and its efforts to repair a derelict space ship.</div>
+            </summary>
+            <artice class="card-content">
+                <h1 id="space-gravity-game">Space Gravity Game</h1>
+<p>This is a simple 2D platformer game I originally made as part of a college assignment. It is written in Python, uses Pygame for graphics, and Pymunk for physics.</p>
+<p>The game currently contains a small selection of levels for you to play through, and one NPC (The Autopilot) for you to meet.</p>
+<h2 id="story">Story</h2>
+<p>You play as a small maintenance robot on a derelict spaceship. As a maintenance robot, it is your duty to keep the ship moving and on track towards its eventual destination.</p>
+<p><img src="https://olliehunt.dev/projects/2-space-gravity-game/space-gravity-game.webp" alt="Screenshot of game" /></p>
+<hr />
+<p>You can find this game's source code <a href="https://github.com/OllieSHunt/space-gravity-game">here</a>.</p>
+
+            </artice>
+        </details>
+    </li>
+    
+    <li>
+        <details id="project-1-keyboard-v1" class="card">
+            <summary>
+                <div class="card-title">Custom Keyboard V1</div>
+                <div class="card-summary">A fully custom keyboard, designed and built by me.</div>
+            </summary>
+            <artice class="card-content">
+                <h1 id="custom-keyboard-v1">Custom Keyboard V1</h1>
+<p>This keyboard is a semi split design (both halves on the same PCB but with some distance between them). It supports n-key rollover but other than that does not have any fancy features like RGB lighting.</p>
+<h2 id="hardware">Hardware</h2>
+<p>For this project, I designed a custom circuit board using <a href="https://www.kicad.org/">KiCad</a> that I then got printed using <a href="https://jlcpcb.com/">JLCPCB</a>.</p>
+<p>I used the <a href="https://www.raspberrypi.com/products/raspberry-pi-pico/">Raspberry Pi Pico 1</a> for the keyboard's microcontroller.</p>
+<h2 id="software">Software</h2>
+<p>I briefly experimented with writing the firmware by hand in C, but I greatly underestimated the difficulty of this task and ultimately decided that the time required to learn would be too long for this project. Because of this, I decided to use <a href="https://qmk.fm/">QMK</a> to simplify the process and take care of the direct hardware communication, allowing me to focus on things like configuring the key map the way I wanted it.</p>
+<hr />
+<p>See also, <a href="/projects/3-keyboard-v2">the second version of this project</a>.</p>
+
+            </artice>
+        </details>
+    </li>
+    
+    <li>
+        <details id="project-0-tile-renderer" class="card">
+            <summary>
+                <div class="card-title">Tile Map Renderer</div>
+                <div class="card-summary">A top-down 3D tile map renderer written in WGSL and Rust.</div>
+            </summary>
+            <artice class="card-content">
+                <h1 id="tile-map-renderer">Tile Map Renderer</h1>
+<p>This project was originally meant to be a <a href="https://www.bay12games.com/dwarves/">Dwarf Fortress</a> clone written in <a href="https://www.rust-lang.org/">Rust</a> using the <a href="https://bevy.org/">Bevy game engine</a>.</p>
+<p>However I never really got to making the game itself and instead got sidetracked with designing a custom tile rendering solution using a <a href="https://en.wikipedia.org/wiki/WebGPU_Shading_Language">WGSL</a> shader and custom Bevy rendering pipeline.</p>
+<p>The final product was able to render a 3D world using 2D sprites across multiple layers similar to the graphical version of Dwarf Fortress. It also had support for sprites that changed the way they looked based on their neighbours, and a chunking system to dynamically extend the world as needed.</p>
+
+            </artice>
+        </details>
+    </li>
+    
+</ol>
+</main>
+    </body>
+    <noscript>
+        <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
+        <style>
+            #header-bar {
+                position: relative;
+            }
+        </style>
+    </noscript>
+</html>
