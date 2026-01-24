@@ -25,7 +25,7 @@ HTTP/2 200
 server: GitHub.com
 content-type: text/html; charset=utf-8
 last-modified: Wed, 27 Aug 2025 20:33:10 GMT
----OUTPUT TRUNCATED---
+### OUTPUT TRUNCATED ###
 ```
 
 As we don't need most of this information, we can extract just the response code from this command's output by piping `curl`'s output through some other commands:

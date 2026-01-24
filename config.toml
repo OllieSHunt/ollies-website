@@ -26,13 +26,6 @@ include_content = true
 index_format = "elasticlunr_json"
 
 [markdown]
-# Syntax highlighting for code
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-    { theme = "gruvbox-dark", filename = "css/syntax-theme-dark.css" },
-]
-
 # This option breaks heading anchor links for some reason? See: https://github.com/getzola/zola/issues/2679
 # lazy_async_image = true
 
@@ -41,6 +34,12 @@ github_alerts = true
 
 # Enable footnotes with back-links at the bottom of the page
 bottom_footnotes = true
+
+[markdown.highlighting]
+# Syntax highlighting theme (it is possible to do separate themes for light
+# and dark mode, see docs)
+# See also light-dark() CSS function: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
+theme = "gruvbox-dark-medium"
 
 [extra]
 # Put all your custom variables here

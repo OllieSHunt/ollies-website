@@ -421,6 +421,7 @@ details.card {
 }
 details.card > * {
     padding: 0.5em;
+    display: block;
 }
 details.card > summary {
     width: 100%;
