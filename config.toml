@@ -39,7 +39,7 @@ bottom_footnotes = true
 # Syntax highlighting theme (it is possible to do separate themes for light
 # and dark mode, see docs)
 # See also light-dark() CSS function: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark
-theme = "gruvbox-dark-medium"
+theme = "gruvbox-dark-soft"
 
 [extra]
 # Put all your custom variables here
