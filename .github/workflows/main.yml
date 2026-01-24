@@ -21,9 +21,16 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6.0.1
 
+      - name: Setup IndexNow
+        shell: bash
+        # Generate IndexNow key file in the ./static folder.
+        # Zola will find this and include this in the final build.
+        run: echo "${{ secrets.INDEX_NOW_KEY }}" > static/"${{ secrets.INDEX_NOW_KEY }}.txt"
+
       - name: Build Zola + upload Pages artifact
         uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7
         with:
+          output_dir: "public"
           zola_version: v0.22.0
 
   deploy:
