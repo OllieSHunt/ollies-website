@@ -9,11 +9,11 @@ date = 2026-06-02
 ## Intro
 One of the many, many cool things you can do with Nix is create [dev shells](https://wiki.nixos.org/wiki/Development_environment_with_nix-shell). These allow you to quickly and easily create reproducible environments in which to do your development.
 
-I love this feature a lot. However, I don't love having to create a separate dev shell for each project even if they have the exact same set of dependencies. I also don't love having `flake.nix` and `flake.lock` files cluttering up the root of the project I'm working on. Additionally, if your working on a project in a team with people who don't use Nix, your team members will likely be less than thrilled at you messing up there wonderfully organised project with files only you see a use in.
+I love this feature a lot. However, I don't love having to create a separate dev shell for each project even if they have the exact same set of dependencies. I also don't love having `flake.nix` and `flake.lock` files cluttering up the root of the project I'm working on. Additionally, if you're working on a project in a team with people who don't use Nix, your team members will likely be less than thrilled at you messing up their wonderfully organised project with files only you see a use in.
 
 So how can we address all these problems? Well the most obvious solution is simply to keep the dev shell `.nix` files *not* in the project your working on. Of course, if your doing that, then you will also want some way of entering the dev shell as easily as if it was in the project's root directory.
 
-In this post, I will write about how I've chosen to go about solving this problem in case its also useful for you.
+In this post, I will write about how I've chosen to go about solving this problem in case it's also useful for you.
 
 > [!NOTE]
 > In this post, I assume the use of [flakes](https://wiki.nixos.org/wiki/Flakes). I will not be specifically covering how to do this without fakes, although I'm sure a lot of this could be easily adapted if you want.
