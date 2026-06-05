@@ -201,7 +201,6 @@ img {
 img.fill-img {
     max-width: 100%;
     width: 100%;
-    /* height: 100%; */
 }
 
 blockquote::before, blockquote::after {
@@ -266,7 +265,7 @@ blockquote > *:last-child {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 66%;
     height: fit-content;
 }
 
@@ -606,6 +605,10 @@ ul.important-list-box > li:last-child {
     ul.important-list-box {
         margin: 1em 0;
     }
+
+    .centred-block {
+        width: 90%;
+    }
 }
 
 @media (width < 576px) {
@@ -649,5 +652,8 @@ ul.important-list-box > li:last-child {
     .centred-text,
     .important-centred-text {
         margin: 1em 1em;
+    }
+    .centred-block {
+        width: 100%;
     }
 }
