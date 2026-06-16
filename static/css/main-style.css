@@ -60,6 +60,8 @@ main {
 
     border: var(--default-border);
     border-radius: 2em;
+
+    box-shadow: var(--default-shadow);
 }
 
 h1,
@@ -422,7 +424,7 @@ EXAMPLE (expandable):
 }
 .card ul.card-info > li::after {
     content: " | ";
-    color: var(--distant-bg-colour);
+    color: var(--thin-border-colour);
 }
 .card ul.card-info > li:last-child::after {
     display: none;

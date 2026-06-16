@@ -9,13 +9,14 @@ https://github.com/morhetz/gruvbox-contrib
 
     --main-bg-colour: #282828;
     --secondary-bg-colour: #32302f;
-    --distant-bg-colour: #7c6f64;
+    --distant-bg-colour: #665c54;
 
     --selected-element-colour: #504945;
 
     --main-accent-colour: #458588;
     --secondary-accent-colour: #98971a;
     --tertiary-accent-colour: #d79921;
+    --thin-border-colour: #7c6f64;
 
     --highlight-colour: #b8bb26;
     --shadow-colour: #1d2021;

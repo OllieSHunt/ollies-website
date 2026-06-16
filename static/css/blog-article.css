@@ -49,5 +49,5 @@ article > footer .article-updates ol {
     padding-left: 0.25em;
 
     border-left: var(--default-border);
-    border-color: var(--distant-bg-colour);
+    border-color: var(--thin-border-colour);
 }

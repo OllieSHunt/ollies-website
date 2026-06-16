@@ -16,6 +16,8 @@ page.
     border: var(--default-border);
     border-radius: 1.25em;
 
+    box-shadow: var(--default-shadow);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +29,6 @@ page.
         top 100ms,
         border-radius 100ms,
         border-top 100ms,
-        box-shadow 100ms;
 }
 
 #header-bar.header-bar-moving {
@@ -35,7 +36,6 @@ page.
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: var(--default-shadow);
 }
 
 #header-bar nav {
