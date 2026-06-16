@@ -48,6 +48,11 @@ in `zola-specific.css`
 
 body {
     background-color: var(--distant-bg-colour);
+
+    background-image: url("/background.svg");
+    background-repeat: repeat;
+    background-size: 12em;
+    background-attachment: fixed;
 }
 
 /* Main area for displaying content */
@@ -614,6 +619,10 @@ ul.important-list-box > li:last-child {
 }
 
 @media (width < 576px) {
+    body {
+        background-image: unset;
+    }
+
     main {
         width: 100%;
         border-radius: 1em;
