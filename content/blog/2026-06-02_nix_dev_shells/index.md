@@ -2,6 +2,11 @@
 title = "Unobtrusive Nix Dev Shells"
 description = "How to manage Nix development flakes outside of your projects repo for better flake reusability and how to not annoy your team."
 date = 2026-06-02
+updated = 2026-06-16
+
+[[extra.updates]]
+date = 2026-06-16
+change_note = "Minor change to code formatting"
 +++
 
 # Unobtrusive Nix Dev Shells
@@ -118,14 +123,16 @@ So, this script is great and all, but we need an easy way to run it.
 If you're using [Home Manager](https://github.com/nix-community/home-manager) and chose to store your flakes in the same directory as your NixOS config, then you can do something along the lines of:
 
 ```nix
-home.file.".local/bin/dev" = {
-  enable = true;
-  executable = true;
-  source = ./path/to/dev.sh;
-};
+{
+  home.file.".local/bin/dev" = {
+    enable = true;
+    executable = true;
+    source = ./path/to/dev.sh;
+  };
 
-# Make sure files in config.xdg.binHome (~/.local/bin) are in PATH.
-xdg.localBinInPath = true;
+  # Make sure files in config.xdg.binHome (~/.local/bin) are in PATH.
+  xdg.localBinInPath = true;
+}
 ```
 
 I'm sure there are many other ways of achieving this (with and without Home Manager), but this is the one I use.
