@@ -69,7 +69,7 @@ udevadm info /dev/sdb1
 You could also look through the subdirectories of `/dev/disk` to find a lot of the same stuff.
 
 ### Debugging Initrd Environments
-Figuring out what is going on inside the initrd environment can be a bit challenging. One option for debugging would be to setup SSH access it and remotely (see [this article](https://wiki.nixos.org/wiki/Remote_disk_unlocking) on the NixOS Wiki), but it was sufficient for my use case to simply manually inspect the contents of the initrd image instead:
+Figuring out what is going on inside the initrd environment can be a bit challenging. One option for debugging would be to setup SSH access and debug remotely (see [this article](https://wiki.nixos.org/wiki/Remote_disk_unlocking) on the NixOS Wiki), but it was sufficient for my use case to simply manually inspect the contents of the initrd image instead:
 
 ```bash
 # List all images
