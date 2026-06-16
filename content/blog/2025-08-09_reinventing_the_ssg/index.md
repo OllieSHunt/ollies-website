@@ -1,10 +1,15 @@
 +++
-title = "Accidentally Reinventing The Static Site Generator"
+title = "Accidentally Reinventing the Static Site Generator"
 description = "Creating a makeshift static site generator using server side includes (SSI) and Python's `str.replace` method. I also talk about how to use SSI, why it is useful, and why Zola is great."
 date = 2025-08-09
+updated = 2026-06-14
+
+[[extra.updates]]
+date = 2026-06-14
+change_note = "Changed title capitalisation"
 +++
 
-# Accidentally Reinventing The Static Site Generator
+# Accidentally Reinventing the Static Site Generator
 
 ## Setting the Scene
 
@@ -147,7 +152,7 @@ Now, in Python I could just use the built in string replace function ([`str.repl
 
 In case you are curious, the full Python script can be found [here](https://github.com/OllieSHunt/ollies-website/blob/ccc93d9cb187cbb11fb65173553a5e9c274b77c9/dev-scripts/build-blog.py).
 
-## Reinventing The Wheel
+## Reinventing the Wheel
 So this works. And it works well. Whenever I write a blog article in markdown, I can just re-run the Python script and have it be automatically converted into HTML and inserted into my template. Then Nginx will use server side includes to automatically insert the nav bar and any other needed elements.
 
 But, during my research for alternative markdown parsers to Pandoc, I found a new type of software that I was not previously aware existed: [static site generators](https://en.wikipedia.org/wiki/Static_site_generator).
