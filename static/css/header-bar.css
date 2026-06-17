@@ -28,7 +28,7 @@ page.
     transition:
         top 100ms,
         border-radius 100ms,
-        border-top 100ms,
+        border-top 100ms;
 }
 
 #header-bar.header-bar-moving {
