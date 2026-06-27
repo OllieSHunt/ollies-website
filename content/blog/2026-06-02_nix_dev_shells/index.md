@@ -2,11 +2,15 @@
 title = "Unobtrusive Nix Dev Shells"
 description = "How to manage Nix development flakes outside of your projects repo for better flake reusability and how to not annoy your team."
 date = 2026-06-02
-updated = 2026-06-16
+updated = 2026-06-27
 
 [[extra.updates]]
 date = 2026-06-16
 change_note = "Minor change to code formatting"
+
+[[extra.updates]]
+date = 2026-06-27
+change_note = "Added more packages in Rust dev shell example"
 +++
 
 # Unobtrusive Nix Dev Shells
@@ -60,9 +64,11 @@ Bellow, I've included an example of a minimal flake for a [Rust](https://rust-la
       pkgs = import nixpkgs { inherit system; };
     in pkgs.mkShell {
       packages = with pkgs; [
-        cargo
-        rust-analyzer # LSP
         rustc
+        cargo
+        rustfmt
+        clippy
+        rust-analyzer
       ];
     };
   };
