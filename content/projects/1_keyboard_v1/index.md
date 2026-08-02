@@ -13,8 +13,8 @@ For this project, I designed a custom circuit board using [KiCad](https://www.ki
 I used the [Raspberry Pi Pico 1](https://www.raspberrypi.com/products/raspberry-pi-pico/) for the keyboard's microcontroller.
 
 ## Software
-I briefly experimented with writing the firmware by hand in C, but I greatly underestimated the difficulty of this task and ultimately decided that the time required to learn would be too long for this project. Because of this, I decided to use [QMK](https://qmk.fm/) to simplify the process and take care of the direct hardware communication, allowing me to focus on things like configuring the key map the way I wanted it.
+I briefly experimented with writing the firmware by hand in C, but ultimately decided to use [QMK](https://qmk.fm/) to simplify the process and take care of the direct hardware communication, allowing me to focus on things like configuring the key map the way I wanted it.
 
 ---
 
-See also, [the second version of this project](/projects/3-keyboard-v2).
+See also, [the second version of this project](/projects/3-keyboard-v2) which is much more feature-rich.
