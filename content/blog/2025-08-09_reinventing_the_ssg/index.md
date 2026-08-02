@@ -2,11 +2,15 @@
 title = "Accidentally Reinventing the Static Site Generator"
 description = "Creating a makeshift static site generator using server side includes (SSI) and Python's `str.replace` method. I also talk about how to use SSI, why it is useful, and why Zola is great."
 date = 2025-08-09
-updated = 2026-06-14
+updated = 2026-08-02
 
 [[extra.updates]]
 date = 2026-06-14
 change_note = "Changed title capitalisation"
+
+[[extra.updates]]
+date = 2026-08-02
+change_note = "Small tweak to wording"
 +++
 
 # Accidentally Reinventing the Static Site Generator
@@ -15,7 +19,7 @@ change_note = "Changed title capitalisation"
 
 So a while ago, I decided to build my own website/blog (your reading it right now!).
 
-The first thing I did after the usual HTML boilerplate was to start work on a navigation bar. The nav bar is, in my opinion, the "core" of any website. It's on every single page and users will keep coming back to it again and again to move around your page.
+The first thing I did after the usual HTML boilerplate was to start work on a navigation bar. The nav bar is, in my opinion, the "core" of any website. It's on every single page and users will keep coming back to it again and again to move around your site.
 
 After a few notebook sketches and indecision, I eventually settled on the following design:
 
