@@ -8,7 +8,11 @@
 <link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
 {% endblock extraStyle %}
 
-{% block content %}
+{% block beforeMainContent %}
+    {# TODO #}
+{% endblock beforeMainContent %}
+
+{% block mainContent %}
 <article>
     {#
         I have set skip_content_templating in the config to stop templates from being used in markdown. This means
@@ -35,4 +39,4 @@
         </ul>
     </footer>
 </article>
-{% endblock content %}
+{% endblock mainContent %}

@@ -2,7 +2,7 @@
 
 {% block pageTitle %}Blog | {{ config.title }}{% endblock pageTitle %}
 
-{% block content %}
+{% block mainContent %}
 <h1>{{ section.title }}</h1>
 <ol class="important-list-box" aria-label="Blog posts">
     {% for page in section.pages %}
@@ -20,4 +20,4 @@
     </li>
     {% endfor %}
 </ol>
-{% endblock content %}
+{% endblock mainContent %}
