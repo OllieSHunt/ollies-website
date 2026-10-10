@@ -17,9 +17,9 @@
     {% for heading in headings %}
     <li>
         <a href="{{ heading.permalink | safe }}">{{ heading.title }}</a>
-            {% if heading.children %}
-            {{ <full_toc headings={heading.children} depth={depth+1} /> }}
-            {% endif %}
+        {% if heading.children %}
+        {{ <full_toc headings={heading.children} depth={depth+1} /> }}
+        {% endif %}
     </li>
     {% endfor %}
 </ol>
