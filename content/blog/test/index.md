@@ -32,3 +32,10 @@ change_note = "Change note 2!"
 
 > [!WARNING]
 > test
+
+## Link Test
+- Footnote[^1]
+- [External](https://example.com)
+- [internal](/blog/reinventing-the-ssg)
+
+[^1]: Test footnote
