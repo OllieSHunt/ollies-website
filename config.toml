@@ -13,6 +13,10 @@ default_language = "en"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+# This prevents templating from being used in markdown. This means that I'm unable to use templates at all in markdown.
+# This solves a problem where templates in code blocks were being executed, causing errors.
+skip_content_templating = ["*.md"]
+
 # When set to "true", a feed is automatically generated.
 generate_feeds = false        # Enable for individual sections instead (e.g. in `content/blog/_index.md`).
 feed_filenames = ["atom.xml"]
