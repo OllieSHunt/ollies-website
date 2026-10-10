@@ -52,31 +52,51 @@ article > footer .article-updates ol {
     border-color: var(--thin-border-colour);
 }
 
-/* toc-wrapper just constrains the table of contents to a specific region of the screen */
+/* toc-wrapper just constrains the table of contents to a specific region of the screen.
+When not hovered, it will show an icon instead*/
 .toc-wrapper {
     position: fixed;
 
-    /* <main> is 66.66% wide. This is meant to slot in next to it */
     left: 0;
-    width: 16.665%;
-
-    top: 0;
     bottom: 0;
 
-    display: flex;
-    align-items: center;
+    z-index: 999;
+
+    background-color: var(--main-bg-colour);
+    border: var(--default-border);
+    box-shadow: var(--default-shadow);
+    border-radius: 1em;
+}
+.toc-wrapper:not(:hover) {
+    width: 4em;
+    height: 4em;
+    padding: 0.25em;
+    margin: 1em;
+
+    border-radius: 50%;
+}
+.toc-wrapper:not(:hover)::before {
+    content: "";
+
+    /* Icon credit: https://icon-sets.iconify.design/tabler/menu-deep/ */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M7 12h13m-10 6h10'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+.toc-wrapper:not(:hover) * {
+    display: none;
 }
 .toc {
-    background-color: var(--main-bg-colour);
-
-    width: calc(100% - 0.5em);
     padding: 0.75em 0.25em;
     margin: 0;
-
-    border: var(--default-border);
-    border-radius: 1em;
-
-    box-shadow: var(--default-shadow);
 
     font-style: italic;
 }
@@ -84,36 +104,36 @@ article > footer .article-updates ol {
     margin: 0 0.5em;
     padding: 0;
     list-style: none;
+
+    border-left: var(--main-line-thickness) solid var(--heading1);
 }
 .toc ol.toc-depth-1 {
-    border-left: var(--secondary-line-thickness) solid var(--heading1);
+    border-left-color: var(--heading1);
 }
 .toc ol.toc-depth-2 {
-    border-left: var(--secondary-line-thickness) solid var(--heading2);
+    border-left-color: var(--heading2);
 }
 .toc ol.toc-depth-3 {
-    border-left: var(--secondary-line-thickness) solid var(--heading3);
+    border-left-color: var(--heading3);
 }
 .toc ol.toc-depth-4 {
-    border-left: var(--secondary-line-thickness) solid var(--heading4);
+    border-left-color: var(--heading4);
 }
 .toc ol.toc-depth-5 {
-    border-left: var(--secondary-line-thickness) solid var(--heading5);
+    border-left-color: var(--heading5);
 }
 .toc ol.toc-depth-6 {
-    border-left: var(--secondary-line-thickness) solid var(--heading6);
+    border-left-color: var(--heading6);
 }
 .toc a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
 
-    border-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
     padding: 0.25em;
 }
 .toc a:hover {
     background-color: var(--selected-element-colour);
 }
-
-/* Make toc expand when hovered */
-/* TODO */
