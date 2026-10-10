@@ -38,4 +38,10 @@ change_note = "Change note 2!"
 - [External](https://example.com)
 - [internal](/blog/reinventing-the-ssg)
 
+### Heading 3
+asdf
+
+## Back to heading 2
+asdf
+
 [^1]: Test footnote
