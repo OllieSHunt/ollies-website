@@ -77,11 +77,11 @@ When not hovered, it will show a preview instead*/
     transition: opacity, left;
     transition-duration: var(--interactive-fade-time);
 }
-.toc-wrapper:not(:hover) {
+.toc-wrapper:not(:hover):not(:focus-within) {
     opacity: 0.333;
     left: -0.333em;
 }
-.toc-wrapper:not(:hover) .toc li a {
+.toc-wrapper:not(:hover):not(:focus-within) .toc li a {
     /* Show preview instead of list when collapsed */
     text-indent: -600px;
 }
@@ -133,7 +133,7 @@ When not hovered, it will show a preview instead*/
 
 @media (width < 768px) or (hover: none) {
     .toc-wrapper {
-        /* Hide on mobile for now */
+        /* Hide on mobile for now. Will revisit later */
         display: none;
     }
 }
