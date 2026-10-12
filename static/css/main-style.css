@@ -3,13 +3,10 @@ This file contains generic style for the whole site. For example, it contains
 style for headings, paragraphs, the body element, as well as fonts.
 *****************************************************************************/
 
-/* Used by `::target { ... }` */
+/* Used by `:target { ... }` */
 @keyframes target-highlight {
     from {
         background-color: var(--highlight-colour);
-    }
-    to {
-        background-color: initial;
     }
 }
 
@@ -333,6 +330,21 @@ button:active {
 button.icon-button {
     padding: 0.25em;
     border-radius: 9999em;
+}
+
+.skip-to-content-link {
+    position: absolute;
+    z-index: 9999;
+
+    --top-offset: 0.5em;
+
+    top: var(--top-offset);
+    left: 0.5em;
+
+    transform: translateY(calc(-100% - var(--top-offset)));
+}
+.skip-to-content-link:focus {
+    transform: translateY(0);
 }
 
 /*

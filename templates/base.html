@@ -37,6 +37,8 @@
     </head>
 
     <body>
+        <a href="#main-content" class="skip-to-content-link link-button">Skip to content</a>
+
         <div id="header-bar-anchor" aria-hidden="true">
             <!-- This acts as a reference point so the nav bar knows when it has scrolled away from the top of the page. -->
         </div>
@@ -44,7 +46,7 @@
         <header id="header-bar">
             <!-- Nav bar displayed at the top of the screen -->
 
-            <nav aria-label="Header bar">
+            <nav aria-label="Main header bar">
                 <ol>
                     <li><a class="link-button" href="/">
                         <!-- Icon credit: https://icon-sets.iconify.design/tabler/home-filled/ -->
@@ -72,7 +74,7 @@
 
         {% block beforeMainContent %} {% endblock beforeMainContent %}
 
-        <main>{% block mainContent %} {% endblock mainContent %}</main>
+        <main id="main-content">{% block mainContent %} {% endblock mainContent %}</main>
 
         {% block afterMainContent %} {% endblock afterMainContent %}
     </body>
