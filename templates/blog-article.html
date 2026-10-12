@@ -8,6 +8,33 @@
 <link rel="stylesheet" type="text/css" href="/css/blog-article.css" />
 {% endblock extraStyle %}
 
+{#
+    This component recursively calls itself to build a hierarchy of headings.
+    toc = Table Of Contents
+#}
+{% component full_toc(headings: array, depth: integer = 1) %}
+<ol class="toc-depth-{{ depth }}">
+    {% for heading in headings %}
+    <li>
+        <a href="{{ heading.permalink | safe }}">{{ heading.title }}</a>
+        {% if heading.children %}
+        {{ <full_toc headings={heading.children} depth={depth+1} /> }}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ol>
+{% endcomponent %}
+
+{% block beforeMainContent %}
+{% if page.toc %}
+<div class="toc-wrapper">
+    <nav class="toc">
+        {{ <full_toc headings={page.toc} /> }}
+    </nav>
+</div>
+{% endif %}
+{% endblock beforeMainContent %}
+
 {% block mainContent %}
 <article>
     {#

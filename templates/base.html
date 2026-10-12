@@ -70,7 +70,11 @@
             </nav>
         </header>
 
+        {% block beforeMainContent %} {% endblock beforeMainContent %}
+
         <main>{% block mainContent %} {% endblock mainContent %}</main>
+
+        {% block afterMainContent %} {% endblock afterMainContent %}
     </body>
     <noscript>
         <!-- Stop the header bar from following you down the page if JavaScript is disabled because it breaks the effect and looks odd in my opinion -->
