@@ -74,33 +74,16 @@ When not hovered, it will show a preview instead*/
 
     box-shadow: var(--default-shadow);
 
-    transition: opacity var(--interactive-fade-time);
-
+    transition: opacity, left;
+    transition-duration: var(--interactive-fade-time);
 }
 .toc-wrapper:not(:hover) {
     opacity: 0.333;
+    left: -0.333em;
 }
 .toc-wrapper:not(:hover) .toc li a {
     /* Show preview instead of list when collapsed */
     text-indent: -600px;
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-1 {
-    color: var(--heading1);
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-2 {
-    color: var(--heading2);
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-3 {
-    color: var(--heading3);
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-4 {
-    color: var(--heading4);
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-5 {
-    color: var(--heading5);
-}
-.toc-wrapper:not(:hover) .toc ol.toc-depth-6 {
-    color: var(--heading6);
 }
 .toc {
     padding: 0.75em 0.25em 0.75em 0;
