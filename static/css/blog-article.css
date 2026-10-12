@@ -64,19 +64,19 @@ When not hovered, it will show a preview instead*/
     z-index: 999;
 
     background-color: var(--main-bg-colour);
+
     border: var(--default-border);
-    box-shadow: var(--default-shadow);
-    border-radius: 1em;
-}
-.toc-wrapper:not(:hover) {
     border-left: none;
+
+    border-radius: 1em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
-    opacity: 0.333;
+    box-shadow: var(--default-shadow);
+
 }
-.toc-wrapper:not(:hover) .toc {
-    padding-left: 0;
+.toc-wrapper:not(:hover) {
+    opacity: 0.333;
 }
 .toc-wrapper:not(:hover) .toc li a {
     /* Show preview instead of list when collapsed */
@@ -101,7 +101,7 @@ When not hovered, it will show a preview instead*/
     color: var(--heading6);
 }
 .toc {
-    padding: 0.75em 0.25em;
+    padding: 0.75em 0.25em 0.75em 0;
     margin: 0;
 
     font-style: italic;
