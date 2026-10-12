@@ -28,7 +28,7 @@
 {% block beforeMainContent %}
 {% if page.toc %}
 <div class="toc-wrapper">
-    <nav class="toc">
+    <nav class="toc" aria-label="Table of contents">
         {{ <full_toc headings={page.toc} /> }}
     </nav>
 </div>
