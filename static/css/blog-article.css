@@ -74,6 +74,8 @@ When not hovered, it will show a preview instead*/
 
     box-shadow: var(--default-shadow);
 
+    transition: opacity var(--interactive-fade-time);
+
 }
 .toc-wrapper:not(:hover) {
     opacity: 0.333;
@@ -146,7 +148,7 @@ When not hovered, it will show a preview instead*/
     background-color: var(--selected-element-colour);
 }
 
-@media (width < 576px) or (hover: none) {
+@media (width < 768px) or (hover: none) {
     .toc-wrapper {
         /* Hide on mobile for now */
         display: none;

@@ -41,6 +41,27 @@ change_note = "Change note 2!"
 ### Heading 3
 asdf
 
+#### Heading 4
+asdf
+
+##### Heading 5
+asdf
+
+###### Heading 6
+asdf
+
+#### Heading 4
+asdf
+
+##### Heading 5
+asdf
+
+###### Heading 6
+asdf
+
+### Heading 3
+asdf
+
 ## Back to heading 2
 asdf
 

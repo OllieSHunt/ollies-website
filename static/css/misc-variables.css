@@ -11,5 +11,5 @@ This file contains misc css variables that are used throughout the website.
     --default-border: var(--main-line-thickness) solid var(--main-accent-colour);
     --thin-border: var(--secondary-line-thickness) solid var(--thin-border-colour);
 
-    --button-fade-time: 64ms;
+    --interactive-fade-time: 64ms;
 }

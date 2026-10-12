@@ -305,7 +305,7 @@ button {
 
     cursor: pointer;
 
-    transition: background-color var(--button-fade-time);
+    transition: background-color var(--interactive-fade-time);
 }
 @media (hover: hover) and (pointer: fine) {
     a.link-button:hover,
@@ -397,7 +397,7 @@ EXAMPLE (expandable):
     box-shadow: var(--default-shadow);
     overflow: hidden;
 
-    transition: background-color var(--button-fade-time);
+    transition: background-color var(--interactive-fade-time);
 }
 .card .card-title {
     font-size: 1.05em;
@@ -424,7 +424,7 @@ EXAMPLE (expandable):
 
     width: fit-content;
 
-    transition: background-color var(--button-fade-time);
+    transition: background-color var(--interactive-fade-time);
 }
 .card ul.card-info > li {
     display: inline;
@@ -450,7 +450,7 @@ details.card > summary {
 
     border-radius: 1em;
 
-    transition: background-color var(--button-fade-time);
+    transition: background-color var(--interactive-fade-time);
 }
 details.card > summary::marker {
     content: none;
@@ -537,7 +537,7 @@ Box with curved edges that is designed to hold exactly one line of text.
     font-weight: normal;
     font-style: normal;
 
-    transition: background-color var(--button-fade-time);
+    transition: background-color var(--interactive-fade-time);
 }
 a.inline-card {
     cursor: pointer;
