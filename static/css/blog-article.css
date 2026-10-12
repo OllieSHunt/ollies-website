@@ -82,15 +82,6 @@ When not hovered, it will show a preview instead*/
     /* Show preview instead of list when collapsed */
     text-indent: -600px;
 }
-.toc-wrapper:not(:hover) .toc ol {
-    /* Show preview instead of list when collapsed */
-    /*border-left: none;*/
-
-    /*font-style: normal;*/
-    /*list-style: "|" inside;*/
-    /*list-style: "\2759" inside;*/
-    /*line-height: 0.666em;*/
-}
 .toc-wrapper:not(:hover) .toc ol.toc-depth-1 {
     color: var(--heading1);
 }
@@ -153,4 +144,11 @@ When not hovered, it will show a preview instead*/
 }
 .toc a:hover {
     background-color: var(--selected-element-colour);
+}
+
+@media (width < 576px) or (hover: none) {
+    .toc-wrapper {
+        /* Hide on mobile for now */
+        display: none;
+    }
 }
